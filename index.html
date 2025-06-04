@@ -4,17 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zero Heat Solutions | Managed IT & Cybersecurity</title>
-  <meta
-    name="description"
-    content="Zero Heat Solutions — Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support."
-  />
+  <!-- Basic SEO Tags -->
+  <meta name="description" content="Zero Heat Solutions — Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support." />
+  <meta name="keywords" content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance" />
+  <meta name="robots" content="index, follow" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ──────────────────────────────────────────────────────────────────────────
@@ -572,16 +569,45 @@
       background-color: #0056b3;
     }
 
-    /* FOOTER */
+    /* FOOTER + SITEMAP */
     footer {
       background-color: var(--accent-color);
       color: var(--light-text);
-      text-align: center;
       padding: 2rem 1rem;
     }
-    footer p {
+    .footer-sitemap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sitemap-column {
+      min-width: 150px;
+    }
+    .sitemap-column h4 {
       margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: var(--light-text);
+    }
+    .sitemap-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+    .sitemap-column a {
+      color: var(--light-text);
+      font-size: 0.95rem;
+    }
+    .sitemap-column a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin-top: 1rem;
       font-size: 0.9rem;
+      text-align: center;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -1079,9 +1105,35 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       FOOTER
+       FOOTER + SITEMAP
        ────────────────────────────────────────────────────────────────────────── -->
   <footer>
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
     <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
   </footer>
 

@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zero Heat Solutions | Services</title>
+  <title>Zero Heat Solutions | IT & Cybersecurity</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Open Sans', sans-serif;
       margin: 0;
@@ -14,11 +17,19 @@
       color: #333;
       line-height: 1.6;
     }
-    header, footer {
-      background-color: #1b263b;
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('phoenix-bg.jpg') center/cover no-repeat;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      padding: 4rem 2rem;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header .intro {
+      max-width: 500px;
     }
     header img {
       width: 100%;
@@ -28,7 +39,10 @@
     nav {
       background-color: #12213a;
       text-align: center;
-      padding: 0.75rem 1rem;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
       color: white;
@@ -39,42 +53,61 @@
     nav a:hover {
       text-decoration: underline;
     }
+    .form-box {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .form-box input, .form-box textarea, .form-box select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .form-box button {
+      background-color: #007BFF;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+    }
+    .form-box button:hover {
+      background-color: #0056b3;
+    }
     main {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
     }
-    h1, h2, h3 {
-      color: #1b263b;
-    }
     section {
       margin-bottom: 3rem;
     }
-    .service {
-      margin-bottom: 2rem;
+    .highlight {
       background-color: #f4f8fc;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    .banner {
-      background-color: #e0ebf7;
+    h1, h2, h3 {
+      color: #1b263b;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+    }
+    footer {
+      background-color: #1b263b;
+      color: white;
       text-align: center;
       padding: 2rem 1rem;
-      margin-bottom: 2rem;
-      border-radius: 0.5rem;
-    }
-    .cta {
-      background-color: #007BFF;
-      color: white;
-      display: inline-block;
-      padding: 0.75rem 1.25rem;
-      margin-top: 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-    .cta:hover {
-      background-color: #0056b3;
     }
   </style>
 </head>
@@ -100,36 +133,51 @@
     <section>
       <h2>Cybersecurity Services</h2>
 
-      <div class="service">
-        <h3>Risk Assessments & Gap Analysis</h3>
-        <p>Our structured risk assessments identify and prioritize security weaknesses across your IT environment. We evaluate assets, threats, vulnerabilities, and existing controls, then provide actionable recommendations in a report that includes both executive and technical summaries.</p>
-      </div>
+      <section id="services" class="highlight">
+  <h2>Our Services</h2>
 
-      <div class="service">
-        <h3>Cloud Security & Compliance Audits</h3>
-        <p>We perform comprehensive audits of your cloud environments (AWS, Azure, Microsoft 365) to ensure configurations follow best practices and compliance standards like HIPAA, PCI DSS, and CMMC. Audits include IAM reviews, security baseline checks, logging validation, and remediation roadmaps.</p>
-      </div>
+  <h3>Cybersecurity Services</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div>
+      <h4>🔍 Risk Assessments & Gap Analysis</h4>
+      <p>We conduct thorough audits of your systems and environment to identify vulnerabilities, misconfigurations, and exposure points. You'll receive a clear executive summary plus detailed technical findings with prioritized recommendations.</p>
 
-      <div class="service">
-        <h3>Security Awareness Training</h3>
-        <p>We help employees become your first line of defense. Our training combines phishing simulations, custom e-learning modules, and ongoing micro-trainings. Progress is measured over time to show ROI and reduce human risk.</p>
-      </div>
+      <h4>☁️ Cloud Security & Compliance Audits</h4>
+      <p>We assess your cloud infrastructure (Microsoft 365, AWS, Azure) to ensure alignment with industry standards such as HIPAA, PCI, and CMMC. Our audits include identity/access reviews, logging validation, and configuration hardening guidance.</p>
 
-      <div class="service">
-        <h3>Phishing Simulations</h3>
-        <p>We conduct simulated phishing attacks to test employee awareness and track high-risk users. Immediate feedback and reporting help reinforce learning and reduce click-through rates over time.</p>
-      </div>
+      <h4>🎓 Security Awareness Training & Phishing Simulations</h4>
+      <p>Educate your staff using realistic phishing simulations, micro-trainings, and customized e-learning to reduce human-related risk. We track participation, click-through rates, and long-term behavioral improvement.</p>
+    </div>
+    <div>
+      <h4>📋 Compliance Support</h4>
+      <p>Whether you're facing HIPAA, PCI DSS, or cybersecurity insurance requirements, we'll guide you through documentation, technical safeguards, and audit readiness — tailored for small business realities.</p>
 
-      <div class="service">
-        <h3>Compliance Guidance</h3>
-        <p>Our team assists with practical, no-nonsense guidance for meeting HIPAA, PCI, and other small-business compliance requirements. We help you understand what’s required, implement solutions, and prepare for audits.</p>
-      </div>
+      <h4>💣 Penetration Testing (Coming Soon)</h4>
+      <p>Simulated attacks on your internal and external systems, performed safely by security professionals. Our reports include real-world exploit paths, screenshots, and remediation advice prioritized by risk.</p>
+    </div>
+  </div>
 
-      <div class="service">
-        <h3>Penetration Testing (Coming Soon)</h3>
-        <p>Soon, we’ll be offering internal and external penetration testing services to simulate real-world attacks. These tests will identify exploitable vulnerabilities and include reports with proof-of-concept findings and step-by-step remediation advice.</p>
-      </div>
-    </section>
+  <h3 style="margin-top: 3rem;">Managed IT Support</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+    <div>
+      <h4>🖥️ Remote Help Desk & IT Support</h4>
+      <p>Instant support when you need it. We resolve everything from login issues and slow computers to application crashes — fast, friendly, and without ticketing nonsense.</p>
+
+      <h4>🛠️ Workstation, Device & Patch Management</h4>
+      <p>We manage endpoint health with real-time antivirus monitoring, patch automation, asset reporting, and proactive updates to minimize vulnerabilities and downtime.</p>
+
+      <h4>🌐 Network Monitoring, VPN & Firewall Maintenance</h4>
+      <p>We keep your routers, firewalls, and wireless networks secured and available. Includes uptime alerts, firmware checks, and remote VPN configuration for your team.</p>
+    </div>
+    <div>
+      <h4>🗄️ Backup & Continuity Services</h4>
+      <p>Automated backups to local and cloud storage with regular testing and monitoring. Ensure you can recover from accidental deletion, ransomware, or system failure.</p>
+
+      <h4>📦 Office 365 and Cloud Support</h4>
+      <p>We handle your Microsoft 365 administration — users, mailboxes, MFA, SharePoint, OneDrive, and Teams. We’ll optimize security, permissions, and ease of use for your team.</p>
+    </div>
+  </div>
+</section>
 
     <section>
       <h2>Managed IT Services</h2>

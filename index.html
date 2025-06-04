@@ -6,13 +6,22 @@
   <title>Zero Heat Solutions | Managed IT & Cybersecurity</title>
 
   <!-- Basic SEO Tags -->
-  <meta name="description" content="Zero Heat Solutions — Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support." />
-  <meta name="keywords" content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance" />
+  <meta
+    name="description"
+    content="Zero Heat Solutions — Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support."
+  />
+  <meta
+    name="keywords"
+    content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance"
+  />
   <meta name="robots" content="index, follow" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     /* ──────────────────────────────────────────────────────────────────────────
@@ -33,7 +42,7 @@
       --letter-spacing: 1px;
       --nav-height: 60px;
       --offset: 80px;
-      --section-padding: 3rem; /* consistent vertical padding */
+      --section-padding: 3rem;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -209,7 +218,7 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION (LESS DARK OVERLAY + BIGGER, INTEGRATED LOGO)
+       HERO SECTION (OVERLAY + INTEGRATED LOGO)
        ────────────────────────────────────────────────────────────────────────── */
     header.hero {
       position: relative;
@@ -719,10 +728,16 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form -->
+      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form (wired to Formspree) -->
       <div class="hero-form">
         <h4>Request a Quote</h4>
-        <form action="/submit-quote" method="POST">
+        <form
+          action="https://formspree.io/f/xpwrwldy"
+          method="POST"
+        >
+          <!-- Hidden field so Formspree knows which form this is -->
+          <input type="hidden" name="form-name" value="quote" />
+
           <label for="hero-first-name">First Name *</label>
           <input
             type="text"
@@ -731,6 +746,7 @@
             placeholder="First Name"
             required
           />
+
           <label for="hero-last-name">Last Name *</label>
           <input
             type="text"
@@ -739,6 +755,7 @@
             placeholder="Last Name"
             required
           />
+
           <label for="hero-email">Business Email *</label>
           <input
             type="email"
@@ -747,6 +764,7 @@
             placeholder="you@yourcompany.com"
             required
           />
+
           <label for="hero-phone">Phone Number *</label>
           <input
             type="tel"
@@ -755,6 +773,7 @@
             placeholder="(###) ###-####"
             required
           />
+
           <label for="hero-interest">Interested In *</label>
           <select id="hero-interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
@@ -762,6 +781,7 @@
             <option value="cybersecurity">Cybersecurity</option>
             <option value="both">Both</option>
           </select>
+
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -772,7 +792,7 @@
        MAIN CONTENT
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
-    <!-- SERVICES (teaser on homepage; Penetration Testing removed) -->
+    <!-- SERVICES (teaser on homepage; “Penetration Testing” removed) -->
     <section id="services">
       <h2>Our Core Services</h2>
       <p>
@@ -1039,8 +1059,14 @@
           </p>
         </div>
 
-        <!-- Contact Form -->
-        <form class="contact-form" action="/submit-quote" method="POST">
+        <!-- Contact Form (wired to Formspree) -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xpwrwldy"
+          method="POST"
+        >
+          <input type="hidden" name="form-name" value="quote" />
+
           <label for="first-name">First Name *</label>
           <input
             type="text"
@@ -1049,6 +1075,7 @@
             placeholder="Your first name"
             required
           />
+
           <label for="last-name">Last Name *</label>
           <input
             type="text"
@@ -1057,6 +1084,7 @@
             placeholder="Your last name"
             required
           />
+
           <label for="email">Business Email *</label>
           <input
             type="email"
@@ -1065,6 +1093,7 @@
             placeholder="you@yourcompany.com"
             required
           />
+
           <label for="phone">Phone Number *</label>
           <input
             type="tel"
@@ -1073,6 +1102,7 @@
             placeholder="(###) ###-####"
             required
           />
+
           <label for="company">Company Name</label>
           <input
             type="text"
@@ -1080,6 +1110,7 @@
             name="company"
             placeholder="Your company name"
           />
+
           <label for="interest">What Are You Interested In? *</label>
           <select id="interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
@@ -1087,6 +1118,7 @@
             <option value="cybersecurity">Cybersecurity</option>
             <option value="both">Both</option>
           </select>
+
           <label for="message">Tell us a bit about your needs</label>
           <textarea
             id="message"
@@ -1094,6 +1126,7 @@
             rows="4"
             placeholder="Describe your environment, pain points, or goals…"
           ></textarea>
+
           <button type="submit">Submit Request</button>
         </form>
       </div>
@@ -1151,7 +1184,7 @@
       hamburger.classList.toggle('active');
     });
     // Close mobile menu when any link is clicked
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('active');
@@ -1159,7 +1192,7 @@
     });
 
     // FAQ accordion toggles
-    document.querySelectorAll('.faq-question').forEach(item => {
+    document.querySelectorAll('.faq-question').forEach((item) => {
       item.addEventListener('click', () => {
         const parent = item.parentElement;
         parent.classList.toggle('open');

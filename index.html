@@ -82,9 +82,9 @@
       display: flex;
       align-items: center;
     }
+    /* Enlarged logo, no text next to it */
     nav .logo img {
-      height: 40px;
-      margin-right: 0.5rem;
+      height: 60px;  /* increased from 40px */
     }
     nav ul {
       list-style: none;
@@ -103,42 +103,88 @@
     /* Hero Section */
     header.hero {
       position: relative;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                   url('assets/phoenix-skyline.jpg') center/cover no-repeat;
-      height: 90vh;
+      min-height: 90vh;
       color: var(--light-text);
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 0 1rem;
+      padding: 2rem 1rem;
     }
-    header.hero h1 {
+    /* New inner flex container for text + form */
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text h1 {
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      line-height: 1.2;
     }
-    header.hero p {
+    .hero-text p {
       font-size: 1.125rem;
       max-width: 600px;
       margin-bottom: 2rem;
+      line-height: 1.5;
     }
-    header.hero .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
+    /* Compact form on right side */
+    .hero-form {
+      flex: 0 0 320px;
+      background-color: #ffffff;
+      border-radius: var(--radius);
+      color: #333333;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    header.hero .cta-buttons a {
+    .hero-form h4 {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: var(--accent-color);
+      text-align: center;
+    }
+    .hero-form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .hero-form input,
+    .hero-form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+    }
+    .hero-form button {
+      width: 100%;
       background-color: var(--secondary-color);
       color: var(--light-text);
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1rem;
+      border: none;
       border-radius: var(--radius);
       font-weight: 600;
+      font-size: 1rem;
       transition: background-color var(--transition);
     }
-    header.hero .cta-buttons a:hover {
+    .hero-form button:hover {
       background-color: #0056b3;
     }
 
@@ -335,7 +381,7 @@
       transform: rotate(45deg);
     }
 
-    /* Contact Form */
+    /* Contact Form (in main) */
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -399,7 +445,7 @@
     /* Responsive tweaks */
     @media screen and (max-width: 768px) {
       nav ul {
-        display: none; /* You can add a mobile menu here later if needed */
+        display: none; /* You can add a mobile menu later if needed */
       }
     }
   </style>
@@ -408,9 +454,8 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="logo">
-      <!-- Pointing to your GitHub logo file -->
+      <!-- Enlarged logo only; no text next to it -->
       <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
-      <span style="color: var(--light-text); font-weight:700; font-size:1.1rem;">Zero Heat Solutions</span>
     </div>
     <ul>
       <li><a href="#services">Services</a></li>
@@ -424,17 +469,45 @@
 
   <!-- HERO -->
   <header class="hero">
-    <h1>Enterprise-Grade IT & Cybersecurity<br />Tailored for Phoenix Small Businesses</h1>
-    <p>Zero Heat Solutions brings decades of collective SOC, encryption, and cloud security experience to local companies. No jargon, no endless tickets—just proactive protection and responsive support.</p>
-    <div class="cta-buttons">
-      <a href="#services">Explore Services</a>
-      <a href="#contact">Request a Quote</a>
+    <div class="hero-inner">
+      <!-- Left: Hero Text -->
+      <div class="hero-text">
+        <h1>Enterprise-Grade IT & Cybersecurity<br />Tailored for Phoenix Small Businesses</h1>
+        <p>Zero Heat Solutions brings decades of collective SOC, encryption, and cloud security experience to local companies. No jargon, no endless tickets—just proactive protection and responsive support.</p>
+      </div>
+
+      <!-- Right: Compact Get-a-Quote Form -->
+      <div class="hero-form">
+        <h4>Request a Quote</h4>
+        <form action="/submit-quote" method="POST">
+          <label for="hero-first-name">First Name *</label>
+          <input type="text" id="hero-first-name" name="firstName" placeholder="First Name" required />
+
+          <label for="hero-last-name">Last Name *</label>
+          <input type="text" id="hero-last-name" name="lastName" placeholder="Last Name" required />
+
+          <label for="hero-email">Business Email *</label>
+          <input type="email" id="hero-email" name="email" placeholder="you@yourcompany.com" required />
+
+          <label for="hero-phone">Phone Number *</label>
+          <input type="tel" id="hero-phone" name="phone" placeholder="(###) ###-####" required />
+
+          <label for="hero-interest">Interested In *</label>
+          <select id="hero-interest" name="interest" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="managedIT">Managed IT</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="both">Both</option>
+          </select>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <main>
-
     <!-- SERVICES -->
     <section id="services">
       <h2>Our Core Services</h2>
@@ -543,17 +616,17 @@
     <!-- ABOUT / TEAM -->
     <section id="about" class="section-light">
       <h2>Meet the Founders</h2>
-      <p>Zero Heat Solutions was founded by two seasoned security professionals who are passionate about empowering local businesses with enterprise-grade protection:</p>
+      <p>Zero Heat Solutions was founded by two seasoned security professionals passionate about empowering local businesses with enterprise-grade protection:</p>
       <div class="team-grid">
         <div class="team-member">
           <img src="assets/faces/fernando.jpg" alt="Fernando Beltran" />
           <h4>Fernando Beltran</h4>
-          <p>SOC Analyst & Cloud Security Specialist with 7+ years in healthcare and financial services. CISSP-certified.</p>
+          <p>SOC Analyst & Cloud Security Specialist with 4+ years in healthcare and financial services. CISSP-certified.</p>
         </div>
         <div class="team-member">
           <img src="assets/faces/aaron.jpg" alt="Aaron Rodríguez" />
           <h4>Aaron Rodríguez</h4>
-          <p>Encryption Architect & HSM Expert with 10+ years in payment cryptography and enterprise infrastructure.</p>
+          <p>Encryption Architect & HSM Expert with 6+ years in payment cryptography and enterprise infrastructure.</p>
         </div>
       </div>
     </section>
@@ -614,7 +687,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (in main, after FAQ) -->
     <section id="contact" class="section-light">
       <h2>Get a Free Quote</h2>
       <div class="contact-container">
@@ -622,7 +695,6 @@
         <div class="contact-info">
           <p><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></p>
           <p><strong>Email:</strong> <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a></p>
-          <!-- Address line removed per request -->
           <p>Tell us about your environment, pain points, or goals—and we’ll build a custom solution that fits.</p>
         </div>
 
@@ -658,13 +730,11 @@
         </form>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
-    <!-- License line removed per request -->
   </footer>
 
   <!-- FAQ Accordion Script -->

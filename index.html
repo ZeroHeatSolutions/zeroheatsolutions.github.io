@@ -28,6 +28,7 @@
       --transition: 0.3s ease;        /* Transition speed */
       --letter-spacing: 1px;          /* For nav links */
       --nav-height: 60px;             /* Nav bar height */
+      --offset: 80px;                 /* Offset for anchor scrolling */
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -165,6 +166,7 @@
       padding: 1rem 0;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       z-index: 999;
+      transition: max-height 0.3s ease;
     }
     .mobile-menu.open {
       display: flex;
@@ -183,8 +185,6 @@
     .mobile-menu li a:hover {
       color: var(--nav-hover);
     }
-
-    /* Show/hide based on screen width */
     @media screen and (max-width: 768px) {
       nav .nav-links {
         display: none;
@@ -195,12 +195,12 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION (with REDUCED OVERLAY + RELOCATED/ENLARGED LOGO)
+       HERO SECTION (REDUCED OVERLAY + LARGER, CENTERED LOGO)
        ────────────────────────────────────────────────────────────────────────── */
     header.hero {
       position: relative;
       background:
-        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),   /* Reduced from 0.6 → 0.4 */
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),   /* 0.4 overlay */
         url('assets/phoenix-skyline.jpg') center/cover no-repeat;
       min-height: 90vh;
       color: var(--light-text);
@@ -216,9 +216,8 @@
       width: 100%;
     }
     .hero-logo img {
-      height: 150px;  /* Increased to 150px for better visibility */
+      height: 150px;  /* Larger on desktop as well */
       width: auto;
-      /* Optional: add a subtle drop-shadow */
       filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
     }
     .hero-contents {
@@ -298,40 +297,18 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       MAIN CONTENT CONTAINER
+       MAIN CONTENT CONTAINER & SECTIONS (with SCROLL OFFSETS)
        ────────────────────────────────────────────────────────────────────────── */
     main {
       max-width: 1200px;
       margin: auto;
       padding: 3rem 1rem;
     }
-
-    /* ──────────────────────────────────────────────────────────────────────────
-       SECTION VARIATIONS
-       ────────────────────────────────────────────────────────────────────────── */
-    section {
-      margin-bottom: 4rem;
+    /* Apply scroll-margin-top so anchors appear below sticky nav */
+    section[id] {
+      scroll-margin-top: var(--offset);
     }
-    .section-light {
-      background-color: var(--light-bg);
-      padding: 3rem 1rem;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .section-dark {
-      background-color: var(--primary-color);
-      color: var(--light-text);
-      padding: 3rem 1rem;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .section-dark a {
-      color: var(--secondary-color);
-    }
-
-    /* ──────────────────────────────────────────────────────────────────────────
-       SERVICES GRID
-       ────────────────────────────────────────────────────────────────────────── */
+    /* SERVICES GRID */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -363,9 +340,7 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       PROCESS STEPS
-       ────────────────────────────────────────────────────────────────────────── */
+    /* PROCESS STEPS */
     .process-steps {
       display: flex;
       flex-direction: column;
@@ -409,9 +384,7 @@
       }
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       INDUSTRIES GRID
-       ────────────────────────────────────────────────────────────────────────── */
+    /* INDUSTRIES GRID */
     .industries-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -433,9 +406,7 @@
       background-color: #e2e8f0;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       TEAM / ABOUT
-       ────────────────────────────────────────────────────────────────────────── */
+    /* TEAM / ABOUT */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -461,9 +432,7 @@
       color: #555555;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       “WHY CHOOSE US” CALLOUT
-       ────────────────────────────────────────────────────────────────────────── */
+    /* “WHY CHOOSE US” CALLOUT */
     .section-dark ul {
       list-style: none;
       margin-top: 1.5rem;
@@ -473,9 +442,7 @@
       margin-bottom: 1rem;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       FAQ ACCORDION
-       ────────────────────────────────────────────────────────────────────────── */
+    /* FAQ ACCORDION */
     .faq-item {
       margin-bottom: 1rem;
       border-bottom: 1px solid #ccc;
@@ -508,9 +475,7 @@
       transform: rotate(45deg);
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       CONTACT FORM (in main)
-       ────────────────────────────────────────────────────────────────────────── */
+    /* CONTACT FORM (in main) */
     .contact-container {
       display: flex;
       flex-direction: column;
@@ -561,9 +526,7 @@
       background-color: #0056b3;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       FOOTER
-       ────────────────────────────────────────────────────────────────────────── */
+    /* FOOTER */
     footer {
       background-color: var(--accent-color);
       color: var(--light-text);
@@ -576,10 +539,34 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       RESPONSIVE BREAKPOINTS
+       BACK TO TOP BUTTON
        ────────────────────────────────────────────────────────────────────────── */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--secondary-color);
+      color: var(--light-text);
+      border: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+    }
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* MOBILE BREAKPOINT */
     @media screen and (max-width: 768px) {
-      /* Hide desktop links, show hamburger */
       nav .nav-links {
         display: none;
       }
@@ -901,6 +888,11 @@
   </main>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
+       BACK TO TOP BUTTON
+       ────────────────────────────────────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
        FOOTER
        ────────────────────────────────────────────────────────────────────────── -->
   <footer>
@@ -908,18 +900,17 @@
   </footer>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       JAVASCRIPT FOR MOBILE MENU & FAQ ACCORDION
+       JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, BACK TO TOP
        ────────────────────────────────────────────────────────────────────────── -->
   <script>
-    // Toggle the mobile menu open/close
+    // 1) Toggle the mobile menu open/close
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active');
+      hamburger.classList.toggle('active'); // optional if you add an “X” animation later
     });
-
     // Close mobile menu when any link is clicked
     document.querySelectorAll('.mobile-menu a').forEach(link => {
       link.addEventListener('click', () => {
@@ -928,12 +919,25 @@
       });
     });
 
-    // FAQ accordion toggles
+    // 2) FAQ accordion toggles
     document.querySelectorAll('.faq-question').forEach(item => {
       item.addEventListener('click', () => {
         const parent = item.parentElement;
         parent.classList.toggle('open');
       });
+    });
+
+    // 3) “Back to Top” button logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>

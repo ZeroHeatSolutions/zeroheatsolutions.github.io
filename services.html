@@ -4,37 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zero Heat Solutions | Our Services</title>
-  <meta
-    name="description"
-    content="Zero Heat Solutions — Detailed breakdown of our Managed IT & Cybersecurity services for Phoenix-area small businesses."
-  />
+  <!-- Basic SEO Tags -->
+  <meta name="description" content="Zero Heat Solutions — Detailed breakdown of our Managed IT & Cybersecurity services for Phoenix-area small businesses." />
+  <meta name="keywords" content="Phoenix Managed IT, Phoenix Cybersecurity, HIPAA compliance, PCI compliance, small business IT solutions" />
+  <meta name="robots" content="index, follow" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ──────────────────────────────────────────────────────────────────────────
        CSS VARIABLES
        ────────────────────────────────────────────────────────────────────────── */
     :root {
-      --nav-bg: #0e1220;              /* Dark/nav background */
-      --nav-hover: #00a8ff;           /* Bright techy accent */
-      --primary-color: #12213a;       /* Dark navy for sections */
-      --secondary-color: #007BFF;     /* Bright blue accent */
-      --accent-color: #1b263b;        /* Darker shade for headings */
-      --light-bg: #f4f8fc;            /* Light background for sections */
-      --text-color: #e0e0e0;          /* Light gray for nav text */
-      --heading-color: #1b263b;       /* Heading text */
-      --light-text: #ffffff;          /* White text */
-      --radius: 8px;                  /* Border radius */
-      --transition: 0.3s ease;        /* Transition speed */
-      --letter-spacing: 1px;          /* For nav links */
-      --nav-height: 60px;             /* Nav bar height */
-      --offset: 80px;                 /* Offset for anchor scrolling */
+      --nav-bg: #0e1220;
+      --nav-hover: #00a8ff;
+      --primary-color: #12213a;
+      --secondary-color: #007BFF;
+      --accent-color: #1b263b;
+      --light-bg: #f4f8fc;
+      --text-color: #e0e0e0;
+      --heading-color: #1b263b;
+      --light-text: #ffffff;
+      --radius: 8px;
+      --transition: 0.3s ease;
+      --letter-spacing: 1px;
+      --nav-height: 60px;
+      --offset: 80px;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -251,15 +248,15 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;               /* increased gap between cards */
+      gap: 2rem;
       margin-top: 2.5rem;
     }
     .service-card {
       background-color: #ffffff;
       border-radius: var(--radius);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      padding: 2.5rem;         /* more padding for breathing room */
-      text-align: left;        /* left-align text for readability */
+      padding: 2.5rem;
+      text-align: left;
       transition: transform var(--transition), box-shadow var(--transition);
     }
     .service-card img {
@@ -319,18 +316,54 @@
       visibility: visible;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       FOOTER
-       ────────────────────────────────────────────────────────────────────────── */
+    /* FOOTER + SITEMAP */
     footer {
       background-color: var(--accent-color);
       color: var(--light-text);
-      text-align: center;
       padding: 2rem 1rem;
     }
-    footer p {
+    .footer-sitemap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sitemap-column {
+      min-width: 150px;
+    }
+    .sitemap-column h4 {
       margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: var(--light-text);
+    }
+    .sitemap-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+    .sitemap-column a {
+      color: var(--light-text);
+      font-size: 0.95rem;
+    }
+    .sitemap-column a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin-top: 1rem;
       font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -545,9 +578,34 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       FOOTER
+       FOOTER + SITEMAP
        ────────────────────────────────────────────────────────────────────────── -->
   <footer>
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#process">How We Work</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="index.html#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
     <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
   </footer>
 
@@ -555,7 +613,7 @@
        JAVASCRIPT: MOBILE MENU & BACK TO TOP
        ────────────────────────────────────────────────────────────────────────── -->
   <script>
-    // 1) Toggle the mobile menu open/close
+    // Toggle the mobile menu open/close
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -571,7 +629,7 @@
       });
     });
 
-    // 2) “Back to Top” button logic
+    // “Back to Top” button logic
     const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       if (window.scrollY > window.innerHeight) {

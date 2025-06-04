@@ -92,8 +92,6 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-
-    /* Logo container (left side) */
     nav .logo {
       display: flex;
       align-items: center;
@@ -102,8 +100,6 @@
       height: 60px;
       width: auto;
     }
-
-    /* Desktop links (hidden on mobile) */
     nav .nav-links {
       display: flex;
       gap: 2rem;
@@ -120,7 +116,6 @@
       position: relative;
       padding: 0.5rem 0;
     }
-    /* Bottom border under active/hovered link */
     nav .nav-links li a::after {
       content: "";
       position: absolute;
@@ -134,12 +129,9 @@
     nav .nav-links li a:hover::after {
       width: 100%;
     }
-    /* Link hover color change */
     nav .nav-links li a:hover {
       color: var(--nav-hover);
     }
-
-    /* Hamburger Icon (hidden on desktop, shown on mobile) */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -161,8 +153,6 @@
     .hamburger span:last-child {
       margin-bottom: 0;
     }
-
-    /* MOBILE MENU (initially hidden) */
     .mobile-menu {
       position: absolute;
       top: var(--nav-height);
@@ -194,13 +184,24 @@
       color: var(--nav-hover);
     }
 
+    /* Show/hide based on screen width */
+    @media screen and (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
     /* ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION (with LOGO + TEXT + FORM)
+       HERO SECTION (with REDUCED OVERLAY + RELOCATED/ENLARGED LOGO)
        ────────────────────────────────────────────────────────────────────────── */
     header.hero {
       position: relative;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-                  url('assets/phoenix-skyline.jpg') center/cover no-repeat;
+      background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),   /* Reduced from 0.6 → 0.4 */
+        url('assets/phoenix-skyline.jpg') center/cover no-repeat;
       min-height: 90vh;
       color: var(--light-text);
       display: flex;
@@ -209,7 +210,18 @@
       text-align: center;
       padding: 2rem 1rem;
     }
-    .hero-inner {
+    .hero-logo {
+      margin-bottom: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+    .hero-logo img {
+      height: 150px;  /* Increased to 150px for better visibility */
+      width: auto;
+      /* Optional: add a subtle drop-shadow */
+      filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
+    }
+    .hero-contents {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -218,25 +230,12 @@
       width: 100%;
     }
     @media screen and (min-width: 768px) {
-      .hero-inner {
+      .hero-contents {
         flex-direction: row;
         align-items: flex-start;
         text-align: left;
         justify-content: space-between;
       }
-    }
-    /* Logo inside hero */
-    .hero-logo {
-      margin-bottom: 2rem;
-    }
-    @media screen and (min-width: 768px) {
-      .hero-logo {
-        margin-bottom: 0;
-      }
-    }
-    .hero-logo img {
-      height: 100px;
-      width: auto;
     }
     .hero-text {
       flex: 1;
@@ -253,7 +252,6 @@
       margin-bottom: 2rem;
       line-height: 1.5;
     }
-    /* Compact form on right side */
     .hero-form {
       flex: 0 0 320px;
       background-color: #ffffff;
@@ -630,15 +628,14 @@
   </nav>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION (Logo + Text + Form)
+       HERO SECTION (with improved overlay + larger, centered logo)
        ────────────────────────────────────────────────────────────────────────── -->
   <header class="hero">
-    <div class="hero-inner">
-      <!-- Logo inside hero (centered on mobile, left on desktop) -->
-      <div class="hero-logo">
-        <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
-      </div>
+    <div class="hero-logo">
+      <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
+    </div>
 
+    <div class="hero-contents">
       <!-- Left: Hero Text -->
       <div class="hero-text">
         <h1>Enterprise-Grade IT & Cybersecurity<br />Tailored for Phoenix Small Businesses</h1>
@@ -920,7 +917,6 @@
 
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
-      // Animate hamburger to X when open
       hamburger.classList.toggle('active');
     });
 
@@ -932,7 +928,7 @@
       });
     });
 
-    // FAQ accordion toggles (already in place)
+    // FAQ accordion toggles
     document.querySelectorAll('.faq-question').forEach(item => {
       item.addEventListener('click', () => {
         const parent = item.parentElement;

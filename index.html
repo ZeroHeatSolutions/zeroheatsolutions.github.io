@@ -20,6 +20,11 @@
       padding: 2rem 1rem;
       text-align: center;
     }
+    header img {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 1rem;
+    }
     nav {
       background-color: #12213a;
       text-align: center;
@@ -34,11 +39,6 @@
     nav a:hover {
       text-decoration: underline;
     }
-    header img {
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 1rem;
-    }
     main {
       padding: 2rem;
       max-width: 1000px;
@@ -46,6 +46,22 @@
     }
     h1, h2, h3 {
       color: #1b263b;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .highlight {
+      background-color: #f4f8fc;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .banner {
+      background-color: #e0ebf7;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
     }
     ul {
       list-style-type: disc;
@@ -64,12 +80,6 @@
     .cta:hover {
       background-color: #0056b3;
     }
-    section {
-      margin-bottom: 2.5rem;
-    }
-    .service-preview {
-      margin-bottom: 1rem;
-    }
   </style>
 </head>
 <body>
@@ -87,25 +97,30 @@
   </nav>
 
   <main>
-    <section>
+    <div class="banner">
+      <h2>Enterprise-Grade Security. Local Business Care.</h2>
+      <p>Zero Heat Solutions delivers affordable, reliable IT and cybersecurity services to Arizona's small business community — with professionalism and passion.</p>
+    </div>
+
+    <section class="highlight">
       <h2>Protect What Matters. Power Your Business.</h2>
       <p>We help small businesses stay secure, connected, and compliant — without the enterprise price tag. Whether you need IT support, risk assessments, or cloud security audits, ZHS brings enterprise-grade solutions to your level.</p>
       <p>Based in Arizona | Serving Statewide & Remotely</p>
     </section>
 
-    <section>
+    <section class="highlight">
       <h2>Our Core Services</h2>
-      <div class="service-preview">
+      <div>
         <h3>Cybersecurity</h3>
         <p>Risk assessments, cloud security audits, training, and compliance. <a href="services.html">Learn more</a></p>
       </div>
-      <div class="service-preview">
+      <div>
         <h3>Managed IT Support</h3>
         <p>Workstation support, network monitoring, backup checks, and proactive maintenance. <a href="services.html">Learn more</a></p>
       </div>
     </section>
 
-    <section>
+    <section class="highlight">
       <h2>How We Work</h2>
       <ol>
         <li><strong>Assess:</strong> We audit your systems for weaknesses and gaps.</li>
@@ -114,12 +129,12 @@
       </ol>
     </section>
 
-    <section>
+    <section class="highlight">
       <h2>Meet the Founders</h2>
       <p><strong>Fernando Beltran</strong> and <strong>Aaron Rodríguez</strong> bring real-world experience in SOC analysis, cryptography, and cloud security. They founded ZHS to give small businesses access to enterprise-grade protection — without the complexity or cost.</p>
     </section>
 
-    <section>
+    <section class="highlight">
       <h2>Why ZHS?</h2>
       <ul>
         <li><strong>Security-first, always.</strong> We think like attackers so you don’t have to.</li>
@@ -129,7 +144,7 @@
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="highlight">
       <h2>Let’s Talk</h2>
       <p>Worried about your current setup? Just need reliable IT help? Let’s make technology easy again.</p>
       <p>Call: <a href="tel:5551234567">555-123-4567</a><br/>

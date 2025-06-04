@@ -21,20 +21,20 @@
        CSS VARIABLES
        ────────────────────────────────────────────────────────────────────────── */
     :root {
-      --nav-bg: #0e1220;              /* Dark/nav background */
-      --nav-hover: #00a8ff;           /* Bright techy accent */
-      --primary-color: #12213a;       /* Dark navy for sections */
-      --secondary-color: #007BFF;     /* Bright blue accent */
-      --accent-color: #1b263b;        /* Darker shade for headings */
-      --light-bg: #f4f8fc;            /* Light background for sections */
-      --text-color: #e0e0e0;          /* Light gray for nav text */
-      --heading-color: #1b263b;       /* Heading text */
-      --light-text: #ffffff;          /* White text */
-      --radius: 8px;                  /* Border radius */
-      --transition: 0.3s ease;        /* Transition speed */
-      --letter-spacing: 1px;          /* For nav links */
-      --nav-height: 60px;             /* Nav bar height */
-      --offset: 80px;                 /* Offset for anchor scrolling */
+      --nav-bg: #0e1220;
+      --nav-hover: #00a8ff;
+      --primary-color: #12213a;
+      --secondary-color: #007BFF;
+      --accent-color: #1b263b;
+      --light-bg: #f4f8fc;
+      --text-color: #e0e0e0;
+      --heading-color: #1b263b;
+      --light-text: #ffffff;
+      --radius: 8px;
+      --transition: 0.3s ease;
+      --letter-spacing: 1px;
+      --nav-height: 60px;
+      --offset: 80px;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -106,6 +106,9 @@
     nav .logo {
       display: flex;
       align-items: center;
+    }
+    nav .logo a {
+      display: inline-block;
     }
     nav .logo img {
       height: 60px;
@@ -212,7 +215,7 @@
     header.hero {
       position: relative;
       background:
-        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),   /* lighten overlay to 0.3 */
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
         url('assets/phoenix-skyline.jpg') center/cover no-repeat;
       min-height: 90vh;
       color: var(--light-text);
@@ -223,7 +226,6 @@
       padding: 2rem 1rem;
     }
 
-    /* New wrapper: two-column on desktop, stacked on mobile */
     .hero-inner {
       display: flex;
       flex-direction: column;
@@ -241,7 +243,6 @@
       }
     }
 
-    /* Left column: logo (on top) + text (below) */
     .hero-left {
       display: flex;
       flex-direction: column;
@@ -261,9 +262,8 @@
       text-align: center;
     }
     .hero-logo img {
-      height: 180px;   /* made bigger */
+      height: 180px;
       width: auto;
-      /* No drop-shadow, for a cleaner “built-in” feel */
     }
 
     .hero-text {
@@ -278,18 +278,17 @@
     .hero-text p {
       font-size: 1.125rem;
       max-width: 600px;
-      margin-bottom: 2rem;  /* added extra spacing so it isn’t “smushed” */
+      margin-bottom: 2rem;
       line-height: 1.6;
-      color: #f0f0f0;       /* slightly lighter so it reads over the overlay */
+      color: #f0f0f0;
     }
 
-    /* Right column: larger form */
     .hero-form {
-      flex: 0 0 360px;     /* increase width so it’s not cramped */
+      flex: 0 0 360px;
       background-color: #ffffff;
       border-radius: var(--radius);
       color: #333333;
-      padding: 2rem;       /* more padding for a more open feel */
+      padding: 2rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 360px;
@@ -346,16 +345,16 @@
     /* SERVICES GRID */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
     .service-card {
       background-color: #ffffff;
       border-radius: var(--radius);
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      padding: 2rem;
-      text-align: center;
+      padding: 2.5rem;
+      text-align: left;
       transition: transform var(--transition), box-shadow var(--transition);
     }
     .service-card img {
@@ -363,12 +362,24 @@
       margin-bottom: 1rem;
     }
     .service-card h4 {
-      margin-bottom: 0.75rem;
-      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
     .service-card p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #555555;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .service-card ul {
+      list-style-type: disc;
+      margin: 0.5rem 0 0 1.25rem;
+      text-align: left;
+    }
+    .service-card li {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
     .service-card:hover {
       transform: translateY(-5px);
@@ -601,7 +612,6 @@
       visibility: visible;
     }
 
-    /* MOBILE BREAKPOINT */
     @media screen and (max-width: 768px) {
       nav .nav-links {
         display: none;
@@ -617,9 +627,9 @@
        NAVIGATION (Desktop + Mobile)
        ────────────────────────────────────────────────────────────────────────── -->
   <nav>
-    <!-- Left: Logo in nav bar -->
+    <!-- Left: Clickable Logo -->
     <div class="logo">
-      <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
+      <a href="index.html"><img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" /></a>
     </div>
 
     <!-- Desktop Links -->
@@ -728,7 +738,7 @@
        MAIN CONTENT
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
-    <!-- SERVICES (teaser on homepage; full grid will move to services.html) -->
+    <!-- SERVICES (teaser on homepage; Penetration Testing removed) -->
     <section id="services">
       <h2>Our Core Services</h2>
       <p>
@@ -779,15 +789,6 @@
           <p>
             Office 365 support, Azure/AWS optimization, secure migrations,
             virtual desktops, and hybrid-cloud management.
-          </p>
-        </div>
-        <!-- PenTesting Card (Coming Soon) -->
-        <div class="service-card">
-          <img src="assets/icons/target.svg" alt="Penetration Testing Icon" />
-          <h4>Penetration Testing</h4>
-          <p>
-            In-depth network and application pen testing—coming soon. Validate
-            your defenses against real-world attacks.
           </p>
         </div>
       </div>

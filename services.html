@@ -4,14 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zero Heat Solutions | Our Services</title>
+
   <!-- Basic SEO Tags -->
-  <meta name="description" content="Zero Heat Solutions — Detailed breakdown of our Managed IT & Cybersecurity services for Phoenix-area small businesses." />
-  <meta name="keywords" content="Phoenix Managed IT, Phoenix Cybersecurity, HIPAA compliance, PCI compliance, small business IT solutions" />
+  <meta
+    name="description"
+    content="Zero Heat Solutions — Detailed breakdown of our Managed IT & Cybersecurity services for Phoenix-area small businesses."
+  />
+  <meta
+    name="keywords"
+    content="Phoenix Managed IT, Phoenix Cybersecurity, HIPAA compliance, PCI compliance, small business IT solutions"
+  />
   <meta name="robots" content="index, follow" />
   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     /* ──────────────────────────────────────────────────────────────────────────
@@ -32,6 +42,7 @@
       --letter-spacing: 1px;
       --nav-height: 60px;
       --offset: 80px;
+      --section-padding: 3rem; /* consistent vertical padding */
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -72,11 +83,11 @@
     h3,
     h4 {
       color: var(--heading-color);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       line-height: 1.2;
     }
     p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       color: #444444;
     }
     button {
@@ -207,7 +218,7 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       PAGE HERO (BANNER) FOR SERVICES PAGE
+       HERO / BANNER FOR SERVICES PAGE
        ────────────────────────────────────────────────────────────────────────── */
     .services-hero {
       background:
@@ -236,14 +247,17 @@
     main {
       max-width: 1200px;
       margin: auto;
-      padding: 3rem 1rem;
+      padding: 0 1rem;
+    }
+    section {
+      padding: var(--section-padding) 0;
     }
     section[id] {
       scroll-margin-top: var(--offset);
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       DETAILED SERVICES GRID
+       DETAILED SERVICES GRID (WITHOUT PENETRATION TESTING)
        ────────────────────────────────────────────────────────────────────────── */
     .services-grid {
       display: grid;
@@ -316,7 +330,9 @@
       visibility: visible;
     }
 
-    /* FOOTER + SITEMAP */
+    /* ──────────────────────────────────────────────────────────────────────────
+       FOOTER + SITEMAP
+       ────────────────────────────────────────────────────────────────────────── */
     footer {
       background-color: var(--accent-color);
       color: var(--light-text);
@@ -428,7 +444,7 @@
           <img src="assets/icons/shield.svg" alt="Cybersecurity Icon" />
           <h4>Comprehensive Cybersecurity</h4>
           <p>
-            Protect your data from every angle with our end-to-end Cybersecurity
+            Protect your data from every angle with our end-to-end cybersecurity
             offering:
           </p>
           <ul>
@@ -570,10 +586,100 @@
         </div>
       </div>
     </section>
+
+    <!-- CONTACT (at bottom of services page) -->
+    <section id="contact" class="section-light">
+      <h2>Get a Free Quote</h2>
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <p><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
+          </p>
+          <p>
+            Tell us about your environment, pain points, or goals—and we’ll build
+            a custom solution that fits.
+          </p>
+        </div>
+
+        <!-- Contact Form wired to Formspree -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xpwrwldy"
+          method="POST"
+        >
+          <input type="hidden" name="form-name" value="quote" />
+
+          <label for="first-name">First Name *</label>
+          <input
+            type="text"
+            id="first-name"
+            name="firstName"
+            placeholder="Your first name"
+            required
+          />
+
+          <label for="last-name">Last Name *</label>
+          <input
+            type="text"
+            id="last-name"
+            name="lastName"
+            placeholder="Your last name"
+            required
+          />
+
+          <label for="email">Business Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@yourcompany.com"
+            required
+          />
+
+          <label for="phone">Phone Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(###) ###-####"
+            required
+          />
+
+          <label for="company">Company Name</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Your company name"
+          />
+
+          <label for="interest">What Are You Interested In? *</label>
+          <select id="interest" name="interest" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="managedIT">Managed IT</option>
+            <option value="cybersecurity">Cybersecurity</option>
+            <option value="both">Both</option>
+          </select>
+
+          <label for="message">Tell us a bit about your needs</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Describe your environment, pain points, or goals…"
+          ></textarea>
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON
+       BACK TO TOP BUTTON (LARGER & CLEANER)
        ────────────────────────────────────────────────────────────────────────── -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
@@ -622,7 +728,7 @@
       hamburger.classList.toggle('active');
     });
     // Close mobile menu when any link is clicked
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('active');

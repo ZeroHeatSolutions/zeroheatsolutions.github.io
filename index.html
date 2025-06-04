@@ -293,6 +293,16 @@
       color: #555555;
     }
 
+    /* “Why Choose Us” Callout */
+    .section-dark ul {
+      list-style: none;
+      margin-top: 1.5rem;
+      padding-left: 0;
+    }
+    .section-dark li {
+      margin-bottom: 1rem;
+    }
+
     /* FAQ Accordion */
     .faq-item {
       margin-bottom: 1rem;
@@ -385,26 +395,11 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
-    footer .social-links {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
-    footer .social-links a {
-      font-size: 1.25rem;
-      color: var(--light-text);
-      transition: color var(--transition);
-    }
-    footer .social-links a:hover {
-      color: var(--secondary-color);
-    }
-
 
     /* Responsive tweaks */
     @media screen and (max-width: 768px) {
       nav ul {
-        display: none; /* Hide on mobile; you could add a hamburger if desired */
+        display: none; /* You can add a mobile menu here later if needed */
       }
     }
   </style>
@@ -413,7 +408,8 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="logo">
-      <img src="assets/zhs-logo-white.png" alt="Zero Heat Solutions" />
+      <!-- Pointing to your GitHub logo file -->
+      <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
       <span style="color: var(--light-text); font-weight:700; font-size:1.1rem;">Zero Heat Solutions</span>
     </div>
     <ul>
@@ -565,11 +561,11 @@
     <!-- WHY CHOOSE US (CALLOUT) -->
     <section class="section-dark">
       <h2>Why Phoenix Businesses Trust ZHS</h2>
-      <ul style="list-style: none; margin-top: 1.5rem; padding-left: 0;">
-        <li style="margin-bottom: 1rem;"><strong>Security-first, always.</strong> From day one, we build your defenses around your mission-critical data.</li>
-        <li style="margin-bottom: 1rem;"><strong>SMB-Focused Pricing.</strong> Customizable plans that grow with you—no hidden fees or long-term lock-ins.</li>
-        <li style="margin-bottom: 1rem;"><strong>Direct Access.</strong> Reach a human-first support engineer within minutes—never a ticketing maze.</li>
-        <li style="margin-bottom: 1rem;"><strong>Scalable Solutions.</strong> From a five-person office to a 100-seat headquarters, we’ve got you covered.</li>
+      <ul>
+        <li><strong>Security-first, always.</strong> From day one, we build your defenses around your mission-critical data.</li>
+        <li><strong>SMB-Focused Pricing.</strong> Customizable plans that grow with you—no hidden fees or long-term lock-ins.</li>
+        <li><strong>Direct Access.</strong> Reach a human-first support engineer within minutes—never a ticketing maze.</li>
+        <li><strong>Scalable Solutions.</strong> From a five-person office to a 100-seat headquarters, we’ve got you covered.</li>
       </ul>
     </section>
 
@@ -626,7 +622,7 @@
         <div class="contact-info">
           <p><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></p>
           <p><strong>Email:</strong> <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a></p>
-          <p><strong>Address:</strong> 123 Tech Way, Suite 100, Phoenix, AZ 85004</p>
+          <!-- Address line removed per request -->
           <p>Tell us about your environment, pain points, or goals—and we’ll build a custom solution that fits.</p>
         </div>
 
@@ -662,23 +658,13 @@
         </form>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
-    <p>Zero Heat Solutions, LLC | Phoenix, AZ | License #AZ-IT12345</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/company/zero-heatsolutions" target="_blank" aria-label="LinkedIn">
-        <img src="assets/icons/linkedin-white.svg" alt="LinkedIn" style="height:24px;" />
-      </a>
-      <a href="https://twitter.com/zeroheatsolutions" target="_blank" aria-label="Twitter">
-        <img src="assets/icons/twitter-white.svg" alt="Twitter" style="height:24px;" />
-      </a>
-      <a href="https://facebook.com/zeroheatsolutions" target="_blank" aria-label="Facebook">
-        <img src="assets/icons/facebook-white.svg" alt="Facebook" style="height:24px;" />
-      </a>
-    </div>
+    <!-- License line removed per request -->
   </footer>
 
   <!-- FAQ Accordion Script -->

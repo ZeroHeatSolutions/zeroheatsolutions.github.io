@@ -1,5 +1,5 @@
 /* =============================================================================
-   styles.css - Zero Heat Solutions (Refined, Tech-Oriented, Sophisticated)
+   styles.css - Zero Heat Solutions (White Hero, Centered Text, Tech Flair)
    ============================================================================= */
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -9,19 +9,18 @@
   /* Color Palette */
   --nav-bg: #0e1220;
   --nav-hover: #00a8ff;
-  --primary-color: #12213a;
-  --secondary-color: #007bff;
-  --accent-color: #1b263b;
-  --light-bg: #f4f8fc;
-  --dark-bg: #0a0f1a;
+  --primary-color: #12213a;      /* Dark navy for headings/text */
+  --secondary-color: #007bff;    /* Bright blue accent */
+  --accent-color: #1b263b;       /* Deep dark for footers, etc. */
+  --light-bg: #f4f8fc;           /* Very light gray for card backgrounds */
+  --white-bg: #ffffff;           /* Pure white */
   --text-light: #ffffff;
-  --text-dark: #333333;
-  --text-muted: #7a7a7a;
+  --text-dark: #2b2b2b;          /* Dark gray for most body text */
+  --text-muted: #7a7a7a;         /* Subtle gray for intros/subtitles */
 
   /* Tech Accents */
   --tech-blue: #0a84ff;
   --tech-neon: #00d8ff;
-  --tech-green: #00ff96;
 
   /* Typography */
   --font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -35,7 +34,7 @@
   --spacing: 1rem;
   --section-padding: 3rem 1rem;
 
-  /* Transitions */
+  /* Transitions & Shadows */
   --transition: 0.3s ease-in-out;
   --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.15);
   --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -66,7 +65,7 @@ body {
   font-size: var(--font-base);
   line-height: var(--line-height-base);
   color: var(--text-dark);
-  background-color: #ffffff;
+  background-color: var(--white-bg);
   overflow-x: hidden;
 }
 
@@ -87,6 +86,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-color);
   margin-bottom: var(--spacing);
   line-height: 1.2;
+  text-align: center; /* Center all headings by default */
 }
 h1 { font-size: 2.75rem; }
 h2 { font-size: 2.25rem; }
@@ -105,6 +105,7 @@ p {
   color: var(--text-muted);
   max-width: var(--max-width);
   margin: 0 auto 2rem;
+  text-align: center; /* Center intro paragraphs */
 }
 ul, ol {
   margin-left: 1.5rem;
@@ -287,33 +288,18 @@ nav .nav-links li a:hover::after {
 }
 
 /* =============================================================================
-   HERO SECTION
+   HERO SECTION (WHITE BACKDROP, CENTERED CONTENT)
    ============================================================================= */
 header.hero {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url('assets/images/phoenix-skyline.jpg') no-repeat center center/cover;
-  min-height: 100vh;
+  background-color: var(--white-bg); /* pure white instead of gray */
+  min-height: 80vh; /* slightly shorter than full-screen to avoid too much white space */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
+  color: var(--text-dark); /* dark text on white */
   overflow: hidden;
-}
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 132, 255, 0.15);
-  mix-blend-mode: overlay;
-  animation: pulseOverlay 8s infinite ease-in-out;
-  z-index: 1;
-}
-@keyframes pulseOverlay {
-  0%, 100% { opacity: 0.15; }
-  50% { opacity: 0.3; }
+  padding: 2rem 1rem;
 }
 .hero-inner {
   position: relative;
@@ -324,14 +310,13 @@ header.hero {
   gap: 2rem;
   max-width: var(--max-width);
   width: 100%;
-  padding: 2rem;
-  text-align: center;
+  text-align: center; /* center all hero text */
 }
 @media (min-width: 768px) {
   .hero-inner {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
   }
 }
@@ -349,56 +334,60 @@ header.hero {
 .hero-left .hero-logo img {
   height: 160px;
   width: auto;
-  animation: fadeIn 2s ease-in-out;
+  background-color: transparent; /* ensure no white “card” behind logo */
 }
 .hero-left .hero-text h1 {
-  color: var(--text-light);
+  color: var(--primary-color);
   font-size: 2.75rem;
   line-height: 1.2;
 }
 .hero-left .hero-text p {
-  color: var(--text-light);
+  color: var(--text-muted);
   font-size: 1.125rem;
   max-width: 500px;
   line-height: 1.5;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  margin: 0 auto;
 }
 .cta-button {
   margin-top: 1rem;
-  background-color: var(--tech-green);
+  background-color: var(--tech-blue);
 }
 .cta-button:hover {
-  background-color: #00ffa3;
+  background-color: var(--tech-neon);
 }
 
-/* Quick Quote Form */
-.hero-form {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-light);
-  width: 100%;
-  max-width: 400px;
-  animation: slideUp 1s ease-in-out;
-}
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-form h4 {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-  color: var(--primary-color);
-}
-.hero-form button {
-  margin-top: 0.5rem;
+/* Remove hero-overlay entirely or keep it transparent */
+.hero-overlay {
+  display: none;
 }
 
 /* =============================================================================
-   SECTION HEADERS (WITH ACCENT BARS)
+   KEYFRAME ANIMATIONS (FOR REVEAL ON SCROLL + SIMPLE FADE-INS)
+   ============================================================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reveal utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================================================
+   SECTION HEADERS (ACCENT BARS, CENTERED)
    ============================================================================= */
 .section-header {
   display: inline-block;
@@ -406,12 +395,14 @@ header.hero {
   padding-bottom: 0.5rem;
   margin-bottom: 2rem;
   color: var(--primary-color);
+  text-align: center; /* ensure centered */
 }
 .section-header::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 80px;
   height: 4px;
   background-color: var(--tech-blue);
@@ -433,7 +424,7 @@ header.hero {
   padding: 0 1rem;
 }
 .service-card {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: var(--radius);
   box-shadow: var(--shadow-light);
@@ -455,7 +446,7 @@ header.hero {
   transition: opacity var(--transition);
 }
 .service-card:hover::before {
-  opacity: 0.15;
+  opacity: 0.12;
 }
 .service-card img {
   height: 60px;
@@ -495,19 +486,17 @@ header.hero {
 }
 
 /* =============================================================================
-   HOW WE WORK
+   HOW WE WORK SECTION
    ============================================================================= */
 #process {
   padding: var(--section-padding);
-  max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: center;
 }
 .process-steps {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
+  max-width: var(--max-width);
+  margin: 2rem auto 0;
   justify-content: space-between;
 }
 .process-step {
@@ -518,7 +507,7 @@ header.hero {
   text-align: center;
   gap: 1rem;
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: var(--radius);
   box-shadow: var(--shadow-light);
   transition: transform var(--transition), box-shadow var(--transition);
@@ -541,59 +530,6 @@ header.hero {
 }
 
 /* =============================================================================
-   SOLUTIONS SPOTLIGHT
-   ============================================================================= */
-#solutions {
-  background-color: var(--light-bg);
-  padding: var(--section-padding);
-}
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.solution-card {
-  background-color: #ffffff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-light);
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.solution-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-.solution-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.solution-card h4 {
-  margin: 1rem;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-.solution-card p {
-  margin: 0 1rem 1rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--text-dark);
-}
-.solution-card .learn-more-link {
-  display: inline-block;
-  margin: 0 1rem 1rem;
-  font-weight: 600;
-  color: var(--tech-blue);
-  transition: color var(--transition);
-}
-.solution-card .learn-more-link:hover {
-  color: var(--tech-neon);
-}
-
-/* =============================================================================
    INDUSTRIES WE SERVE
    ============================================================================= */
 #industries {
@@ -608,7 +544,7 @@ header.hero {
   padding: 0 1rem;
 }
 .industry-card {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: var(--radius);
   box-shadow: var(--shadow-light);
   padding: 1.5rem;
@@ -635,97 +571,7 @@ header.hero {
 }
 
 /* =============================================================================
-   PARTNERS & TECHNOLOGY STACK
-   ============================================================================= */
-#partners {
-  background-color: var(--light-bg);
-  padding: var(--section-padding);
-}
-.partners-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 2rem;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
-  justify-items: center;
-  align-items: center;
-}
-.partner-card {
-  position: relative;
-  width: 100px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
-}
-.partner-card img {
-  max-width: 100%;
-  max-height: 100%;
-  filter: grayscale(100%);
-  transition: filter var(--transition);
-}
-.partner-card:hover img {
-  filter: none;
-}
-.partner-tooltip {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--dark-bg);
-  color: var(--text-light);
-  font-size: 0.875rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--radius);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition);
-}
-.partner-card:hover .partner-tooltip {
-  opacity: 1;
-}
-
-/* =============================================================================
-   TESTIMONIALS CAROUSEL
-   ============================================================================= */
-#testimonials {
-  padding: var(--section-padding);
-  background-color: #ffffff;
-  text-align: center;
-}
-.testimonials-carousel {
-  position: relative;
-  max-width: 700px;
-  margin: 2rem auto 0;
-  height: 200px;
-  overflow: hidden;
-}
-.testimonial-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-}
-.testimonial-item:first-child {
-  opacity: 1;
-}
-.quote {
-  font-style: italic;
-  font-size: 1.125rem;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-}
-.testimonial-item h5 {
-  font-size: 1rem;
-  color: var(--primary-color);
-}
-
-/* =============================================================================
-   FAQ ACCORDION
+   FAQ SECTION (CENTERED & FUNCTIONAL)
    ============================================================================= */
 #faq {
   background-color: var(--light-bg);
@@ -740,7 +586,7 @@ header.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 1rem 1.5rem;
   border-radius: var(--radius);
   cursor: pointer;
@@ -761,16 +607,17 @@ header.hero {
   transition: transform var(--transition);
 }
 .faq-item.open .toggle-icon {
-  transform: rotate(45deg);
+  transform: rotate(45deg); /* turns “+” into “×” */
 }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition), padding var(--transition);
+  padding: 0 1.5rem;
 }
 .faq-item.open .faq-answer {
-  max-height: 500px;
-  padding: 1rem 1.5rem;
+  max-height: 500px; /* large enough for answer text */
+  padding: 0.75rem 1.5rem;
 }
 .faq-answer p {
   background-color: #fdfdfd;
@@ -798,6 +645,7 @@ header.hero {
 }
 .contact-info {
   flex: 1 1 320px;
+  text-align: center; /* center contact info text */
 }
 .contact-info h4 {
   margin-bottom: 0.5rem;
@@ -815,7 +663,7 @@ header.hero {
 }
 .contact-form {
   flex: 1 1 400px;
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow-light);
@@ -867,6 +715,7 @@ footer {
   background-color: var(--accent-color);
   color: var(--text-light);
   padding: 3rem 1rem;
+  text-align: center;
 }
 .footer-container {
   display: grid;
@@ -875,6 +724,7 @@ footer {
   max-width: var(--max-width);
   margin: 0 auto 2rem;
   padding: 0 1rem;
+  text-align: left; /* left-align links inside footer columns */
 }
 .footer-column h4 {
   margin-bottom: 1rem;
@@ -923,6 +773,7 @@ footer {
   margin-top: 1rem;
   display: flex;
   gap: 1rem;
+  justify-content: flex-start;
 }
 .social-icons a img {
   width: 24px;
@@ -950,7 +801,7 @@ footer {
 .numeric {
   text-align: center;
   font-weight: bold;
-  color: var(--tech-green);
+  color: var(--tech-neon);
 }
 
 @media (max-width: 1200px) {
@@ -958,14 +809,8 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-  .solutions-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
   .industries-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-  .partners-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
 
@@ -973,8 +818,15 @@ footer {
   .services-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
-  .hero-form {
-    margin-top: 2rem;
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-left .hero-text p {
+    text-align: center;
+  }
+  .contact-info {
+    text-align: center;
   }
   .testimonial-item {
     position: relative;

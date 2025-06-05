@@ -1,1 +1,527 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero Heat Solutions | Privacy Policy</title>
+
+  <!-- Basic SEO Tags -->
+  <meta
+    name="description"
+    content="Privacy Policy for Zero Heat Solutions—how we collect, use, and protect your personal information."
+  />
+  <meta name="keywords" content="Privacy Policy, Zero Heat Solutions, data collection, Formspree" />
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ──────────────────────────────────────────────────────────────────────────
+       CSS VARIABLES
+       ────────────────────────────────────────────────────────────────────────── */
+    :root {
+      --nav-bg: #0e1220;
+      --nav-hover: #00a8ff;
+      --accent-color: #1b263b;
+      --primary-color: #12213a;
+      --secondary-color: #007BFF;
+      --light-bg: #f4f8fc;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --radius: 8px;
+      --transition: 0.3s ease;
+      --letter-spacing: 1px;
+      --nav-height: 60px;
+      --offset: 80px;
+      --section-padding: 3rem;
+      --card-hover-shadow: rgba(0, 0, 0, 0.15);
+      --tech-blue: #0a84ff;
+      --tech-neon: #00d8ff;
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       GLOBAL RESET & BASE STYLES
+       ────────────────────────────────────────────────────────────────────────── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    ul,
+    ol {
+      margin-left: 1.25rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+    button {
+      cursor: pointer;
+      transition: background-color var(--transition);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       NAVIGATION (DESKTOP & MOBILE)
+       ────────────────────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--nav-bg);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav .logo img {
+      height: 50px;
+      width: auto;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links li {
+      list-style: none;
+    }
+    nav .nav-links li a {
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    nav .nav-links li a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--tech-neon);
+      transition: width var(--transition);
+    }
+    nav .nav-links li a:hover::after {
+      width: 100%;
+    }
+    nav .nav-links li a:hover {
+      color: var(--tech-neon);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      margin-bottom: 5px;
+      background-color: var(--text-light);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger span:last-child {
+      margin-bottom: 0;
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu li {
+      list-style: none;
+      margin: 0.75rem 0;
+    }
+    .mobile-menu li a {
+      color: var(--text-light);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing);
+      transition: color var(--transition);
+    }
+    .mobile-menu li a:hover {
+      color: var(--tech-neon);
+    }
+
+    @media screen and (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       MAIN CONTENT & SECTIONS (with SCROLL OFFSETS)
+       ────────────────────────────────────────────────────────────────────────── */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      padding: var(--section-padding) 0;
+    }
+    section[id] {
+      scroll-margin-top: var(--offset);
+    }
+
+    /* PRIVACY POLICY STYLES */
+    .policy-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .policy-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .policy-intro {
+      margin-bottom: 2rem;
+      color: #555555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .policy-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    .policy-section p,
+    .policy-section ul {
+      margin-bottom: 1rem;
+      color: #444444;
+    }
+    .policy-section ul li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER + SITEMAP */
+    footer {
+      background-color: var(--accent-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-sitemap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sitemap-column {
+      min-width: 150px;
+    }
+    .sitemap-column h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .sitemap-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+    .sitemap-column a {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    .sitemap-column a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       NAVIGATION (Desktop + Mobile)
+       ────────────────────────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#process">How We Work</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Get a Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#process">How We Work</a></li>
+      <li><a href="index.html#industries">Industries</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       MAIN PRIVACY POLICY CONTENT
+       ────────────────────────────────────────────────────────────────────────── -->
+  <main>
+    <section class="policy-header">
+      <h1>Privacy Policy</h1>
+      <p class="policy-intro">
+        At Zero Heat Solutions, we respect your privacy and are committed to protecting your
+        personal information. This Privacy Policy explains how we collect, use, and safeguard
+        the data you provide when you use our website or submit any forms.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2>1. Information We Collect</h2>
+      <p>When you interact with our website (e.g., by requesting a quote), we may collect:</p>
+      <ul>
+        <li><strong>Contact Information:</strong> First name, last name, email address, phone number, and company name.</li>
+        <li><strong>Service Preferences:</strong> The type of service you’re interested in (Managed IT, Cybersecurity, or Both).</li>
+        <li><strong>Additional Details:</strong> Any optional message or description of your needs submitted in the “Tell us a bit about your needs” field.</li>
+      </ul>
+      <p>All form submissions are processed via Formspree’s secure servers. We do not collect any other personal data unless you voluntarily provide it.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>2. How We Use Your Information</h2>
+      <ul>
+        <li>
+          <strong>Respond to Quotes:</strong> We use your contact information to send you a customized quote
+          or answer any follow-up questions you may have requested.
+        </li>
+        <li>
+          <strong>Service Delivery:</strong> If you become a client, we may store and use your data to deliver
+          managed IT or cybersecurity services in accordance with our service agreement.
+        </li>
+        <li>
+          <strong>Communication:</strong> We may occasionally send you important updates or notices related
+          to your request. You can opt out of non-essential communications at any time by contacting us.
+        </li>
+        <li>
+          <strong>Site Improvement:</strong> We may analyze form submissions in aggregate to improve our
+          website content, user experience, and service offerings.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>3. Data Storage & Security</h2>
+      <p>All form submissions are transmitted securely to Formspree:</p>
+      <ul>
+        <li>Formspree stores your data on encrypted servers and provides two-factor authentication to their team.</li>
+        <li>We do not store your payment details, social security numbers, or any highly sensitive data on our site.</li>
+        <li>We limit access to your personal information to authorized employees who need it to fulfill your request.</li>
+      </ul>
+      <p>We take reasonable measures (e.g., encryption, secure hosting) to protect your data from unauthorized access, alteration, or disclosure. However, no online system can be 100% secure. If you suspect any misuse of your information, please contact us immediately.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>4. Sharing & Third Parties</h2>
+      <p>We will never sell or rent your personal information to third parties. We may share data in the following situations:</p>
+      <ul>
+        <li>
+          <strong>Service Providers:</strong> We use trusted third-party services (e.g., Formspree) to collect
+          and store your form submissions. These providers are contractually bound to keep your data confidential.
+        </li>
+        <li>
+          <strong>Legal Requirements:</strong> In rare cases, we may disclose personal information if required
+          by law or court order, or to protect our legal rights.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>5. Cookies & Tracking</h2>
+      <p>We use only essential cookies on our site (e.g., for session management). We do not track personal data or install advertising cookies. If we integrate analytics (e.g., Google Analytics) or other tools in the future, we will disclose that here and provide opt-out instructions.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>6. Your Rights & Choices</h2>
+      <ul>
+        <li>
+          <strong>Access & Correction:</strong> You can request access to the personal information we hold
+          about you and ask for corrections if it is inaccurate. Email us at
+          <a href="mailto:privacy@zeroheatsolutions.com">privacy@zeroheatsolutions.com</a>.
+        </li>
+        <li>
+          <strong>Deletion:</strong> You can request that we delete your personal data from our records.
+          We will comply unless we are legally required to retain certain information.
+        </li>
+        <li>
+          <strong>Opt-Out:</strong> To stop receiving non-essential email communications (e.g., newsletters),
+          reply “Unsubscribe” to any marketing email or contact us at
+          <a href="mailto:privacy@zeroheatsolutions.com">privacy@zeroheatsolutions.com</a>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2>7. Links to Other Websites</h2>
+      <p>Our site may contain links to third-party websites (for example, icon asset CDN, Formspree’s documentation, etc.). We are not responsible for the privacy practices of those sites. We encourage you to review their privacy policies before entering personal information.</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy occasionally to reflect changes in our practices or legal requirements. When we do, we will revise the “Last Updated” date below. Your continued use of our site after those changes constitutes acceptance of the updated policy.</p>
+      <p><strong>Last Updated:</strong> June 2025</p>
+    </section>
+
+    <section class="policy-section">
+      <h2>9. Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, please reach out:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:privacy@zeroheatsolutions.com">privacy@zeroheatsolutions.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></li>
+        <li><strong>Mail:</strong> Zero Heat Solutions<br />
+            1234 Phoenix St.<br />
+            Phoenix, AZ 85001<br />
+            USA
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       BACK TO TOP BUTTON
+       ────────────────────────────────────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       FOOTER + SITEMAP
+       ────────────────────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="index.html#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       JAVASCRIPT: MOBILE MENU & BACK TO TOP
+       ────────────────────────────────────────────────────────────────────────── -->
+  <script>
+    // Toggle the mobile menu open/close
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // “Back to Top” button logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

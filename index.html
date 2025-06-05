@@ -16,10 +16,10 @@
     content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance"
   />
 
-  <!-- Favicon -->
+  <!-- Favicon (now in root) -->
   <link rel="shortcut icon" href="favicon.ico" />
 
-  <!-- Centralized Stylesheet (now in root) -->
+  <!-- Centralized Stylesheet (also in root) -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -30,7 +30,6 @@
   <nav>
     <div class="logo">
       <a href="index.html">
-        <!-- Logo (now in root) -->
         <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
       </a>
     </div>
@@ -65,10 +64,12 @@
        ────────────────────────────────────────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-inner">
+      <!-- Left half of hero: logo + heading/text -->
       <div class="hero-left">
         <div class="hero-logo">
           <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
         </div>
+
         <div class="hero-text">
           <h1>
             Enterprise-Grade IT &amp; Cybersecurity<br />
@@ -82,12 +83,10 @@
         </div>
       </div>
 
+      <!-- Right half of hero: “Request a Quote” form -->
       <div class="hero-form">
         <h4>Request a Quote</h4>
-        <form
-          action="https://formspree.io/f/xpwrwldy"
-          method="POST"
-        >
+        <form action="https://formspree.io/f/xpwrwldy" method="POST">
           <!-- Hidden fields for Formspree (optional) -->
           <input type="hidden" name="form-name" value="quote" />
           <input
@@ -157,8 +156,7 @@
     <section id="services-overview">
       <h2 class="section-header">Our Core Services</h2>
       <div class="services-overview-grid">
-        <!-- No icons – just text headings for now -->
-
+        <!-- Cybersecurity Card -->
         <div class="overview-card">
           <h4>Comprehensive Cybersecurity</h4>
           <p>Fortify your digital perimeter with a multi-layered approach:</p>
@@ -182,6 +180,7 @@
           </ul>
         </div>
 
+        <!-- Managed IT Card -->
         <div class="overview-card">
           <h4>Managed IT Support</h4>
           <p>Keep your operations seamless with our 24/7 Managed IT solution:</p>
@@ -205,6 +204,7 @@
           </ul>
         </div>
 
+        <!-- Backup & Disaster Recovery Card -->
         <div class="overview-card">
           <h4>Backup &amp; Disaster Recovery</h4>
           <p>Protect your data with robust backup and recovery solutions:</p>
@@ -224,6 +224,7 @@
           </ul>
         </div>
 
+        <!-- Cloud & Infrastructure Card -->
         <div class="overview-card">
           <h4>Cloud &amp; Infrastructure</h4>
           <p>Leverage cloud platforms for scalability and security:</p>
@@ -441,7 +442,7 @@
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       FOOTER
+       ENHANCED FOOTER
        ────────────────────────────────────────────────────────────────────────── -->
   <footer>
     <div class="footer-container">
@@ -550,7 +551,7 @@
         } else {
           answer.classList.remove('open');
           question.querySelector('span').textContent = '+';
-        }
+        });
       });
     });
 

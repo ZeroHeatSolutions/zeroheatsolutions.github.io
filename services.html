@@ -30,19 +30,21 @@
     :root {
       --nav-bg: #0e1220;
       --nav-hover: #00a8ff;
+      --accent-color: #1b263b;
       --primary-color: #12213a;
       --secondary-color: #007BFF;
-      --accent-color: #1b263b;
       --light-bg: #f4f8fc;
-      --text-color: #e0e0e0;
-      --heading-color: #1b263b;
-      --light-text: #ffffff;
+      --text-light: #ffffff;
+      --text-dark: #333333;
       --radius: 8px;
       --transition: 0.3s ease;
       --letter-spacing: 1px;
       --nav-height: 60px;
       --offset: 80px;
-      --section-padding: 3rem; /* consistent vertical padding */
+      --section-padding: 3rem;
+      --card-hover-shadow: rgba(0, 0, 0, 0.15);
+      --tech-blue: #0a84ff;
+      --tech-neon: #00d8ff;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -59,7 +61,7 @@
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: #ffffff;
-      color: #444444;
+      color: var(--text-dark);
       line-height: 1.6;
     }
     a {
@@ -82,13 +84,13 @@
     h2,
     h3,
     h4 {
-      color: var(--heading-color);
+      color: var(--accent-color);
       margin-bottom: 1rem;
       line-height: 1.2;
     }
     p {
       margin-bottom: 1.5rem;
-      color: #444444;
+      color: var(--text-dark);
     }
     button {
       cursor: pointer;
@@ -111,15 +113,8 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
-    nav .logo {
-      display: flex;
-      align-items: center;
-    }
-    nav .logo a {
-      display: inline-block;
-    }
     nav .logo img {
-      height: 60px;
+      height: 50px;
       width: auto;
     }
     nav .nav-links {
@@ -130,7 +125,7 @@
       list-style: none;
     }
     nav .nav-links li a {
-      color: var(--text-color);
+      color: var(--text-light);
       font-weight: 600;
       font-size: 0.95rem;
       text-transform: uppercase;
@@ -141,18 +136,18 @@
     nav .nav-links li a::after {
       content: "";
       position: absolute;
-      bottom: -8px;
+      bottom: -6px;
       left: 0;
       width: 0%;
       height: 2px;
-      background-color: var(--nav-hover);
+      background-color: var(--tech-neon);
       transition: width var(--transition);
     }
     nav .nav-links li a:hover::after {
       width: 100%;
     }
     nav .nav-links li a:hover {
-      color: var(--nav-hover);
+      color: var(--tech-neon);
     }
 
     .hamburger {
@@ -169,7 +164,7 @@
       width: 100%;
       height: 3px;
       margin-bottom: 5px;
-      background-color: var(--text-color);
+      background-color: var(--text-light);
       border-radius: 2px;
       transition: all var(--transition);
     }
@@ -198,14 +193,14 @@
       margin: 0.75rem 0;
     }
     .mobile-menu li a {
-      color: var(--text-color);
+      color: var(--text-light);
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: var(--letter-spacing);
       transition: color var(--transition);
     }
     .mobile-menu li a:hover {
-      color: var(--nav-hover);
+      color: var(--tech-neon);
     }
 
     @media screen and (max-width: 768px) {
@@ -221,10 +216,11 @@
        HERO / BANNER FOR SERVICES PAGE
        ────────────────────────────────────────────────────────────────────────── */
     .services-hero {
+      position: relative;
       background:
-        url('assets/phoenix-skyline.jpg') center/cover no-repeat,
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-      color: var(--light-text);
+        linear-gradient(rgba(18, 33, 58, 0.7), rgba(18, 33, 58, 0.7)),
+        url('assets/phoenix-skyline.jpg') center/cover no-repeat;
+      color: var(--text-light);
       padding: 6rem 1rem;
       text-align: center;
     }
@@ -232,13 +228,14 @@
       font-size: 2.75rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      letter-spacing: 1px;
     }
     .services-hero p {
       font-size: 1.125rem;
       max-width: 700px;
       margin: auto;
       line-height: 1.6;
-      color: #f0f0f0;
+      color: #e0e0e0;
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -257,7 +254,7 @@
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
-       DETAILED SERVICES GRID (WITHOUT PENETRATION TESTING)
+       DETAILED SERVICES GRID
        ────────────────────────────────────────────────────────────────────────── */
     .services-grid {
       display: grid;
@@ -266,24 +263,42 @@
       margin-top: 2.5rem;
     }
     .service-card {
-      background-color: #ffffff;
+      background-color: var(--light-bg);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: var(--radius);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px var(--card-hover-shadow);
       padding: 2.5rem;
       text-align: left;
       transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, var(--tech-neon) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .service-card:hover::before {
+      opacity: 0.15;
     }
     .service-card img {
-      height: 60px;
+      height: 50px;
       margin-bottom: 1rem;
     }
     .service-card h4 {
       margin-bottom: 1rem;
       font-size: 1.5rem;
+      color: var(--primary-color);
     }
     .service-card p {
       font-size: 1rem;
-      color: #555555;
+      color: #444444;
       line-height: 1.6;
       margin-bottom: 1rem;
     }
@@ -298,19 +313,75 @@
       line-height: 1.5;
     }
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON
-       ────────────────────────────────────────────────────────────────────────── */
+    /* ACCENT BARS IN SECTION HEADERS */
+    .section-header {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .section-header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--tech-blue);
+    }
+
+    /* FOOTER + SITEMAP */
+    footer {
+      background-color: var(--accent-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+    }
+    .footer-sitemap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sitemap-column {
+      min-width: 150px;
+    }
+    .sitemap-column h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .sitemap-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+    .sitemap-column a {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    .sitemap-column a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* BACK TO TOP BUTTON */
     #back-to-top {
       position: fixed;
       bottom: 30px;
       right: 30px;
       background-color: var(--secondary-color);
-      color: var(--light-text);
+      color: var(--text-light);
       border: none;
       width: 45px;
       height: 45px;
@@ -329,58 +400,6 @@
       opacity: 1;
       visibility: visible;
     }
-
-    /* ──────────────────────────────────────────────────────────────────────────
-       FOOTER + SITEMAP
-       ────────────────────────────────────────────────────────────────────────── */
-    footer {
-      background-color: var(--accent-color);
-      color: var(--light-text);
-      padding: 2rem 1rem;
-    }
-    .footer-sitemap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .sitemap-column {
-      min-width: 150px;
-    }
-    .sitemap-column h4 {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: var(--light-text);
-    }
-    .sitemap-column ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sitemap-column li {
-      margin-bottom: 0.5rem;
-    }
-    .sitemap-column a {
-      color: var(--light-text);
-      font-size: 0.95rem;
-    }
-    .sitemap-column a:hover {
-      text-decoration: underline;
-    }
-    footer p {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    @media screen and (max-width: 768px) {
-      nav .nav-links {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
   </style>
 </head>
 <body>
@@ -388,12 +407,9 @@
        NAVIGATION (Desktop + Mobile)
        ────────────────────────────────────────────────────────────────────────── -->
   <nav>
-    <!-- Left: Clickable Logo -->
     <div class="logo">
       <a href="index.html"><img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" /></a>
     </div>
-
-    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="index.html#process">How We Work</a></li>
@@ -402,15 +418,11 @@
       <li><a href="index.html#faq">FAQ</a></li>
       <li><a href="index.html#contact">Get a Quote</a></li>
     </ul>
-
-    <!-- Hamburger (Mobile Only) -->
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
-    <!-- Mobile Menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="services.html">Services</a></li>
       <li><a href="index.html#process">How We Work</a></li>
@@ -427,42 +439,45 @@
   <header class="services-hero">
     <h1>Empowering Your Digital Frontier</h1>
     <p>
-      Explore our suite of Managed IT & Cybersecurity solutions—built to scale
-      with your Phoenix-area small business. Click any service below to learn
-      more or reach out for a custom quote.
+      Dive into our comprehensive portfolio of Managed IT & Cybersecurity solutions—designed to safeguard and scale Phoenix-area small businesses.  
+      Click any service below to learn how we can protect your critical data and optimize your infrastructure.
     </p>
   </header>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       DETAILED SERVICES GRID (WITHOUT PENETRATION TESTING)
+       DETAILED SERVICES GRID
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
     <section id="services">
+      <h2 class="section-header">Our Services</h2>
       <div class="services-grid">
         <!-- 1. Comprehensive Cybersecurity -->
         <div class="service-card">
           <img src="assets/icons/shield.svg" alt="Cybersecurity Icon" />
           <h4>Comprehensive Cybersecurity</h4>
           <p>
-            Protect your data from every angle with our end-to-end cybersecurity
-            offering:
+            Fortify your digital perimeter with a multi-layered approach:
           </p>
           <ul>
-            <li><strong>Risk Assessments & Gap Analysis</strong>  
-              • Deep infrastructure audit to uncover vulnerabilities<br />
-              • Detailed report with prioritized remediation steps
+            <li>
+              <strong>Risk Assessments & Gap Analysis</strong><br />
+              • In-depth infrastructure audit to uncover vulnerabilities<br />
+              • Detailed remediation roadmap aligned with business priorities
             </li>
-            <li><strong>Cloud Security & Compliance Audits</strong>  
-              • AWS & Azure security posture assessments<br />
-              • HIPAA/PCI compliance reviews for cloud workloads
+            <li>
+              <strong>Cloud Security & Compliance Audits</strong><br />
+              • AWS/Azure security posture assessments<br />
+              • HIPAA & PCI compliance reviews for cloud workloads
             </li>
-            <li><strong>Security Awareness Training & Phishing Simulations</strong>  
+            <li>
+              <strong>Security Awareness Training & Phishing Simulations</strong><br />
               • Interactive staff training modules<br />
-              • Realistic phishing campaigns + detailed reporting dashboard
+              • Realistic phishing campaigns with analytics and reporting
             </li>
-            <li><strong>HIPAA, PCI & SMB Compliance Support</strong>  
-              • Policy development (Acceptable Use, Data Handling, etc.)<br />
-              • Continuous monitoring, gap remediation, and audit prep
+            <li>
+              <strong>HIPAA, PCI & SMB Compliance Support</strong><br />
+              • Policy creation (Data Handling, Incident Response, etc.)<br />
+              • Continuous compliance monitoring and audit preparation
             </li>
           </ul>
         </div>
@@ -472,27 +487,31 @@
           <img src="assets/icons/server.svg" alt="Managed IT Icon" />
           <h4>Managed IT Support</h4>
           <p>
-            Keep your operations running smoothly with our 24/7 Managed IT
-            solution:
+            Keep your operations seamless with our 24/7 Managed IT solution:
           </p>
           <ul>
-            <li><strong>24/7 Remote Help Desk & IT Support</strong>  
-              • Rapid response times (most issues resolved < 1 hour)<br />
-              • Windows, macOS, and Linux troubleshooting
+            <li>
+              <strong>24/7 Remote Help Desk & IT Support</strong><br />
+              • Rapid ticket resolution (most issues solved < 1 hour)<br />
+              • Windows, macOS, and Linux expert assistance
             </li>
-            <li><strong>Workstation, Device & Patch Management</strong>  
-              • Automated patch deployments for OS & third-party apps<br />
-              • Inventory tracking and lifecycle management for endpoints
+            <li>
+              <strong>Workstation, Device & Patch Management</strong><br />
+              • Automated patch deployments for OS & third-party software<br />
+              • Endpoint inventory tracking and lifecycle management
             </li>
-            <li><strong>Network Monitoring & VPN/Firewall Maintenance</strong>  
-              • Proactive SNMP/NetFlow monitoring and alerting<br />
-              • Managed firewall rule reviews and VPN configuration
+            <li>
+              <strong>Network Monitoring & VPN/Firewall Maintenance</strong><br />
+              • Proactive SNMP/NetFlow monitoring with real-time alerts<br />
+              • Managed firewall rule reviews and secure VPN configuration
             </li>
-            <li><strong>Backup & Continuity Services</strong>  
+            <li>
+              <strong>Backup & Continuity Services</strong><br />
               • On-premises and cloud backup orchestration<br />
-              • Disaster recovery planning with defined RTO/RPO targets
+              • Comprehensive disaster recovery planning with RTO/RPO alignment
             </li>
-            <li><strong>Office 365 & Google Workspace Support</strong>  
+            <li>
+              <strong>Office 365 & Google Workspace Support</strong><br />
               • Tenant configuration, security hardening, and license management<br />
               • Migration assistance and ongoing administration
             </li>
@@ -504,24 +523,28 @@
           <img src="assets/icons/checklist.svg" alt="Compliance Icon" />
           <h4>Compliance & Auditing</h4>
           <p>
-            Stay ahead of regulations and avoid fines with our Compliance team:
+            Navigate regulatory landscapes with confidence:
           </p>
           <ul>
-            <li><strong>HIPAA/PCI Gap Analysis</strong>  
-              • Control mapping against HIPAA & PCI DSS<br />
-              • Gap report with remediation recommendations
+            <li>
+              <strong>HIPAA/PCI Gap Analysis</strong><br />
+              • Control mapping against HIPAA & PCI DSS frameworks<br />
+              • Gap reports with prioritized remediation steps
             </li>
-            <li><strong>Policy & Procedure Development</strong>  
-              • Draft Acceptable Use, Incident Response, and Data Protection policies<br />
-              • Employee confidentiality agreements and security guidelines
+            <li>
+              <strong>Policy & Procedure Development</strong><br />
+              • Craft Acceptable Use, Incident Response, and Data Protection policies<br />
+              • Employee confidentiality agreements and security protocols
             </li>
-            <li><strong>Continuous Compliance Monitoring</strong>  
+            <li>
+              <strong>Continuous Compliance Monitoring</strong><br />
               • Quarterly vulnerability scans and remediation support<br />
               • Vendor risk assessments and BAA management
             </li>
-            <li><strong>Audit Remediation Planning</strong>  
-              • Roadmap to close remaining compliance gaps<br />
-              • Coordination with external auditors as needed
+            <li>
+              <strong>Audit Remediation Planning</strong><br />
+              • Roadmap to close compliance gaps<br />
+              • Coordination with external auditors, ensuring smooth audits
             </li>
           </ul>
         </div>
@@ -531,22 +554,26 @@
           <img src="assets/icons/cloud-backup.svg" alt="Backup Icon" />
           <h4>Backup & Continuity</h4>
           <p>
-            Protect your critical data from loss, ransomware, or hardware failure:
+            Guarantee business resilience through proactive data protection:
           </p>
           <ul>
-            <li><strong>Automated On-Premises & Cloud Backups</strong>  
+            <li>
+              <strong>Automated On-Premises & Cloud Backups</strong><br />
               • Local snapshots plus cloud replication (AWS, Azure, GCP)<br />
-              • File-level and image-level backup options
+              • File-level and image-level backup strategies
             </li>
-            <li><strong>Disaster Recovery Planning</strong>  
+            <li>
+              <strong>Disaster Recovery Planning</strong><br />
               • RTO/RPO assessment and documentation<br />
-              • Failover site testing and runbooks
+              • Failover site testing and runbook creation
             </li>
-            <li><strong>24/7 Monitoring & Alerting</strong>  
-              • Backup job health checks and automated notifications<br />
-              • Offsite backup integrity audits
+            <li>
+              <strong>24/7 Monitoring & Alerting</strong><br />
+              • Backup job health checks with automated notifications<br />
+              • Offsite backup integrity audits and audits
             </li>
-            <li><strong>Business Continuity Strategy</strong>  
+            <li>
+              <strong>Business Continuity Strategy</strong><br />
               • Redundant infrastructure recommendations<br />
               • High-availability clustering and load balancing
             </li>
@@ -558,128 +585,42 @@
           <img src="assets/icons/cloud-computing.svg" alt="Cloud Icon" />
           <h4>Cloud & Infrastructure</h4>
           <p>
-            Modernize your network and cloud architecture for scalability and
-            security:
+            Modernize your environment for scale, performance, and security:
           </p>
           <ul>
-            <li><strong>Office 365 & Google Workspace Administration</strong>  
-              • Tenant setup, security policies, and MFA configuration<br />
-              • License management and best-practice hardening
+            <li>
+              <strong>Office 365 & Google Workspace Administration</strong><br />
+              • Tenant setup, security policies, and MFA enforcement<br />
+              • License management and cost optimization
             </li>
-            <li><strong>AWS & Azure Optimization</strong>  
-              • Cost analysis and rightsizing of VMs and instances<br />
-              • Identity & Access Management reviews and policy enforcement
+            <li>
+              <strong>AWS & Azure Optimization</strong><br />
+              • Cost analysis and resource rightsizing<br />
+              • IAM reviews, secure role-based access, and policy enforcement
             </li>
-            <li><strong>Secure Cloud Migrations</strong>  
+            <li>
+              <strong>Secure Cloud Migrations</strong><br />
               • Lift-and-shift or cloud-native rearchitecting<br />
               • Zero-trust network segmentation and VPC/VNet design
             </li>
-            <li><strong>Virtual Desktop Infrastructure (VDI)</strong>  
+            <li>
+              <strong>Virtual Desktop Infrastructure (VDI)</strong><br />
               • Azure Virtual Desktop or AWS WorkSpaces deployments<br />
               • Secure remote access for distributed teams
             </li>
-            <li><strong>Hybrid-Cloud & On-Prem Integration</strong>  
+            <li>
+              <strong>Hybrid-Cloud & On-Prem Integration</strong><br />
               • Site-to-site VPN, ExpressRoute/Direct Connect<br />
-              • Active Directory / Azure AD sync and SSO configuration
+              • AD/Azure AD sync, SSO configuration, and hybrid identity
             </li>
           </ul>
         </div>
       </div>
     </section>
-
-    <!-- CONTACT (at bottom of services page) -->
-    <section id="contact" class="section-light">
-      <h2>Get a Free Quote</h2>
-      <div class="contact-container">
-        <!-- Contact Info -->
-        <div class="contact-info">
-          <p><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></p>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
-          </p>
-          <p>
-            Tell us about your environment, pain points, or goals—and we’ll build
-            a custom solution that fits.
-          </p>
-        </div>
-
-        <!-- Contact Form wired to Formspree -->
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/xpwrwldy"
-          method="POST"
-        >
-          <input type="hidden" name="form-name" value="quote" />
-
-          <label for="first-name">First Name *</label>
-          <input
-            type="text"
-            id="first-name"
-            name="firstName"
-            placeholder="Your first name"
-            required
-          />
-
-          <label for="last-name">Last Name *</label>
-          <input
-            type="text"
-            id="last-name"
-            name="lastName"
-            placeholder="Your last name"
-            required
-          />
-
-          <label for="email">Business Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@yourcompany.com"
-            required
-          />
-
-          <label for="phone">Phone Number *</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="(###) ###-####"
-            required
-          />
-
-          <label for="company">Company Name</label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            placeholder="Your company name"
-          />
-
-          <label for="interest">What Are You Interested In? *</label>
-          <select id="interest" name="interest" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="managedIT">Managed IT</option>
-            <option value="cybersecurity">Cybersecurity</option>
-            <option value="both">Both</option>
-          </select>
-
-          <label for="message">Tell us a bit about your needs</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Describe your environment, pain points, or goals…"
-          ></textarea>
-
-          <button type="submit">Submit Request</button>
-        </form>
-      </div>
-    </section>
   </main>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON (LARGER & CLEANER)
+       BACK TO TOP BUTTON
        ────────────────────────────────────────────────────────────────────────── -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
@@ -727,7 +668,6 @@
       mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('active');
     });
-    // Close mobile menu when any link is clicked
     document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');

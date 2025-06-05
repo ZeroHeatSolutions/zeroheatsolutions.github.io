@@ -42,7 +42,7 @@
       --letter-spacing: 1px;
       --nav-height: 60px;
       --offset: 80px;
-      --section-padding: 3rem;
+      --section-padding: 3rem; /* consistent vertical padding */
     }
 
     /* ──────────────────────────────────────────────────────────────────────────
@@ -632,9 +632,7 @@
       text-align: center;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON (LARGER & CLEANER)
-       ────────────────────────────────────────────────────────────────────────── */
+    /* BACK TO TOP BUTTON (LARGER & CLEANER) */
     #back-to-top {
       position: fixed;
       bottom: 30px;
@@ -735,8 +733,9 @@
           action="https://formspree.io/f/xpwrwldy"
           method="POST"
         >
-          <!-- Hidden field so Formspree knows which form this is -->
+          <!-- Hidden fields so Formspree knows which form this is and where to redirect -->
           <input type="hidden" name="form-name" value="quote" />
+          <input type="hidden" name="_next" value="thank-you.html" />
 
           <label for="hero-first-name">First Name *</label>
           <input
@@ -1059,13 +1058,14 @@
           </p>
         </div>
 
-        <!-- Contact Form (wired to Formspree) -->
+        <!-- Contact Form (wired to Formspree + redirect) -->
         <form
           class="contact-form"
           action="https://formspree.io/f/xpwrwldy"
           method="POST"
         >
           <input type="hidden" name="form-name" value="quote" />
+          <input type="hidden" name="_next" value="thank-you.html" />
 
           <label for="first-name">First Name *</label>
           <input

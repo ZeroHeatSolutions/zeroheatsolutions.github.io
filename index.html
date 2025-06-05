@@ -16,10 +16,10 @@
     content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance"
   />
 
-  <!-- Favicon (now in root) -->
-  <link rel="shortcut icon" href="favicon.ico" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- Centralized Stylesheet (also in root) -->
+  <!-- Centralized Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -39,6 +39,7 @@
       <li><a href="#process">How We Work</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
+      <li><a href="#why">Why Choose Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Get a Quote</a></li>
     </ul>
@@ -54,17 +55,19 @@
       <li><a href="#process">How We Work</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
+      <li><a href="#why">Why Choose Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Get a Quote</a></li>
     </ul>
   </nav>
+  <!-- nav structure inspired by turn2file16 :contentReference[oaicite:0]{index=0} -->
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION
+       HERO SECTION (Centered, Big Logo + Text on Left; Larger Form on Right)
        ────────────────────────────────────────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-inner">
-      <!-- Left half of hero: logo + heading/text -->
+      <!-- LEFT COLUMN: Logo + Text stacked vertically -->
       <div class="hero-left">
         <div class="hero-logo">
           <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
@@ -76,24 +79,20 @@
             Tailored for Phoenix Small Businesses
           </h1>
           <p>
-            Zero Heat Solutions brings decades of collective SOC, encryption,
-            and cloud security experience to ensure your business stays
-            protected—always. Focus on growth; let us handle the tech.
+            Zero Heat Solutions brings decades of collective SOC, encryption, and
+            cloud security experience to local companies. No jargon, no endless
+            tickets—just proactive protection and responsive support.
           </p>
         </div>
       </div>
 
-      <!-- Right half of hero: “Request a Quote” form -->
+      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form -->
       <div class="hero-form">
         <h4>Request a Quote</h4>
         <form action="https://formspree.io/f/xpwrwldy" method="POST">
-          <!-- Hidden fields for Formspree (optional) -->
+          <!-- Hidden fields for Formspree -->
           <input type="hidden" name="form-name" value="quote" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://www.zeroheatsolutions.com/thank-you.html"
-          />
+          <input type="hidden" name="_next" value="thank-you.html" />
 
           <label for="hero-first-name">First Name *</label>
           <input
@@ -127,11 +126,19 @@
             type="tel"
             id="hero-phone"
             name="phone"
-            placeholder="(123) 456-7890"
+            placeholder="(###) ###-####"
             required
           />
 
-          <label for="hero-interest">Interested In *</label>
+          <label for="hero-company">Company Name</label>
+          <input
+            type="text"
+            id="hero-company"
+            name="company"
+            placeholder="Your company name"
+          />
+
+          <label for="hero-interest">What Are You Interested In? *</label>
           <select id="hero-interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
             <option value="managedIT">Managed IT</option>
@@ -139,190 +146,236 @@
             <option value="both">Both</option>
           </select>
 
+          <label for="hero-message">Tell us a bit about your needs</label>
+          <textarea
+            id="hero-message"
+            name="message"
+            rows="4"
+            placeholder="Describe your environment, pain points, or goals…"
+          ></textarea>
+
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
   </header>
+  <!-- hero section based on turn2file17 & turn2file16  -->
 
   <!-- ──────────────────────────────────────────────────────────────────────────
        MAIN CONTENT
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
-    <!-- Spacer under fixed nav for the “Our Core Services” anchor -->
-    <div id="services" style="padding-top: 60px;"></div>
-
-    <!-- Services Overview -->
-    <section id="services-overview">
+    <!-- ────────────────────────────────────────────────────────────────────────
+         SERVICES OVERVIEW
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="services">
       <h2 class="section-header">Our Core Services</h2>
-      <div class="services-overview-grid">
+      <div class="services-grid">
         <!-- Cybersecurity Card -->
-        <div class="overview-card">
+        <div class="service-card">
+          <img src="assets/icons/shield.svg" alt="Cybersecurity Icon" />
           <h4>Comprehensive Cybersecurity</h4>
-          <p>Fortify your digital perimeter with a multi-layered approach:</p>
-          <ul>
-            <li>
-              <strong>Risk Assessments &amp; Gap Analysis</strong><br />
-              • In-depth infrastructure audit to uncover vulnerabilities
-            </li>
-            <li>
-              <strong>Cloud Security &amp; Compliance Audits</strong><br />
-              • AWS/Azure security configuration reviews
-            </li>
-            <li>
-              <strong>Security Awareness Training &amp; Phishing Simulations</strong><br />
-              • Interactive modules and simulated phishing campaigns
-            </li>
-            <li>
-              <strong>HIPAA, PCI DSS &amp; SMB Compliance Support</strong><br />
-              • Policy creation, control implementation, and documentation
-            </li>
-          </ul>
+          <p>
+            Risk assessments, compliance audits (HIPAA, PCI), security awareness
+            training, phishing simulations, and more.
+          </p>
         </div>
-
         <!-- Managed IT Card -->
-        <div class="overview-card">
+        <div class="service-card">
+          <img src="assets/icons/server.svg" alt="Managed IT Icon" />
           <h4>Managed IT Support</h4>
-          <p>Keep your operations seamless with our 24/7 Managed IT solution:</p>
-          <ul>
-            <li>
-              <strong>24/7 Remote Help Desk &amp; IT Support</strong><br />
-              • Rapid ticket resolution for end users
-            </li>
-            <li>
-              <strong>On-Site &amp; Remote Maintenance</strong><br />
-              • Patching, updates, and proactive monitoring
-            </li>
-            <li>
-              <strong>Network &amp; Infrastructure Monitoring</strong><br />
-              • Firewalls, switches, NAS, and Wi-Fi health checks
-            </li>
-            <li>
-              <strong>Cloud Account Assistance</strong><br />
-              • Microsoft 365 administration and troubleshooting
-            </li>
-          </ul>
+          <p>
+            24/7 remote help desk, patch &amp; device management, network
+            monitoring, VPN/firewall configuration, and cloud integration.
+          </p>
         </div>
-
-        <!-- Backup & Disaster Recovery Card -->
-        <div class="overview-card">
-          <h4>Backup &amp; Disaster Recovery</h4>
-          <p>Protect your data with robust backup and recovery solutions:</p>
-          <ul>
-            <li>
-              <strong>Automated Backup Monitoring</strong><br />
-              • Daily/weekly checks and health reports
-            </li>
-            <li>
-              <strong>Rapid Data Restoration</strong><br />
-              • Minimize downtime with tested recovery processes
-            </li>
-            <li>
-              <strong>Business Continuity Planning</strong><br />
-              • Ensure critical systems stay online
-            </li>
-          </ul>
+        <!-- Compliance & Auditing Card -->
+        <div class="service-card">
+          <img src="assets/icons/checklist.svg" alt="Compliance Icon" />
+          <h4>Compliance &amp; Auditing</h4>
+          <p>
+            HIPAA/PCI gap analysis, policy development, continuous compliance
+            monitoring, and audit remediation plans.
+          </p>
         </div>
-
+        <!-- Backup & Continuity Card -->
+        <div class="service-card">
+          <img src="assets/icons/cloud-backup.svg" alt="Backup Icon" />
+          <h4>Backup &amp; Continuity</h4>
+          <p>
+            Automated backups, disaster recovery planning, cloud replication, and
+            guaranteed RTO/RPO alignment.
+          </p>
+        </div>
         <!-- Cloud & Infrastructure Card -->
-        <div class="overview-card">
+        <div class="service-card">
+          <img src="assets/icons/cloud-computing.svg" alt="Cloud Icon" />
           <h4>Cloud &amp; Infrastructure</h4>
-          <p>Leverage cloud platforms for scalability and security:</p>
-          <ul>
-            <li>
-              <strong>Cloud Migrations &amp; Deployments</strong><br />
-              • AWS, Azure, GCP solutions
-            </li>
-            <li>
-              <strong>Virtual Machine Management</strong><br />
-              • Provisioning, backup, and patching
-            </li>
-            <li>
-              <strong>Container &amp; Kubernetes Support</strong><br />
-              • Docker, K3s, and microservices orchestration
-            </li>
-          </ul>
+          <p>
+            Office 365 support, Azure/AWS optimization, secure migrations,
+            virtual desktops, and hybrid-cloud management.
+          </p>
         </div>
       </div>
     </section>
+    <!-- services overview inspired by turn2file18 :contentReference[oaicite:1]{index=1} -->
 
-    <!-- ──────────────────────────────────────────────────────────────────────────
-         HOW WE WORK SECTION
-         ────────────────────────────────────────────────────────────────────────── -->
-    <section id="process">
-      <h2 class="section-header">How We Work</h2>
+    <!-- ────────────────────────────────────────────────────────────────────────
+         HOW WE WORK
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="process" class="section-light">
+      <h2>How We Work</h2>
+      <p>
+        Our transparent, three-phase approach ensures you get the right roadmap,
+        the right implementation, and ongoing support that scales:
+      </p>
       <div class="process-steps">
-        <div class="step-card">
-          <h4>1. Discovery &amp; Assessment</h4>
-          <p>
-            We begin with a thorough discovery call, asset inventory, and risk
-            assessment to identify your unique needs.
-          </p>
+        <div class="process-step">
+          <div class="icon">1</div>
+          <div>
+            <h4>Assess &amp; Audit</h4>
+            <p>
+              We perform a deep dive into your current environment—identifying
+              risks, inefficiencies, and compliance gaps.
+            </p>
+          </div>
         </div>
-        <div class="step-card">
-          <h4>2. Design &amp; Planning</h4>
-          <p>
-            Our team architects a tailored solution—be it network modernization,
-            security hardening, or cloud migration.
-          </p>
+        <div class="process-step">
+          <div class="icon">2</div>
+          <div>
+            <h4>Plan &amp; Protect</h4>
+            <p>
+              Custom roadmap creation: network hardening, policy development,
+              cloud optimizations, and proactive threat hunting.
+            </p>
+          </div>
         </div>
-        <div class="step-card">
-          <h4>3. Implementation &amp; Deployment</h4>
-          <p>
-            We execute with minimal disruption—patch management, firewall
-            configuration, or policy rollouts—so you stay productive.
-          </p>
-        </div>
-        <div class="step-card">
-          <h4>4. Monitor &amp; Support</h4>
-          <p>
-            Continuous 24/7 monitoring, regular health checks, and on-demand
-            support ensure your environment remains secure and optimized.
-          </p>
+        <div class="process-step">
+          <div class="icon">3</div>
+          <div>
+            <h4>Support &amp; Scale</h4>
+            <p>
+              Ongoing 24/7 managed services—patching, monitoring, on-demand help
+              desk, and continuous improvement aligned with your growth.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+    <!-- how we work section based on turn2file11 :contentReference[oaicite:2]{index=2} -->
 
-    <!-- ──────────────────────────────────────────────────────────────────────────
-         INDUSTRIES SECTION
-         ────────────────────────────────────────────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────────────────────────
+         INDUSTRIES WE SERVE
+         ──────────────────────────────────────────────────────────────────────── -->
     <section id="industries">
       <h2 class="section-header">Industries We Serve</h2>
-      <div class="industries-list">
-        <div class="industry-item">
-          <p>Healthcare &amp; Medical Practices</p>
+      <p>
+        Our expertise spans a variety of verticals—each with its own regulatory
+        and operational requirements:
+      </p>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <h4>Healthcare</h4>
+          <p>HIPAA-compliant support, EHR security, secure telehealth solutions.</p>
         </div>
-        <div class="industry-item">
-          <p>Law Firms &amp; Professional Services</p>
+        <div class="industry-card">
+          <h4>Construction &amp; Field Services</h4>
+          <p>
+            On-site mobile device management, secure file syncing, remote power
+            users support.
+          </p>
         </div>
-        <div class="industry-item">
-          <p>Tech Startups &amp; SaaS Companies</p>
+        <div class="industry-card">
+          <h4>Legal &amp; Accounting</h4>
+          <p>
+            Data-at-rest encryption, secure communication channels, regulatory
+            compliance (PCI/GLBA).
+          </p>
         </div>
-        <div class="industry-item">
-          <p>Retail &amp; E-Commerce</p>
+        <div class="industry-card">
+          <h4>Real Estate &amp; Property Mgmt</h4>
+          <p>
+            MLS integration support, private network isolation, remote office
+            connectivity.
+          </p>
         </div>
-        <div class="industry-item">
-          <p>Finance &amp; Accounting</p>
+        <div class="industry-card">
+          <h4>Retail &amp; Local Shops</h4>
+          <p>
+            POS system hardening, PCI-DSS gap analysis, secure guest Wi-Fi setup.
+          </p>
         </div>
-        <div class="industry-item">
-          <p>General SMBs &amp; Professional Services</p>
+        <div class="industry-card">
+          <h4>Nonprofits &amp; SMBs</h4>
+          <p>
+            Budget-friendly solutions, grant-eligible cybersecurity services,
+            volunteer training.
+          </p>
         </div>
       </div>
     </section>
+    <!-- industries section based on turn2file1 :contentReference[oaicite:3]{index=3} -->
 
-    <!-- ──────────────────────────────────────────────────────────────────────────
-         ABOUT US SECTION
-         ────────────────────────────────────────────────────────────────────────── -->
-    <section id="about">
-      <h2>About Zero Heat Solutions</h2>
+    <!-- ────────────────────────────────────────────────────────────────────────
+         ABOUT / TEAM
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="about" class="section-light">
+      <h2>Meet the Founders</h2>
       <p>
-        At Zero Heat Solutions, we’re on a mission to provide enterprise-grade IT and cybersecurity tailored to the needs of Phoenix-area small and medium-sized businesses. Founded by seasoned SOC analysts and cloud security experts, our focus is on proactive protection, transparent pricing, and a human-first approach—no ticket numbers, just real people who care about your success.
+        Zero Heat Solutions was founded by two seasoned security professionals
+        passionate about empowering local businesses with enterprise-grade
+        protection:
       </p>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="assets/faces/fernando.jpg" alt="Fernando Beltran" />
+          <h4>Fernando Beltran</h4>
+          <p>
+            SOC Analyst &amp; Cloud Security Specialist with 4+ years in healthcare
+            and financial services. CISSP-certified.
+          </p>
+        </div>
+        <div class="team-member">
+          <img src="assets/faces/aaron.jpg" alt="Aaron Rodríguez" />
+          <h4>Aaron Rodríguez</h4>
+          <p>
+            Encryption Architect &amp; HSM Expert with 6+ years in payment
+            cryptography and enterprise infrastructure.
+          </p>
+        </div>
+      </div>
     </section>
+    <!-- meet the founders based on turn2file1 :contentReference[oaicite:4]{index=4} -->
 
-    <!-- ──────────────────────────────────────────────────────────────────────────
+    <!-- ────────────────────────────────────────────────────────────────────────
+         WHY CHOOSE US (CALLOUT)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="why" class="section-dark">
+      <h2>Why Phoenix Businesses Trust ZHS</h2>
+      <ul>
+        <li>
+          <strong>Security-first, always.</strong> From day one, we build your
+          defenses around your mission-critical data.
+        </li>
+        <li>
+          <strong>SMB-Focused Pricing.</strong> Customizable plans that grow
+          with you—no hidden fees or long-term lock-ins.
+        </li>
+        <li>
+          <strong>Direct Access.</strong> Reach a human-first support engineer
+          within minutes—never a ticketing maze.
+        </li>
+        <li>
+          <strong>Scalable Solutions.</strong> From a five-person office to a
+          100-seat headquarters, we’ve got you covered.
+        </li>
+      </ul>
+    </section>
+    <!-- why choose us based on turn2file12 :contentReference[oaicite:5]{index=5} -->
+
+    <!-- ────────────────────────────────────────────────────────────────────────
          FAQ SECTION
-         ────────────────────────────────────────────────────────────────────────── -->
+         ──────────────────────────────────────────────────────────────────────── -->
     <section id="faq">
       <h2 class="section-header">Frequently Asked Questions</h2>
 
@@ -333,7 +386,9 @@
         </div>
         <div class="faq-answer">
           <p>
-            We specialize in healthcare, legal, tech startups, retail, finance, and general SMBs. Our team is well-versed in HIPAA, PCI DSS, and other industry regulations.
+            We specialize in healthcare, legal, tech startups, retail, finance,
+            and general SMBs. Our team is well-versed in HIPAA, PCI DSS, and other
+            industry regulations.
           </p>
         </div>
       </div>
@@ -345,7 +400,9 @@
         </div>
         <div class="faq-answer">
           <p>
-            We offer 24/7 remote help desk support with guaranteed response times based on your service level agreement. On-site visits in Phoenix are scheduled within 24 hours for critical issues.
+            We offer 24/7 remote help desk support with guaranteed response
+            times based on your service level agreement. On-site visits in Phoenix
+            are scheduled within 24 hours for critical issues.
           </p>
         </div>
       </div>
@@ -357,34 +414,64 @@
         </div>
         <div class="faq-answer">
           <p>
-            Yes. We provide standalone risk assessments, gap analyses, and cloud compliance audits if you don’t need ongoing managed services. Our reports include prioritized remediation recommendations.
+            Yes. We provide standalone risk assessments, gap analyses, and cloud
+            compliance audits if you don’t need ongoing managed services. Our
+            reports include prioritized remediation recommendations.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>I’m a nonprofit—do you offer any discounts or grants support?</h3>
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            We love working with nonprofits. Ask about our discounted rates and
+            assistance in applying for grant funding to cover cybersecurity costs.
           </p>
         </div>
       </div>
     </section>
+    <!-- FAQ based on turn2file12 :contentReference[oaicite:6]{index=6} -->
 
-    <!-- ──────────────────────────────────────────────────────────────────────────
+    <!-- ────────────────────────────────────────────────────────────────────────
          CONTACT FORM SECTION
-         ────────────────────────────────────────────────────────────────────────── -->
-    <section id="contact">
-      <h2>Get a Quote</h2>
-      <p>Fill out the form below and we’ll be in touch with a tailored proposal.</p>
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="contact" class="section-light">
+      <h2>Get a Free Quote</h2>
+      <p>Tell us about your environment, pain points, or goals—and we’ll build a custom solution that fits.</p>
 
-      <div class="contact-form">
-        <form action="https://formspree.io/f/xpwrwldy" method="POST">
+      <div class="contact-container">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <p><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
+          </p>
+          <p>
+            We partner with you to secure your business—no ticket queues, no long wait times, just real people who care.
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xpwrwldy"
+          method="POST"
+        >
+          <!-- Hidden fields for Formspree -->
           <input type="hidden" name="form-name" value="quote" />
-          <input
-            type="hidden"
-            name="_next"
-            value="https://www.zeroheatsolutions.com/thank-you.html"
-          />
+          <input type="hidden" name="_next" value="thank-you.html" />
 
           <label for="first-name">First Name *</label>
           <input
             type="text"
             id="first-name"
             name="firstName"
-            placeholder="First Name"
+            placeholder="Your first name"
             required
           />
 
@@ -393,7 +480,7 @@
             type="text"
             id="last-name"
             name="lastName"
-            placeholder="Last Name"
+            placeholder="Your last name"
             required
           />
 
@@ -411,11 +498,19 @@
             type="tel"
             id="phone"
             name="phone"
-            placeholder="(123) 456-7890"
+            placeholder="(###) ###-####"
             required
           />
 
-          <label for="interest">Interested In *</label>
+          <label for="company">Company Name</label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Your company name"
+          />
+
+          <label for="interest">What Are You Interested In? *</label>
           <select id="interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
             <option value="managedIT">Managed IT</option>
@@ -423,23 +518,25 @@
             <option value="both">Both</option>
           </select>
 
-          <label for="message">Additional Message</label>
+          <label for="message">Tell us a bit about your needs</label>
           <textarea
             id="message"
             name="message"
-            placeholder="How can we help you today?"
+            rows="4"
+            placeholder="Describe your environment, pain points, or goals…"
           ></textarea>
 
-          <button type="submit">Submit</button>
+          <button type="submit">Submit Request</button>
         </form>
       </div>
     </section>
-  </main>
+    <!-- contact section based on turn2file9 :contentReference[oaicite:7]{index=7} -->
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON
-       ────────────────────────────────────────────────────────────────────────── -->
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+    <!-- ────────────────────────────────────────────────────────────────────────
+         BACK TO TOP BUTTON (LARGER & CLEANER)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+  </main>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
        ENHANCED FOOTER
@@ -477,7 +574,7 @@
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
           <li><a href="services.html">Service FAQs</a></li>
-          <li><a href="index.html#faq">General FAQ</a></li>
+          <li><a href="#faq">General FAQ</a></li>
         </ul>
       </div>
 
@@ -491,7 +588,7 @@
           </li>
           <li>
             <span class="contact-icon">📞</span>
-            <a href="tel:+16025550123">(602) 555-0123</a>
+            <a href="tel:+16025551234">(602) 555-1234</a>
           </li>
           <li>
             <span class="contact-icon">📍</span>
@@ -510,12 +607,13 @@
       <p class="footer-small">Designed &amp; Maintained by Zero Heat Solutions</p>
     </div>
   </footer>
+  <!-- footer based on turn2file2 & turn2file4  -->
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       JAVASCRIPT (Mobile Menu, FAQ Accordion, Back-to-Top)
+       JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, BACK TO TOP
        ────────────────────────────────────────────────────────────────────────── -->
   <script>
-    // Toggle mobile menu open/close
+    // Toggle the mobile menu open/close
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -523,7 +621,6 @@
       mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('active');
     });
-
     // Close mobile menu when any link is clicked
     document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
@@ -551,7 +648,7 @@
         } else {
           answer.classList.remove('open');
           question.querySelector('span').textContent = '+';
-        });
+        }
       });
     });
 

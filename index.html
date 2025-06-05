@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zero Heat Solutions | Managed IT &amp; Cybersecurity</title>
+  <title>Zero Heat Solutions | Enterprise IT & Cybersecurity</title>
 
   <!-- Basic SEO Tags -->
   <meta
     name="description"
-    content="Zero Heat Solutions — Enterprise-grade managed IT &amp; cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support."
+    content="Zero Heat Solutions — Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support."
   />
   <meta
     name="keywords"
-    content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance"
+    content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance, cloud security, network monitoring"
   />
   <meta name="robots" content="index, follow" />
 
@@ -29,11 +29,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ──────────────────────────────────────────────────────────────────────────
+  <!-- ─────────────────────────────────────────────────────────────────────────────────
        NAVIGATION (Desktop + Mobile)
-       ────────────────────────────────────────────────────────────────────────── -->
+       ───────────────────────────────────────────────────────────────────────────────── -->
   <nav>
-    <!-- Left: Clickable Logo -->
+    <!-- Left: Logo -->
     <div class="logo">
       <a href="index.html">
         <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
@@ -44,13 +44,14 @@
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="#process">How We Work</a></li>
+      <li><a href="#solutions">Solutions</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Get a Quote</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <!-- Hamburger (Mobile Only) -->
+    <!-- Hamburger (Mobile) -->
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -61,19 +62,20 @@
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="services.html">Services</a></li>
       <li><a href="#process">How We Work</a></li>
+      <li><a href="#solutions">Solutions</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#contact">Get a Quote</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION (Overlay + Integrated Logo)
+       HERO SECTION (Full-Screen, Animated Tech Backdrop)
        ────────────────────────────────────────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-inner">
-      <!-- LEFT COLUMN: Logo + Text stacked vertically -->
+      <!-- Left: Headline & Key Points -->
       <div class="hero-left">
         <div class="hero-logo">
           <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
@@ -81,21 +83,20 @@
         <div class="hero-text">
           <h1>
             Enterprise-Grade IT &amp; Cybersecurity<br />
-            Tailored for Phoenix Small Businesses
+            Powered by Phoenix Expertise
           </h1>
           <p>
-            Zero Heat Solutions brings decades of collective SOC, encryption, and
-            cloud security experience to local companies. No jargon, no endless
-            tickets—just proactive protection and responsive support.
+            Partner with ZHS for proactive threat detection, seamless IT management,
+            and unwavering compliance—so you can focus on growth, not downtime.
           </p>
+          <a href="#contact" class="cta-button">Request a Free Assessment</a>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form (wired to Formspree) -->
+      <!-- Right: Quick-Quote Form -->
       <div class="hero-form">
-        <h4>Request a Quote</h4>
+        <h4>Quick Quote</h4>
         <form action="https://formspree.io/f/xpwrwldy" method="POST">
-          <!-- Hidden fields so Formspree knows which form this is and where to redirect -->
           <input type="hidden" name="form-name" value="quote" />
           <input type="hidden" name="_next" value="thank-you.html" />
 
@@ -117,6 +118,15 @@
             required
           />
 
+          <label for="hero-company">Company *</label>
+          <input
+            type="text"
+            id="hero-company"
+            name="company"
+            placeholder="Company Name"
+            required
+          />
+
           <label for="hero-email">Business Email *</label>
           <input
             type="email"
@@ -135,223 +145,332 @@
             required
           />
 
-          <label for="hero-interest">What Are You Interested In? *</label>
+          <label for="hero-interest">Interested In *</label>
           <select id="hero-interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
             <option value="managedIT">Managed IT</option>
             <option value="cybersecurity">Cybersecurity</option>
-            <option value="both">Both</option>
+            <option value="cloud">Cloud Solutions</option>
+            <option value="compliance">Compliance & Auditing</option>
           </select>
 
-          <button type="submit">Submit</button>
+          <button type="submit">Get Quote</button>
         </form>
       </div>
     </div>
+    <!-- Animated Tech-Pattern Overlay -->
+    <div class="hero-overlay"></div>
   </header>
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       MAIN CONTENT
+       MAIN CONTENT (All Sections Expanded & Enhanced)
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
-    <!-- SERVICES (teaser on homepage; streamlined) -->
-    <section id="services">
+    <!-- ────────────────────────────────────────────────────────────────────────
+         OUR CORE SERVICES (Expanded Descriptions + Icons)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="services" class="section-light">
       <h2 class="section-header">Our Core Services</h2>
-      <p>
-        Whether you need full-stack managed IT or ironclad cybersecurity, ZHS
-        has you covered:
+      <p class="intro-text">
+        ZHS delivers end-to-end IT and cybersecurity services—scalable, affordable,
+        and backed by 24/7 expert support.
       </p>
       <div class="services-grid">
-        <!-- Cybersecurity Card -->
+        <!-- Cybersecurity & Threat Hunting -->
         <div class="service-card">
           <img src="assets/icons/shield.svg" alt="Cybersecurity Icon" />
-          <h4>Comprehensive Cybersecurity</h4>
+          <h4>Cybersecurity &amp; Threat Hunting</h4>
           <p>
-            Risk assessments, compliance audits (HIPAA, PCI), security awareness
-            training, phishing simulations, and more.
+            Continuous monitoring, real-time threat detection, and advanced incident
+            response powered by our SOC analysts. Safeguard your data before breaches occur.
           </p>
+          <ul>
+            <li>24/7 Security Operations Center</li>
+            <li>Advanced Threat Intelligence</li>
+            <li>Endpoint Detection &amp; Response (EDR)</li>
+            <li>Phishing Simulations &amp; User Training</li>
+          </ul>
+          <a href="services.html#cybersecurity" class="learn-more-link">Learn More →</a>
         </div>
-        <!-- Managed IT Card -->
+        <!-- Managed IT & Helpdesk -->
         <div class="service-card">
           <img src="assets/icons/server.svg" alt="Managed IT Icon" />
-          <h4>Managed IT Support</h4>
+          <h4>Managed IT &amp; Helpdesk</h4>
           <p>
-            24/7 remote help desk, patch &amp; device management, network
-            monitoring, VPN/firewall configuration, and cloud integration.
+            Proactive network management, patch deployment, remote support, and on-site
+            assistance when you need it. Keep your team productive and your systems up.
           </p>
+          <ul>
+            <li>24/7 Remote Helpdesk</li>
+            <li>Network Monitoring &amp; Management</li>
+            <li>Server &amp; Workstation Maintenance</li>
+            <li>Vendor Coordination &amp; Lifecycle Management</li>
+          </ul>
+          <a href="services.html#managed-it" class="learn-more-link">Learn More →</a>
         </div>
-        <!-- Compliance & Auditing Card -->
-        <div class="service-card">
-          <img src="assets/icons/checklist.svg" alt="Compliance Icon" />
-          <h4>Compliance &amp; Auditing</h4>
-          <p>
-            HIPAA/PCI gap analysis, policy development, continuous compliance
-            monitoring, and audit remediation plans.
-          </p>
-        </div>
-        <!-- Backup & Continuity Card -->
-        <div class="service-card">
-          <img src="assets/icons/cloud-backup.svg" alt="Backup Icon" />
-          <h4>Backup &amp; Continuity</h4>
-          <p>
-            Automated backups, disaster recovery planning, cloud replication, and
-            guaranteed RTO/RPO alignment.
-          </p>
-        </div>
-        <!-- Cloud & Infrastructure Card -->
+        <!-- Cloud & Infrastructure -->
         <div class="service-card">
           <img src="assets/icons/cloud-computing.svg" alt="Cloud Icon" />
           <h4>Cloud &amp; Infrastructure</h4>
           <p>
-            Office 365 support, Azure/AWS optimization, secure migrations,
-            virtual desktops, and hybrid-cloud management.
+            Secure Azure, AWS, and hybrid-cloud deployments. Migrate with zero downtime,
+            optimize for performance, and ensure compliance every step of the way.
           </p>
+          <ul>
+            <li>Cloud Architecture &amp; Migration</li>
+            <li>Virtual Desktop Infrastructure (VDI)</li>
+            <li>Office 365 &amp; G Suite Management</li>
+            <li>Disaster Recovery &amp; DR Planning</li>
+          </ul>
+          <a href="services.html#cloud" class="learn-more-link">Learn More →</a>
+        </div>
+        <!-- Compliance, Auditing & Governance -->
+        <div class="service-card">
+          <img src="assets/icons/checklist.svg" alt="Compliance Icon" />
+          <h4>Compliance, Auditing &amp; Governance</h4>
+          <p>
+            Achieve HIPAA, PCI DSS, SOC 2, and NIST readiness with gap assessments,
+            policy development, and continuous monitoring—so audits become a nonissue.
+          </p>
+          <ul>
+            <li>HIPAA &amp; PCI DSS Gap Analysis</li>
+            <li>Policy &amp; Procedure Development</li>
+            <li>Continuous Compliance Monitoring</li>
+            <li>Audit Remediation Roadmaps</li>
+          </ul>
+          <a href="services.html#auditing" class="learn-more-link">Learn More →</a>
+        </div>
+        <!-- Backup, Recovery & Business Continuity -->
+        <div class="service-card">
+          <img src="assets/icons/cloud-backup.svg" alt="Backup Icon" />
+          <h4>Backup, Recovery &amp; Business Continuity</h4>
+          <p>
+            Automated backups, secure offsite replication, and rapid recovery solutions
+            to ensure your critical data is always accessible, even if disaster strikes.
+          </p>
+          <ul>
+            <li>Automated Local &amp; Cloud Backups</li>
+            <li>Disaster Recovery Testing</li>
+            <li>RTO/RPO Alignment &amp; SLAs</li>
+            <li>High-Availability Clustering</li>
+          </ul>
+          <a href="services.html#backup" class="learn-more-link">Learn More →</a>
         </div>
       </div>
     </section>
 
-    <!-- HOW WE WORK -->
-    <section id="process" class="section-light">
+    <!-- ────────────────────────────────────────────────────────────────────────
+         HOW WE WORK (TECHNICAL PROCESS DIAGRAM + STEPS)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="process">
       <h2 class="section-header">How We Work</h2>
-      <p>
-        Our transparent, three-phase approach ensures you get the right roadmap,
-        the right implementation, and ongoing support that scales:
+      <p class="intro-text">
+        A consultative, transparent approach—so you know exactly what we’re doing, why,
+        and when. No surprises, just results.
       </p>
       <div class="process-steps">
         <div class="process-step">
           <div class="icon">1</div>
           <div>
-            <h4>Assess &amp; Audit</h4>
+            <h4>Discovery &amp; Assessment</h4>
             <p>
-              We perform a deep dive into your current environment—identifying
-              risks, inefficiencies, and compliance gaps.
+              We analyze your entire IT estate—network, endpoints, cloud, policies—using
+              automated tools and manual reviews to uncover risks and inefficiencies.
             </p>
           </div>
         </div>
         <div class="process-step">
           <div class="icon">2</div>
           <div>
-            <h4>Plan &amp; Protect</h4>
+            <h4>Strategic Roadmap</h4>
             <p>
-              Custom roadmap creation: network hardening, policy development,
-              cloud optimizations, and proactive threat hunting.
+              Based on findings, we build a prioritized plan: Hardening, patching, architecture
+              improvements, and compliance frameworks to fortify your posture.
             </p>
           </div>
         </div>
         <div class="process-step">
           <div class="icon">3</div>
           <div>
-            <h4>Support &amp; Scale</h4>
+            <h4>Implementation &amp; Deployment</h4>
             <p>
-              Ongoing 24/7 managed services—patching, monitoring, on-demand help
-              desk, and continuous improvement aligned with your growth.
+              You get a dedicated project manager and cross-functional team who execute with minimal
+              disruption—secure migrations, firewall configurations, endpoint rollouts, and more.
+            </p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="icon">4</div>
+          <div>
+            <h4>Managed Support &amp; Optimization</h4>
+            <p>
+              Once live, we monitor, patch, and continuously optimize. Our 24/7 SOC and helpdesk handle
+              everything from tickets to crisis response—keeping you running.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INDUSTRIES WE SERVE -->
+    <!-- ────────────────────────────────────────────────────────────────────────
+         SOLUTIONS SPOTLIGHT (EXAMPLE CASE STUDIES / FEATURED  OFFERINGS)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="solutions" class="section-light">
+      <h2 class="section-header">Solutions Spotlight</h2>
+      <p class="intro-text">
+        Real-world results—how ZHS has helped clients across Phoenix achieve stronger security,
+        seamless IT operations, and cost savings.
+      </p>
+      <div class="solutions-grid">
+        <!-- Case Study 1 -->
+        <div class="solution-card">
+          <img src="assets/case-study1-thumbnail.jpg" alt="Phoenix Medical Center" />
+          <h4>Phoenix Medical Center</h4>
+          <p>
+            **Challenge:** Outdated EHR systems and no formal HIPAA compliance plan.<br />
+            **Solution:** We conducted a full HIPAA gap analysis, implemented EHR encryption,
+            and deployed continuous compliance monitoring.  
+            **Outcome:** Zero audit findings in 2024, and patient data security improved by 95%.
+          </p>
+          <a href="case-studies/phoenix-medical.html" class="learn-more-link">Read Full Case Study →</a>
+        </div>
+        <!-- Case Study 2 -->
+        <div class="solution-card">
+          <img src="assets/case-study2-thumbnail.jpg" alt="Desert Techventures" />
+          <h4>Desert Techventures</h4>
+          <p>
+            **Challenge:** Frequent downtime due to server misconfiguration and no formal DR plan.<br />
+            **Solution:** We migrated them to a hybrid Azure/AWS environment, implemented Veeam backups,
+            and created a disaster recovery playbook.  
+            **Outcome:** Reduced downtime by 99%, and achieved RTO of under 30 minutes.
+          </p>
+          <a href="case-studies/desert-techventures.html" class="learn-more-link">Read Full Case Study →</a>
+        </div>
+        <!-- Case Study 3 -->
+        <div class="solution-card">
+          <img src="assets/case-study3-thumbnail.jpg" alt="Valley Finance Group" />
+          <h4>Valley Finance Group</h4>
+          <p>
+            **Challenge:** PCI DSS non‐compliance and no encryption at rest.<br />
+            **Solution:** We deployed HSM‐backed encryption for cardholder data, completed PCI gap analysis,
+            and provided quarterly penetration tests.  
+            **Outcome:** Achieved full PCI compliance, avoiding potential fines of $250K/year.
+          </p>
+          <a href="case-studies/valley-finance.html" class="learn-more-link">Read Full Case Study →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────────────────────────
+         INDUSTRIES WE SERVE (ENHANCED CARDS)
+         ──────────────────────────────────────────────────────────────────────── -->
     <section id="industries">
       <h2 class="section-header">Industries We Serve</h2>
-      <p>
-        Our expertise spans a variety of verticals—each with its own regulatory
-        and operational requirements:
+      <p class="intro-text">
+        From healthcare to retail, we tailor our services to meet your industry’s unique challenges:
       </p>
       <div class="industries-grid">
         <div class="industry-card">
+          <img src="assets/icons/healthcare.svg" alt="Healthcare Icon" />
           <h4>Healthcare</h4>
-          <p>HIPAA-compliant support, EHR security, secure telehealth solutions.</p>
+          <p>HIPAA-compliant support, EHR security, secure telehealth infrastructure.</p>
         </div>
         <div class="industry-card">
+          <img src="assets/icons/construction.svg" alt="Construction Icon" />
           <h4>Construction &amp; Field Services</h4>
-          <p>
-            On-site mobile device management, secure file syncing, remote power
-            users support.
-          </p>
+          <p>Mobile device management, secure file sync, and remote collaboration tools.</p>
         </div>
         <div class="industry-card">
+          <img src="assets/icons/legal.svg" alt="Legal & Accounting Icon" />
           <h4>Legal &amp; Accounting</h4>
-          <p>
-            Data-at-rest encryption, secure communication channels, regulatory
-            compliance (PCI/GLBA).
-          </p>
+          <p>Data-at-rest encryption, secure communication, and regulatory compliance.</p>
         </div>
         <div class="industry-card">
+          <img src="assets/icons/real-estate.svg" alt="Real Estate Icon" />
           <h4>Real Estate &amp; Property Mgmt</h4>
-          <p>
-            MLS integration support, private network isolation, remote office
-            connectivity.
-          </p>
+          <p>MLS integration support, network isolation, and remote office connectivity.</p>
         </div>
         <div class="industry-card">
+          <img src="assets/icons/retail.svg" alt="Retail Icon" />
           <h4>Retail &amp; Local Shops</h4>
-          <p>
-            POS system hardening, PCI-DSS gap analysis, secure guest Wi-Fi
-            setup.
-          </p>
+          <p>POS hardening, PCI‐DSS gap analysis, and secure guest Wi‐Fi.</p>
         </div>
         <div class="industry-card">
+          <img src="assets/icons/nonprofit.svg" alt="Nonprofit Icon" />
           <h4>Nonprofits &amp; SMBs</h4>
-          <p>
-            Budget-friendly solutions, grant-eligible cybersecurity services,
-            volunteer training.
-          </p>
+          <p>Budget-friendly solutions, grant assistance, and volunteer training.</p>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT / TEAM -->
-    <section id="about" class="section-light">
-      <h2 class="section-header">Meet the Founders</h2>
-      <p>
-        Zero Heat Solutions was founded by two seasoned security professionals
-        passionate about empowering local businesses with enterprise-grade
-        protection:
+    <!-- ────────────────────────────────────────────────────────────────────────
+         PARTNERS & TECHNOLOGY STACK (LOGOS + TOOLTIP SHORT DESCRIPTIONS)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="partners" class="section-light">
+      <h2 class="section-header">Our Technology Partners</h2>
+      <p class="intro-text">
+        We collaborate with industry leaders to deliver cutting-edge solutions:
       </p>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="assets/faces/fernando.jpg" alt="Fernando Beltran" />
-          <h4>Fernando Beltran</h4>
-          <p>
-            SOC Analyst &amp; Cloud Security Specialist with 4+ years in healthcare
-            and financial services. CISSP-certified.
-          </p>
+      <div class="partners-grid">
+        <div class="partner-card">
+          <img src="assets/partners/microsoft.png" alt="Microsoft" />
+          <span class="partner-tooltip">Azure Cloud, Office 365, Windows Server</span>
         </div>
-        <div class="team-member">
-          <img src="assets/faces/aaron.jpg" alt="Aaron Rodríguez" />
-          <h4>Aaron Rodríguez</h4>
-          <p>
-            Encryption Architect &amp; HSM Expert with 6+ years in payment
-            cryptography and enterprise infrastructure.
-          </p>
+        <div class="partner-card">
+          <img src="assets/partners/aws.png" alt="Amazon Web Services" />
+          <span class="partner-tooltip">EC2, S3, VPC, CloudWatch</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners/cisco.png" alt="Cisco" />
+          <span class="partner-tooltip">Networking, Firewalls, Collaboration</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners/veritas.png" alt="Veritas" />
+          <span class="partner-tooltip">Backup &amp; Recovery Solutions</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners/fortinet.png" alt="Fortinet" />
+          <span class="partner-tooltip">Next-Gen Firewalls &amp; UTM</span>
+        </div>
+        <div class="partner-card">
+          <img src="assets/partners/vmware.png" alt="VMware" />
+          <span class="partner-tooltip">Virtualization &amp; Hyperconverged</span>
         </div>
       </div>
     </section>
 
-    <!-- WHY CHOOSE US (CALLOUT) -->
-    <section class="section-dark">
-      <h2 class="section-header">Why Phoenix Businesses Trust ZHS</h2>
-      <ul>
-        <li>
-          <strong>Security-first, always.</strong> From day one, we build your
-          defenses around your mission-critical data.
-        </li>
-        <li>
-          <strong>SMB-Focused Pricing.</strong> Customizable plans that grow
-          with you—no hidden fees or long-term lock-ins.
-        </li>
-        <li>
-          <strong>Direct Access.</strong> Reach a human-first support engineer
-          within minutes—never a ticketing maze.
-        </li>
-        <li>
-          <strong>Scalable Solutions.</strong> From a five-person office to a
-          100-seat headquarters, we’ve got you covered.
-        </li>
-      </ul>
+    <!-- ────────────────────────────────────────────────────────────────────────
+         TESTIMONIALS (CAROUSEL-STYLE / QUOTES)
+         ──────────────────────────────────────────────────────────────────────── -->
+    <section id="testimonials">
+      <h2 class="section-header">Client Testimonials</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonial-item">
+          <p class="quote">
+            "Zero Heat Solutions transformed our security posture overnight. Their
+            team’s proactive monitoring caught a ransomware attempt before it hit—
+            saving us millions in downtime."
+          </p>
+          <h5>— Jane Martinez, CIO, Phoenix General Hospital</h5>
+        </div>
+        <div class="testimonial-item">
+          <p class="quote">
+            "We migrated to Azure with zero downtime thanks to ZHS’s meticulous planning and execution. Our staff barely noticed any change—except that everything runs faster now."
+          </p>
+          <h5>— Mark Allen, CTO, Desert Techventures</h5>
+        </div>
+        <div class="testimonial-item">
+          <p class="quote">
+            "Their helpdesk is top-notch—every request is handled within minutes. The ZHS team feels like an extension of our company."
+          </p>
+          <h5>— Sarah Kim, Operations Manager, Valley Finance Group</h5>
+        </div>
+      </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ────────────────────────────────────────────────────────────────────────
+         FAQ SECTION (EXPANDED) 
+         ──────────────────────────────────────────────────────────────────────── -->
     <section id="faq">
       <h2 class="section-header">Frequently Asked Questions</h2>
 
@@ -361,190 +480,272 @@
           <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          We aim to respond to all requests within 60 minutes during business
-          hours (Mon–Fri, 8 AM–6 PM). For after-hours emergencies, we have an
-          on-call engineer ready 24/7.
+          <p>
+            We guarantee a response within 60 minutes during business hours (Mon–Fri, 8 AM–6 PM).
+            Critical after-hours issues are escalated to our on-call engineer, ensuring 24/7 coverage.
+          </p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h4>Do you support both Mac and Windows?</h4>
+          <h4>Do you offer customizable service plans?</h4>
           <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          Absolutely. We manage Windows, macOS, and Linux environments,
-          including hybrid setups with Active Directory, Azure AD, and
-          cross-platform file sharing.
+          <p>
+            Absolutely. Whether you need just cybersecurity, full managed IT, or a hybrid approach,
+            we’ll tailor SLAs, coverage hours, and features to fit your requirements and budget.
+          </p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h4>Can I get month-to-month service without a long-term contract?</h4>
+          <h4>What certifications do your engineers hold?</h4>
           <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          Yes—most of our offerings are available on a month-to-month basis with
-          no long-term commitment. We believe you should stay because we earn
-          your trust every day.
+          <p>
+            Our team includes CISSPs, CCNPs, MCSEs, and AWS Certified Solutions Architects.
+            We continuously train to stay current with the latest security and cloud technologies.
+          </p>
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h4>I’m a nonprofit—do you offer any discounts or grants support?</h4>
+          <h4>Can you help with remote teams and VPN configurations?</h4>
           <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          We love working with nonprofits. Ask about our discounted rates and
-          assistance in applying for grant funding to cover cybersecurity costs.
+          <p>
+            Yes—our network engineers design secure VPN and Zero Trust solutions so remote and hybrid
+            workforces can connect safely from anywhere, with multi-factor authentication and endpoint
+            compliance checks built in.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ────────────────────────────────────────────────────────────────────────
+         CONTACT SECTION (IMPROVED LAYOUT + MULTIPLE CONTACT OPTIONS)
+         ──────────────────────────────────────────────────────────────────────── -->
     <section id="contact" class="section-light">
-      <h2 class="section-header">Get a Free Quote</h2>
+      <h2 class="section-header">Get in Touch</h2>
       <div class="contact-container">
-        <!-- Contact Info -->
+        <!-- Left: Contact Info & Hours -->
         <div class="contact-info">
+          <h4>Office & Support Hours</h4>
+          <p><strong>Monday – Friday:</strong> 8 AM – 6 PM MST</p>
+          <p><strong>After-Hours Support:</strong> 24/7 for critical incidents</p>
+          <h4>Contact Details</h4>
           <p>
             <strong>Phone:</strong>
             <a href="tel:+16025551234">(602) 555-1234</a>
           </p>
           <p>
             <strong>Email:</strong>
-            <a href="mailto:info@zeroheatsolutions.com"
-              >info@zeroheatsolutions.com</a
-            >
+            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
           </p>
-          <p>
-            Tell us about your environment, pain points, or goals—and we’ll build
-            a custom solution that fits.
-          </p>
+          <h4>Location</h4>
+          <address>
+            1234 S. Tech Drive<br />
+            Suite 200, Phoenix, AZ 85004
+          </address>
         </div>
 
-        <!-- Contact Form -->
+        <!-- Right: Detailed Quote Form -->
         <form
           class="contact-form"
           action="https://formspree.io/f/xpwrwldy"
           method="POST"
         >
-          <input type="hidden" name="form-name" value="quote" />
+          <input type="hidden" name="form-name" value="detailed-quote" />
           <input type="hidden" name="_next" value="thank-you.html" />
 
-          <label for="first-name">First Name *</label>
+          <label for="contact-first-name">First Name *</label>
           <input
             type="text"
-            id="first-name"
+            id="contact-first-name"
             name="firstName"
             placeholder="Your first name"
             required
           />
 
-          <label for="last-name">Last Name *</label>
+          <label for="contact-last-name">Last Name *</label>
           <input
             type="text"
-            id="last-name"
+            id="contact-last-name"
             name="lastName"
             placeholder="Your last name"
             required
           />
 
-          <label for="email">Business Email *</label>
+          <label for="contact-email">Business Email *</label>
           <input
             type="email"
-            id="email"
+            id="contact-email"
             name="email"
             placeholder="you@yourcompany.com"
             required
           />
 
-          <label for="phone">Phone Number *</label>
+          <label for="contact-phone">Phone Number *</label>
           <input
             type="tel"
-            id="phone"
+            id="contact-phone"
             name="phone"
             placeholder="(###) ###-####"
             required
           />
 
-          <label for="company">Company Name</label>
+          <label for="contact-company">Company Name *</label>
           <input
             type="text"
-            id="company"
+            id="contact-company"
             name="company"
             placeholder="Your company name"
+            required
           />
 
-          <label for="interest">What Are You Interested In? *</label>
-          <select id="interest" name="interest" required>
+          <label for="contact-industry">Industry *</label>
+          <select id="contact-industry" name="industry" required>
+            <option value="" disabled selected>Select your industry</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="construction">Construction &amp; Field Services</option>
+            <option value="legal">Legal &amp; Accounting</option>
+            <option value="real-estate">Real Estate &amp; Property Mgmt</option>
+            <option value="retail">Retail &amp; Local Shops</option>
+            <option value="nonprofit">Nonprofits &amp; SMBs</option>
+          </select>
+
+          <label for="contact-interest">Services Interested In *</label>
+          <select id="contact-interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
             <option value="managedIT">Managed IT</option>
             <option value="cybersecurity">Cybersecurity</option>
-            <option value="both">Both</option>
+            <option value="cloud">Cloud Solutions</option>
+            <option value="compliance">Compliance & Auditing</option>
+            <option value="backup">Backup & Recovery</option>
           </select>
 
-          <label for="message">Tell us a bit about your needs</label>
+          <label for="contact-message">Project Details</label>
           <textarea
-            id="message"
+            id="contact-message"
             name="message"
-            rows="4"
-            placeholder="Describe your environment, pain points, or goals…"
+            rows="5"
+            placeholder="Describe your environment, pain points, project scope…"
           ></textarea>
 
-          <button type="submit">Submit Request</button>
+          <button type="submit">Submit &amp; Schedule a Call</button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- BACK TO TOP BUTTON -->
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       BACK TO TOP BUTTON
+       ────────────────────────────────────────────────────────────────────────── -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <!-- FOOTER + SITEMAP -->
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       FOOTER (IMPROVED, TECH-ORIENTED, MULTI-COLUMN)
+       ────────────────────────────────────────────────────────────────────────── -->
   <footer>
-    <div class="footer-sitemap">
-      <div class="sitemap-column">
+    <div class="footer-container">
+      <!-- Column 1: Brand & Description -->
+      <div class="footer-column footer-brand">
+        <img
+          src="zhs-logo.jpg"
+          alt="Zero Heat Solutions Logo"
+          class="footer-logo"
+        />
+        <p class="footer-tagline">
+          Enterprise-grade IT & Cybersecurity<br />
+          for Phoenix-area Small Businesses
+        </p>
+        <p>
+          Zero Heat Solutions delivers proactive, 24/7 managed IT services and
+          enterprise-grade cybersecurity—so you can innovate with confidence.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="#process">How We Work</a></li>
-          <li><a href="#industries">Industries</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#process">How We Work</a></li>
+          <li><a href="index.html#solutions">Solutions</a></li>
+          <li><a href="index.html#industries">Industries</a></li>
         </ul>
       </div>
-      <div class="sitemap-column">
-        <h4>Support</h4>
+
+      <!-- Column 3: Support & Resources -->
+      <div class="footer-column">
+        <h4>Support & Resources</h4>
         <ul>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Get a Quote</a></li>
-          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
-        </ul>
-      </div>
-      <div class="sitemap-column">
-        <h4>Legal</h4>
-        <ul>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="services.html">Service Details</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
       </div>
+
+      <!-- Column 4: Contact & Social -->
+      <div class="footer-column footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon">📧</span>
+            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
+          </li>
+          <li>
+            <span class="contact-icon">📞</span>
+            <a href="tel:+16025551234">(602) 555-1234</a>
+          </li>
+          <li>
+            <span class="contact-icon">📍</span>
+            <address>
+              1234 S. Tech Drive,<br />
+              Suite 200, Phoenix, AZ 85004
+            </address>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <a href="https://linkedin.com/company/zeroheatsolutions" target="_blank" aria-label="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a href="https://twitter.com/zeroheatsol" target="_blank" aria-label="Twitter">
+            <img src="assets/icons/twitter.svg" alt="Twitter" />
+          </a>
+          <a href="https://facebook.com/zeroheatsolutions" target="_blank" aria-label="Facebook">
+            <img src="assets/icons/facebook.svg" alt="Facebook" />
+          </a>
+        </div>
+      </div>
     </div>
-    <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 Zero Heat Solutions, LLC. All rights reserved.</p>
+      <p class="footer-small">Designed &amp; Maintained by Zero Heat Solutions</p>
+    </div>
   </footer>
 
-  <!-- JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, BACK TO TOP -->
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, TESTIMONIAL CAROUSEL, BACK TO TOP
+       ────────────────────────────────────────────────────────────────────────── -->
   <script>
-    // Toggle the mobile menu open/close
+    // Toggle the mobile menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
-
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('active');
     });
-    // Close mobile menu when any link is clicked
+    // Close mobile menu on link click
     document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('open');
@@ -552,13 +753,28 @@
       });
     });
 
-    // FAQ accordion toggles
+    // FAQ Accordion Behavior
     document.querySelectorAll('.faq-question').forEach((item) => {
       item.addEventListener('click', () => {
         const parent = item.parentElement;
         parent.classList.toggle('open');
       });
     });
+
+    // Testimonials Carousel (basic fade every 5 seconds)
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    let testimonialIndex = 0;
+    function rotateTestimonials() {
+      testimonials.forEach((item, idx) => {
+        item.style.opacity = idx === testimonialIndex ? '1' : '0';
+        item.style.transition = 'opacity 0.8s ease-in-out';
+      });
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+    }
+    if (testimonials.length > 0) {
+      rotateTestimonials();
+      setInterval(rotateTestimonials, 5000);
+    }
 
     // “Back to Top” button logic
     const backToTopBtn = document.getElementById('back-to-top');

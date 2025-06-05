@@ -3,71 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Zero Heat Solutions | Managed IT &amp; Cybersecurity</title>
 
   <!-- Basic SEO Tags -->
   <meta
     name="description"
-    content="Zero Heat Solutions — Enterprise-grade managed IT &amp; cybersecurity for Phoenix small businesses. Reliable, scalable, and human-first support."
+    content="Zero Heat Solutions — Enterprise-grade managed IT &amp; cybersecurity for Phoenix-area small businesses. Reliable, scalable, and human-first support."
   />
   <meta
     name="keywords"
     content="Phoenix IT support, cybersecurity, managed IT services, small business IT, HIPAA compliance"
   />
+  <meta name="robots" content="index, follow" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
-  <!-- Centralized Stylesheet -->
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
   <!-- ──────────────────────────────────────────────────────────────────────────
-       NAVIGATION
+       NAVIGATION (Desktop + Mobile)
        ────────────────────────────────────────────────────────────────────────── -->
   <nav>
+    <!-- Left: Clickable Logo -->
     <div class="logo">
       <a href="index.html">
         <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
       </a>
     </div>
 
+    <!-- Desktop Links -->
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="#process">How We Work</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#why">Why Choose Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Get a Quote</a></li>
     </ul>
 
+    <!-- Hamburger (Mobile Only) -->
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
+    <!-- Mobile Menu -->
     <ul class="mobile-menu" id="mobile-menu">
       <li><a href="services.html">Services</a></li>
       <li><a href="#process">How We Work</a></li>
       <li><a href="#industries">Industries</a></li>
       <li><a href="#about">About Us</a></li>
-      <li><a href="#why">Why Choose Us</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Get a Quote</a></li>
     </ul>
   </nav>
-  <!-- End Navigation -->
 
   <!-- ──────────────────────────────────────────────────────────────────────────
-       HERO SECTION
+       HERO SECTION (Overlay + Integrated Logo)
        ────────────────────────────────────────────────────────────────────────── -->
   <header class="hero">
     <div class="hero-inner">
-      <!-- LEFT COLUMN: Logo + Text -->
+      <!-- LEFT COLUMN: Logo + Text stacked vertically -->
       <div class="hero-left">
         <div class="hero-logo">
           <img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" />
@@ -85,11 +91,11 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form -->
+      <!-- RIGHT COLUMN: Enlarged “Request a Quote” Form (wired to Formspree) -->
       <div class="hero-form">
         <h4>Request a Quote</h4>
         <form action="https://formspree.io/f/xpwrwldy" method="POST">
-          <!-- Hidden fields for Formspree -->
+          <!-- Hidden fields so Formspree knows which form this is and where to redirect -->
           <input type="hidden" name="form-name" value="quote" />
           <input type="hidden" name="_next" value="thank-you.html" />
 
@@ -129,14 +135,6 @@
             required
           />
 
-          <label for="hero-company">Company Name</label>
-          <input
-            type="text"
-            id="hero-company"
-            name="company"
-            placeholder="Your company name"
-          />
-
           <label for="hero-interest">What Are You Interested In? *</label>
           <select id="hero-interest" name="interest" required>
             <option value="" disabled selected>Select an option</option>
@@ -145,30 +143,23 @@
             <option value="both">Both</option>
           </select>
 
-          <label for="hero-message">Tell us a bit about your needs</label>
-          <textarea
-            id="hero-message"
-            name="message"
-            rows="4"
-            placeholder="Describe your environment, pain points, or goals…"
-          ></textarea>
-
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
   </header>
-  <!-- End Hero Section -->
 
   <!-- ──────────────────────────────────────────────────────────────────────────
        MAIN CONTENT
        ────────────────────────────────────────────────────────────────────────── -->
   <main>
-    <!-- ────────────────────────────────────────────────────────────────────────
-         SERVICES OVERVIEW
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- SERVICES (teaser on homepage; streamlined) -->
     <section id="services">
       <h2 class="section-header">Our Core Services</h2>
+      <p>
+        Whether you need full-stack managed IT or ironclad cybersecurity, ZHS
+        has you covered:
+      </p>
       <div class="services-grid">
         <!-- Cybersecurity Card -->
         <div class="service-card">
@@ -217,13 +208,10 @@
         </div>
       </div>
     </section>
-    <!-- End Services Overview -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         HOW WE WORK
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- HOW WE WORK -->
     <section id="process" class="section-light">
-      <h2>How We Work</h2>
+      <h2 class="section-header">How We Work</h2>
       <p>
         Our transparent, three-phase approach ensures you get the right roadmap,
         the right implementation, and ongoing support that scales:
@@ -261,57 +249,60 @@
         </div>
       </div>
     </section>
-    <!-- End How We Work -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         INDUSTRIES WE SERVE (PLAIN LIST)
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- INDUSTRIES WE SERVE -->
     <section id="industries">
       <h2 class="section-header">Industries We Serve</h2>
       <p>
         Our expertise spans a variety of verticals—each with its own regulatory
         and operational requirements:
       </p>
-
-      <h4>Healthcare</h4>
-      <p>HIPAA-compliant support, EHR security, secure telehealth solutions.</p>
-
-      <h4>Construction &amp; Field Services</h4>
-      <p>
-        On-site mobile device management, secure file syncing, remote power users
-        support.
-      </p>
-
-      <h4>Legal &amp; Accounting</h4>
-      <p>
-        Data-at-rest encryption, secure communication channels, regulatory
-        compliance (PCI/GLBA).
-      </p>
-
-      <h4>Real Estate &amp; Property Mgmt</h4>
-      <p>
-        MLS integration support, private network isolation, remote office
-        connectivity.
-      </p>
-
-      <h4>Retail &amp; Local Shops</h4>
-      <p>
-        POS system hardening, PCI-DSS gap analysis, secure guest Wi-Fi setup.
-      </p>
-
-      <h4>Nonprofits &amp; SMBs</h4>
-      <p>
-        Budget-friendly solutions, grant-eligible cybersecurity services,
-        volunteer training.
-      </p>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <h4>Healthcare</h4>
+          <p>HIPAA-compliant support, EHR security, secure telehealth solutions.</p>
+        </div>
+        <div class="industry-card">
+          <h4>Construction &amp; Field Services</h4>
+          <p>
+            On-site mobile device management, secure file syncing, remote power
+            users support.
+          </p>
+        </div>
+        <div class="industry-card">
+          <h4>Legal &amp; Accounting</h4>
+          <p>
+            Data-at-rest encryption, secure communication channels, regulatory
+            compliance (PCI/GLBA).
+          </p>
+        </div>
+        <div class="industry-card">
+          <h4>Real Estate &amp; Property Mgmt</h4>
+          <p>
+            MLS integration support, private network isolation, remote office
+            connectivity.
+          </p>
+        </div>
+        <div class="industry-card">
+          <h4>Retail &amp; Local Shops</h4>
+          <p>
+            POS system hardening, PCI-DSS gap analysis, secure guest Wi-Fi
+            setup.
+          </p>
+        </div>
+        <div class="industry-card">
+          <h4>Nonprofits &amp; SMBs</h4>
+          <p>
+            Budget-friendly solutions, grant-eligible cybersecurity services,
+            volunteer training.
+          </p>
+        </div>
+      </div>
     </section>
-    <!-- End Industries We Serve -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         MEET THE FOUNDERS
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- ABOUT / TEAM -->
     <section id="about" class="section-light">
-      <h2>Meet the Founders</h2>
+      <h2 class="section-header">Meet the Founders</h2>
       <p>
         Zero Heat Solutions was founded by two seasoned security professionals
         passionate about empowering local businesses with enterprise-grade
@@ -336,13 +327,10 @@
         </div>
       </div>
     </section>
-    <!-- End Meet the Founders -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         WHY CHOOSE US (CALLOUT)
-         ──────────────────────────────────────────────────────────────────────── -->
-    <section id="why" class="section-dark">
-      <h2>Why Phoenix Businesses Trust ZHS</h2>
+    <!-- WHY CHOOSE US (CALLOUT) -->
+    <section class="section-dark">
+      <h2 class="section-header">Why Phoenix Businesses Trust ZHS</h2>
       <ul>
         <li>
           <strong>Security-first, always.</strong> From day one, we build your
@@ -362,81 +350,62 @@
         </li>
       </ul>
     </section>
-    <!-- End Why Choose Us -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         FAQ SECTION
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- FAQ -->
     <section id="faq">
       <h2 class="section-header">Frequently Asked Questions</h2>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h3>What industries do you specialize in?</h3>
-          <span>+</span>
+          <h4>How quickly can I get support?</h4>
+          <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>
-            We specialize in healthcare, legal, tech startups, retail, finance,
-            and general SMBs. Our team is well-versed in HIPAA, PCI DSS, and other
-            industry regulations.
-          </p>
+          We aim to respond to all requests within 60 minutes during business
+          hours (Mon–Fri, 8 AM–6 PM). For after-hours emergencies, we have an
+          on-call engineer ready 24/7.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h3>How quickly can I get support?</h3>
-          <span>+</span>
+          <h4>Do you support both Mac and Windows?</h4>
+          <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>
-            We offer 24/7 remote help desk support with guaranteed response
-            times based on your service level agreement. On-site visits in Phoenix
-            are scheduled within 24 hours for critical issues.
-          </p>
+          Absolutely. We manage Windows, macOS, and Linux environments,
+          including hybrid setups with Active Directory, Azure AD, and
+          cross-platform file sharing.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h3>Do you offer one-time security assessments?</h3>
-          <span>+</span>
+          <h4>Can I get month-to-month service without a long-term contract?</h4>
+          <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>
-            Yes. We provide standalone risk assessments, gap analyses, and cloud
-            compliance audits if you don’t need ongoing managed services. Our
-            reports include prioritized remediation recommendations.
-          </p>
+          Yes—most of our offerings are available on a month-to-month basis with
+          no long-term commitment. We believe you should stay because we earn
+          your trust every day.
         </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">
-          <h3>I’m a nonprofit—do you offer any discounts or grants support?</h3>
-          <span>+</span>
+          <h4>I’m a nonprofit—do you offer any discounts or grants support?</h4>
+          <span class="toggle-icon">+</span>
         </div>
         <div class="faq-answer">
-          <p>
-            We love working with nonprofits. Ask about our discounted rates and
-            assistance in applying for grant funding to cover cybersecurity costs.
-          </p>
+          We love working with nonprofits. Ask about our discounted rates and
+          assistance in applying for grant funding to cover cybersecurity costs.
         </div>
       </div>
     </section>
-    <!-- End FAQ Section -->
 
-    <!-- ────────────────────────────────────────────────────────────────────────
-         CONTACT FORM SECTION
-         ──────────────────────────────────────────────────────────────────────── -->
+    <!-- CONTACT -->
     <section id="contact" class="section-light">
-      <h2>Get a Free Quote</h2>
-      <p>
-        Tell us about your environment, pain points, or goals—and we’ll build a
-        custom solution that fits.
-      </p>
-
+      <h2 class="section-header">Get a Free Quote</h2>
       <div class="contact-container">
         <!-- Contact Info -->
         <div class="contact-info">
@@ -446,11 +415,13 @@
           </p>
           <p>
             <strong>Email:</strong>
-            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
+            <a href="mailto:info@zeroheatsolutions.com"
+              >info@zeroheatsolutions.com</a
+            >
           </p>
           <p>
-            We partner with you to secure your business—no ticket queues, no long
-            wait times, just real people who care.
+            Tell us about your environment, pain points, or goals—and we’ll build
+            a custom solution that fits.
           </p>
         </div>
 
@@ -460,7 +431,6 @@
           action="https://formspree.io/f/xpwrwldy"
           method="POST"
         >
-          <!-- Hidden fields for Formspree -->
           <input type="hidden" name="form-name" value="quote" />
           <input type="hidden" name="_next" value="thank-you.html" />
 
@@ -528,89 +498,43 @@
         </form>
       </div>
     </section>
-    <!-- End Contact Form Section -->
   </main>
-  <!-- End Main Content -->
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON
-       ────────────────────────────────────────────────────────────────────────── -->
+  <!-- BACK TO TOP BUTTON -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       ENHANCED FOOTER
-       ────────────────────────────────────────────────────────────────────────── -->
+  <!-- FOOTER + SITEMAP -->
   <footer>
-    <div class="footer-container">
-      <!-- Column 1: Brand + Tagline -->
-      <div class="footer-column footer-brand">
-        <img
-          src="zhs-logo.jpg"
-          alt="Zero Heat Solutions Logo"
-          class="footer-logo"
-        />
-        <p class="footer-tagline">
-          Enterprise-grade IT &amp; Cybersecurity<br />
-          for Phoenix-area Small Businesses
-        </p>
-      </div>
-
-      <!-- Column 2: Services -->
-      <div class="footer-column">
-        <h4>Our Services</h4>
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Quick Links</h4>
         <ul>
-          <li><a href="services.html#cybersecurity">Cybersecurity</a></li>
-          <li><a href="services.html#managed-it">Managed IT</a></li>
-          <li><a href="services.html#backup-dr">Backup &amp; Recovery</a></li>
-          <li><a href="services.html#cloud">Cloud &amp; Infrastructure</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#about">About Us</a></li>
         </ul>
       </div>
-
-      <!-- Column 3: Resources / Legal -->
-      <div class="footer-column">
-        <h4>Resources</h4>
+      <div class="sitemap-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="services.html">Service FAQs</a></li>
-          <li><a href="#faq">General FAQ</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Contact Info & Location -->
-      <div class="footer-column footer-contact">
-        <h4>Contact Us</h4>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-icon">📧</span>
-            <a href="mailto:info@zeroheatsolutions.com">info@zeroheatsolutions.com</a>
-          </li>
-          <li>
-            <span class="contact-icon">📞</span>
-            <a href="tel:+16025551234">(602) 555-1234</a>
-          </li>
-          <li>
-            <span class="contact-icon">📍</span>
-            <address>
-              1234 S. Tech Drive,<br />
-              Suite 200, Phoenix, AZ 85004
-            </address>
-          </li>
         </ul>
       </div>
     </div>
-
-    <!-- Bottom bar: copyright & design credit -->
-    <div class="footer-bottom">
-      <p>&copy; 2025 Zero Heat Solutions, LLC. All rights reserved.</p>
-      <p class="footer-small">Designed &amp; Maintained by Zero Heat Solutions</p>
-    </div>
+    <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
   </footer>
-  <!-- End Footer -->
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, BACK TO TOP
-       ────────────────────────────────────────────────────────────────────────── -->
+  <!-- JAVASCRIPT: MOBILE MENU, FAQ ACCORDION, BACK TO TOP -->
   <script>
     // Toggle the mobile menu open/close
     const hamburger = document.getElementById('hamburger');
@@ -628,26 +552,11 @@
       });
     });
 
-    // FAQ Accordion Behavior
-    document.querySelectorAll('.faq-item').forEach((item) => {
-      const question = item.querySelector('.faq-question');
-      const answer = item.querySelector('.faq-answer');
-      question.addEventListener('click', () => {
-        const isOpen = answer.classList.contains('open');
-        // Close any other open answers
-        document.querySelectorAll('.faq-answer.open').forEach((openAns) => {
-          openAns.classList.remove('open');
-          openAns.previousElementSibling
-            .querySelector('span')
-            .textContent = '+';
-        });
-        if (!isOpen) {
-          answer.classList.add('open');
-          question.querySelector('span').textContent = '–';
-        } else {
-          answer.classList.remove('open');
-          question.querySelector('span').textContent = '+';
-        }
+    // FAQ accordion toggles
+    document.querySelectorAll('.faq-question').forEach((item) => {
+      item.addEventListener('click', () => {
+        const parent = item.parentElement;
+        parent.classList.toggle('open');
       });
     });
 

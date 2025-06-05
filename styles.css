@@ -20,6 +20,7 @@
   --font-serif: 'Merriweather', serif;
   --font-base: 1rem;
   --line-height-base: 1.6;
+  --radius: 8px;
 
   /* Spacing & Transitions */
   --spacing: 1rem;
@@ -230,29 +231,44 @@ nav .nav-links li a:hover {
    HERO / HOMEPAGE
    ───────────────────────────────────────────────────────────────────────────── */
 header.hero {
-  background-color: var(--primary-color);
+  position: relative;
+  /* Make sure phoenix-skyline.jpg is stored in assets/images/ */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url('assets/images/phoenix-skyline.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-light);
-  padding: 4rem 1rem;
 }
 .hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
 }
-@media (max-width: 992px) {
+@media (min-width: 768px) {
   .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 .hero-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-left {
+    align-items: flex-start;
+  }
 }
 .hero-left .hero-logo img {
   height: 180px; /* keep largest logo size */
@@ -272,8 +288,10 @@ header.hero {
 .hero-form {
   background-color: #ffffff;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 .hero-form h4 {
   margin-bottom: 1rem;
@@ -311,12 +329,12 @@ header.hero {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 .service-card {
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   transition: transform var(--transition), box-shadow var(--transition);
@@ -348,52 +366,22 @@ header.hero {
 .process-step {
   flex: 1 1 300px;
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
 }
 .process-step .icon {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: var(--secondary-color);
-  flex-shrink: 0;
-}
-.process-step h4 {
-  margin-bottom: 0.5rem;
-}
-.process-step p {
-  font-size: 0.95rem;
-  color: #555555;
-}
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   INDUSTRIES WE SERVE
-   ───────────────────────────────────────────────────────────────────────────── */
-.industries-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.industry-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.industry-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-.industry-card h4 {
-  margin-bottom: 0.5rem;
-  color: var(--primary-color);
-}
-.industry-card p {
-  font-size: 0.95rem;
-  color: #555555;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  height: 60px;      /* increased circle size */
+  width: 60px;       /* increased circle size */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; /* larger number */
+  margin-bottom: 1rem;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -404,18 +392,20 @@ header.hero {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 .team-member {
   text-align: center;
 }
 .team-member img {
-  width: 150px;
-  height: 150px;
+  width: 160px;        /* increased size */
+  height: 160px;       /* increased size */
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 1rem;
+  border: 3px solid var(--secondary-color);
+  background-color: #f0f0f0;
 }
 .team-member h4 {
   margin-bottom: 0.5rem;
@@ -518,7 +508,7 @@ header.hero {
   flex: 1 1 400px;
   background-color: #ffffff;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -642,10 +632,13 @@ footer {
   .services-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
-  .industries-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
   .hero-form {
     margin-top: 2rem;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   NOTE: The “.industries-grid” and “.industry-card” rules have been removed to 
+   revert to the plain list style for “Industries We Serve.” If you ever want 
+   the card-based layout, simply re-add those CSS blocks.
+   ───────────────────────────────────────────────────────────────────────────── */

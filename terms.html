@@ -1,1 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero Heat Solutions | Terms of Service</title>
 
+  <!-- Basic SEO Tags -->
+  <meta
+    name="description"
+    content="Terms of Service for Zero Heat Solutions—rules and guidelines governing use of our managed IT and cybersecurity services."
+  />
+  <meta name="keywords" content="Zero Heat Solutions, Terms of Service, IT services agreement" />
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ──────────────────────────────────────────────────────────────────────────
+       CSS VARIABLES
+       ────────────────────────────────────────────────────────────────────────── */
+    :root {
+      --nav-bg: #0e1220;
+      --nav-hover: #00a8ff;
+      --accent-color: #1b263b;
+      --primary-color: #12213a;
+      --secondary-color: #007BFF;
+      --light-bg: #f4f8fc;
+      --text-light: #ffffff;
+      --text-dark: #333333;
+      --radius: 8px;
+      --transition: 0.3s ease;
+      --letter-spacing: 1px;
+      --nav-height: 60px;
+      --offset: 80px;
+      --section-padding: 3rem;
+      --card-hover-shadow: rgba(0, 0, 0, 0.15);
+      --tech-blue: #0a84ff;
+      --tech-neon: #00d8ff;
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       GLOBAL RESET & BASE STYLES
+       ────────────────────────────────────────────────────────────────────────── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    ul,
+    ol {
+      margin-left: 1.25rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+    button {
+      cursor: pointer;
+      transition: background-color var(--transition);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       NAVIGATION (DESKTOP & MOBILE)
+       ────────────────────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--nav-bg);
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    nav .logo img {
+      height: 50px;
+      width: auto;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav .nav-links li {
+      list-style: none;
+    }
+    nav .nav-links li a {
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    nav .nav-links li a::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--tech-neon);
+      transition: width var(--transition);
+    }
+    nav .nav-links li a:hover::after {
+      width: 100%;
+    }
+    nav .nav-links li a:hover {
+      color: var(--tech-neon);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      margin-bottom: 5px;
+      background-color: var(--text-light);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger span:last-child {
+      margin-bottom: 0;
+    }
+
+    .mobile-menu {
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu li {
+      list-style: none;
+      margin: 0.75rem 0;
+    }
+    .mobile-menu li a {
+      color: var(--text-light);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing);
+      transition: color var(--transition);
+    }
+    .mobile-menu li a:hover {
+      color: var(--tech-neon);
+    }
+
+    @media screen and (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ──────────────────────────────────────────────────────────────────────────
+       MAIN CONTENT & SECTIONS (with SCROLL OFFSETS)
+       ────────────────────────────────────────────────────────────────────────── */
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      padding: var(--section-padding) 0;
+    }
+    section[id] {
+      scroll-margin-top: var(--offset);
+    }
+
+    /* TERMS OF SERVICE STYLES */
+    .terms-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .terms-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .terms-intro {
+      margin-bottom: 2rem;
+      color: #555555;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .terms-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+    }
+    .terms-section p,
+    .terms-section ul {
+      margin-bottom: 1rem;
+      color: #444444;
+    }
+    .terms-section ul li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER + SITEMAP */
+    footer {
+      background-color: var(--accent-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-sitemap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .sitemap-column {
+      min-width: 150px;
+    }
+    .sitemap-column h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    .sitemap-column ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+    .sitemap-column a {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    .sitemap-column a:hover {
+      text-decoration: underline;
+    }
+    footer p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* BACK TO TOP BUTTON */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary-color);
+      color: var(--text-light);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition), visibility var(--transition);
+    }
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+</head>
+<body>
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       NAVIGATION (Desktop + Mobile)
+       ────────────────────────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="index.html#contact">Get a Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="mobile-menu" id="mobile-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+      <li><a href="index.html#contact">Get a Quote</a></li>
+    </ul>
+  </nav>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       MAIN TERMS OF SERVICE CONTENT
+       ────────────────────────────────────────────────────────────────────────── -->
+  <main>
+    <section class="terms-header">
+      <h1>Terms of Service</h1>
+      <p class="terms-intro">
+        Welcome to Zero Heat Solutions. These Terms of Service (“Terms”) govern your access to and use of our website (the “Site”) and any services (managed IT, cybersecurity, consulting) provided by Zero Heat Solutions (“ZHS,” “we,” “our,” or “us”). By accessing our Site or engaging our services, you agree to be bound by these Terms.
+      </p>
+    </section>
+
+    <section class="terms-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By visiting, browsing, or using this Site, or by requesting a quote or engaging in any business transaction with ZHS, you acknowledge that you have read, understood, and agree to be bound by these Terms, as well as our Privacy Policy. If you do not agree with any part of these Terms, you must not use our Site or services.
+      </p>
+    </section>
+
+    <section class="terms-section">
+      <h2>2. Services Overview</h2>
+      <p>
+        ZHS provides managed IT support, cybersecurity services, compliance auditing, backup & continuity solutions, and cloud infrastructure management (collectively, the “Services”). The specific details, scope, and pricing of any Services will be defined in a separate Service Agreement or Statement of Work provided to you prior to engagement.
+      </p>
+      <p>
+        All descriptions, specifications, and pricing displayed on our Site are subject to change at our discretion. We reserve the right to modify or discontinue any Service without prior notice.
+      </p>
+    </section>
+
+    <section class="terms-section">
+      <h2>3. Service Agreements & Contracts</h2>
+      <ul>
+        <li>
+          <strong>Quote Request:</strong> When you submit a quote request via our forms, we will email you a detailed proposal outlining the proposed Services, timeline, and estimated fees. Your acceptance of the proposal constitutes agreement to these Terms and any additional terms contained within the proposal.
+        </li>
+        <li>
+          <strong>Service Agreement:</strong> For ongoing or multi-month engagements, a formal Service Agreement will be executed between you (“Client”) and ZHS. The Service Agreement will specify deliverables, service levels, payment terms, and any applicable Service Level Agreements (SLAs).
+        </li>
+        <li>
+          <strong>Term & Termination:</strong> The Service Agreement will define its effective date and duration. Either party may terminate the contract per the termination clauses outlined therein (e.g., a minimum notice period, upon breach, or other conditions).
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>4. Fees, Payment, & Billing</h2>
+      <ul>
+        <li>
+          <strong>Fees:</strong> Fees for Services will be calculated based on hourly rates, fixed project fees, or monthly subscription plans, as indicated in your proposal or Service Agreement.
+        </li>
+        <li>
+          <strong>Invoices:</strong> We will invoice you either monthly or upon completion of project milestones (as specified in the Service Agreement). Invoices are due within thirty (30) days of the invoice date, unless otherwise stated.
+        </li>
+        <li>
+          <strong>Late Payments:</strong> Any payment not received within the specified payment window may be subject to late fees (e.g., 1.5% monthly interest) or suspension of Services until payment is current.
+        </li>
+        <li>
+          <strong>Taxes:</strong> You are responsible for any sales tax, VAT, or other applicable taxes on Services. ZHS will not collect or remit taxes unless required by law.
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>5. Client Responsibilities</h2>
+      <ul>
+        <li>
+          <strong>Accurate Information:</strong> You agree to provide accurate and up-to-date information (e.g., network diagrams, system credentials) necessary for ZHS to deliver Services.
+        </li>
+        <li>
+          <strong>Access:</strong> You will grant ZHS reasonable access to on-site or remote systems, hardware, software, and documentation to facilitate troubleshooting, maintenance, and implementation.
+        </li>
+        <li>
+          <strong>Backups:</strong> While ZHS may manage your backup solutions, you are responsible for ensuring critical data is backed up before granting ZHS access or authorizing changes. ZHS is not liable for any data loss if backups are not properly configured or tested.
+        </li>
+        <li>
+          <strong>Compliance:</strong> You must maintain compliance with applicable laws and regulations (e.g., HIPAA, PCI-DSS) and inform ZHS of any compliance requirements that affect the scope of Services.
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>6. Disclaimers & Limitation of Liability</h2>
+      <ul>
+        <li>
+          <strong>No Warranty:</strong> All Services are provided “as is” and “as available.” ZHS makes no express or implied warranties, including but not limited to warranties of merchantability or fitness for a particular purpose.
+        </li>
+        <li>
+          <strong>Limitation of Liability:</strong> To the maximum extent permitted by law, ZHS’s total liability for any claim arising from or related to Services is limited to the fees paid by you to ZHS in the three (3) months preceding the event giving rise to the claim. Under no circumstances shall ZHS be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, even if advised of the possibility.
+        </li>
+        <li>
+          <strong>Force Majeure:</strong> ZHS shall not be responsible for delays or failures due to events beyond our reasonable control, including natural disasters, acts of war, terrorism, strikes, or governmental actions.
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>7. Confidentiality & Intellectual Property</h2>
+      <ul>
+        <li>
+          <strong>Confidential Information:</strong> “Confidential Information” includes any non-public business data, network configurations, security keys, or trade secrets disclosed by either party. Both parties agree to maintain confidentiality and not disclose such information except as required by law.
+        </li>
+        <li>
+          <strong>Exclusions:</strong> Confidential Information does not include information that is (a) publicly available through no breach by the receiving party, (b) rightfully obtained from a third party without restriction, or (c) independently developed without the use of confidential data.
+        </li>
+        <li>
+          <strong>Return of Materials:</strong> Upon termination of Services, ZHS will return or destroy any physical or electronic materials containing your Confidential Information, unless otherwise agreed or required by law.
+        </li>
+        <li>
+          <strong>Intellectual Property:</strong> Any intellectual property, trademarks, or copyrighted materials used or owned by ZHS remain the exclusive property of ZHS. Client retains ownership of any data, documents, or custom configurations provided to ZHS for the purposes of Service delivery.
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>8. Termination</h2>
+      <ul>
+        <li>
+          <strong>By Client:</strong> The Client may terminate the Service Agreement in accordance with the termination notice requirements defined in that Agreement (typically 30 days’ written notice).
+        </li>
+        <li>
+          <strong>By ZHS:</strong> ZHS may suspend or terminate Services if Client fails to pay undisputed invoices within fifteen (15) days of the due date or breaches any material term without cure within thirty (30) days after written notice.
+        </li>
+        <li>
+          <strong>Effect of Termination:</strong> Upon termination, Client will pay for all Services rendered through the termination date. Sections concerning Limitation of Liability, Confidentiality, and Intellectual Property will survive termination.
+        </li>
+      </ul>
+    </section>
+
+    <section class="terms-section">
+      <h2>9. Governing Law & Dispute Resolution</h2>
+      <p>
+        These Terms, and any disputes arising from them, shall be governed by and construed in accordance with the laws of the State of Arizona, without regard to conflict-of-law principles. Any legal action or proceeding related to these Terms must be brought exclusively in a state or federal court located in Maricopa County, Arizona.
+      </p>
+      <p>
+        Prior to initiating litigation, both parties agree to attempt in good faith to resolve any dispute through negotiation. If unresolved within thirty (30) days, either party may pursue legal remedies.
+      </p>
+    </section>
+
+    <section class="terms-section">
+      <h2>10. Changes to Terms</h2>
+      <p>
+        ZHS reserves the right to modify these Terms of Service at any time. When changes occur, we will update the “Last Updated” date below. Your continued use of our Site or Services after changes have been posted constitutes acceptance of the new Terms.
+      </p>
+      <p><strong>Last Updated:</strong> June 2025</p>
+    </section>
+
+    <section class="terms-section">
+      <h2>11. Contact Information</h2>
+      <p>
+        If you have any questions or concerns about these Terms of Service, please contact us:
+      </p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:legal@zeroheatsolutions.com">legal@zeroheatsolutions.com</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+16025551234">(602) 555-1234</a></li>
+        <li>
+          <strong>Mail:</strong> Zero Heat Solutions<br />
+          1234 Phoenix St.<br />
+          Phoenix, AZ 85001<br />
+          USA
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       BACK TO TOP BUTTON
+       ────────────────────────────────────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       FOOTER + SITEMAP
+       ────────────────────────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="index.html#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- ──────────────────────────────────────────────────────────────────────────
+       JAVASCRIPT: MOBILE MENU & BACK TO TOP
+       ────────────────────────────────────────────────────────────────────────── -->
+  <script>
+    // Toggle the mobile menu open/close
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+      });
+    });
+
+    // “Back to Top” button logic
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

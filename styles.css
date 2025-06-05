@@ -1,5 +1,5 @@
 /* =============================================================================
-   styles.css - Centralized Stylesheet for Zero Heat Solutions
+   styles.css - Centralized Stylesheet for Zero Heat Solutions (Root-based)
    ============================================================================= */
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -233,7 +233,7 @@ nav .nav-links li a:hover {
 header.hero {
   position: relative;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('assets/phoenix-skyline.jpg') no-repeat center center/cover;
+              url('phoenix-skyline.jpg') no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -357,10 +357,6 @@ main {
   transform: translateY(-6px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
-.overview-card img {
-  height: 50px;
-  margin-bottom: 1rem;
-}
 .overview-card h4 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
@@ -410,10 +406,6 @@ main {
   transform: translateY(-4px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
-.step-card img {
-  height: 40px;
-  margin-bottom: 1rem;
-}
 .step-card h4 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -447,10 +439,6 @@ main {
 .industry-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-.industry-item img {
-  height: 50px;
-  margin-bottom: 0.75rem;
 }
 .industry-item p {
   font-size: 0.9rem;
@@ -750,7 +738,7 @@ footer {
 .services-hero {
   position: relative;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url('assets/phoenix-skyline.jpg') no-repeat center center/cover;
+              url('phoenix-skyline.jpg') no-repeat center center/cover;
   padding: 6rem 1rem;
   text-align: center;
   color: var(--text-light);
@@ -787,27 +775,9 @@ footer {
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(0, 168, 255, 0.15), transparent 60%);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-.service-card:hover::before {
-  opacity: 1;
-}
-.service-card img {
-  height: 60px;
-  margin-bottom: 1rem;
 }
 .service-card h4 {
   font-size: 1.2rem;

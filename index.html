@@ -22,9 +22,9 @@
   <meta name="twitter:image" content="zhs-logo.jpg" />
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
 
-  <!-- Fonts (fast) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -32,34 +32,29 @@
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Prefetch internal pages to feel snappier -->
+  <!-- Prefetch internal pages -->
   <link rel="prefetch" href="services.html" as="document" />
   <link rel="prefetch" href="privacy.html" as="document" />
   <link rel="prefetch" href="terms.html" as="document" />
 
-  <!-- Structured Data (Org + WebSite; FAQ injected at bottom) -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zero Heat Solutions",
-    "url": "https://www.zeroheatit.com/",
-    "logo": "https://www.zeroheatit.com/zhs-logo.jpg",
-    "sameAs": [],
-    "address": { "@type": "PostalAddress", "addressLocality": "Phoenix", "addressRegion": "AZ", "addressCountry": "US" }
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Zero Heat Solutions",
+    "url":"https://www.zeroheatit.com/",
+    "logo":"https://www.zeroheatit.com/zhs-logo.jpg",
+    "address":{"@type":"PostalAddress","addressLocality":"Phoenix","addressRegion":"AZ","addressCountry":"US"}
   }
   </script>
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Zero Heat Solutions",
-    "url": "https://www.zeroheatit.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.zeroheatit.com/services.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Zero Heat Solutions",
+    "url":"https://www.zeroheatit.com/",
+    "potentialAction":{"@type":"SearchAction","target":"https://www.zeroheatit.com/services.html?q={search_term_string}","query-input":"required name=search_term_string"}
   }
   </script>
 </head>
@@ -75,7 +70,6 @@
         <img src="zhs-logo.jpg" alt="Zero Heat Solutions logo" width="160" height="160" decoding="async" />
       </a>
     </div>
-
     <ul class="nav-links">
       <li><a href="services.html">Services</a></li>
       <li><a href="#process">How We Work</a></li>
@@ -83,11 +77,9 @@
       <li><a href="#about">About Us</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
     <ul class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile">
       <li role="none"><a role="menuitem" href="services.html">Services</a></li>
       <li role="none"><a role="menuitem" href="#process">How We Work</a></li>
@@ -97,7 +89,7 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (no form) -->
   <header class="hero" role="banner">
     <div class="hero-inner">
       <div class="hero-left">
@@ -107,200 +99,136 @@
         <div class="hero-text">
           <h1 class="reveal">Enterprise-Grade IT &amp; Cybersecurity<br />Powered by Phoenix Expertise</h1>
           <p class="reveal" style="animation-delay:.3s">
-            Partner with ZHS for proactive threat detection, seamless IT management,
-            and unwavering compliance—so you can focus on growth, not downtime.
+            Proactive threat detection, managed IT, cloud, backups, and compliance—so you can focus on growth, not downtime.
           </p>
-          <a href="#contact" class="cta-button reveal" style="animation-delay:.6s">Request a Free Assessment</a>
+          <div class="reveal" style="animation-delay:.6s">
+            <a href="services.html" class="cta-button">Explore Services</a>
+            <a href="#contact" class="cta-button secondary" style="margin-left:.5rem">Get a Free Assessment</a>
+          </div>
         </div>
       </div>
-
-      <!-- Quick Quote Form -->
-      <aside class="hero-form reveal" style="animation-delay:.9s" aria-label="Quick Quote">
-        <h4>Quick Quote</h4>
-        <form action="https://formspree.io/f/xpwrwldy" method="POST" id="quote-form" novalidate>
-          <input type="hidden" name="form-name" value="quote" />
-          <input type="hidden" name="_next" value="thank-you.html" />
-          <!-- honeypot -->
-          <input type="text" name="_human" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
-
-          <label for="hero-first-name">First Name *</label>
-          <input id="hero-first-name" name="firstName" type="text" autocomplete="given-name" required />
-
-          <label for="hero-last-name">Last Name *</label>
-          <input id="hero-last-name" name="lastName" type="text" autocomplete="family-name" required />
-
-          <label for="hero-company">Company *</label>
-          <input id="hero-company" name="company" type="text" autocomplete="organization" required />
-
-          <label for="hero-email">Business Email *</label>
-          <input id="hero-email" name="email" type="email" placeholder="you@yourcompany.com" autocomplete="email" inputmode="email" required />
-
-          <label for="hero-phone">Phone Number *</label>
-          <input id="hero-phone" name="phone" type="tel" placeholder="(###) ###-####" autocomplete="tel" inputmode="tel" pattern="^[0-9()\\-\\.\\s+]{7,}$" required />
-
-          <label for="hero-interest">Interested In *</label>
-          <select id="hero-interest" name="interest" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="managedIT">Managed IT</option>
-            <option value="cybersecurity">Cybersecurity</option>
-            <option value="cloud">Cloud Solutions</option>
-            <option value="compliance">Compliance &amp; Auditing</option>
-          </select>
-
-          <button type="submit">Get Quote</button>
-          <p id="form-msg" role="status" aria-live="polite" class="intro-text" style="margin-top:.5rem"></p>
-        </form>
-      </aside>
     </div>
   </header>
 
   <main id="main">
-    <!-- SERVICES (teaser cards link to services.html anchors) -->
-    <section id="services" class="section-light">
+    <!-- SERVICES -->
+    <section id="services">
       <h2 class="section-header reveal">Our Core Services</h2>
       <p class="intro-text reveal" style="animation-delay:.3s">
-        ZHS delivers end-to-end IT and cybersecurity services—scalable, affordable, and backed by 24/7 expert support.
+        End-to-end IT and cybersecurity services—scalable, affordable, backed by 24/7 expert support.
       </p>
 
       <div class="services-grid">
-        <article class="service-card reveal" style="animation-delay:.4s">
+        <article class="service-card reveal" style="animation-delay:.4s;">
           <img src="assets/icons/shield.svg" alt="" width="60" height="60" loading="lazy" />
           <h4>Cybersecurity &amp; Threat Hunting</h4>
-          <p>Continuous monitoring, real-time detection, and incident response powered by our SOC.</p>
-          <ul>
-            <li>24/7 SOC</li><li>Threat Intelligence</li><li>EDR</li><li>Phishing Training</li>
-          </ul>
+          <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
+          <ul><li>24/7 SOC</li><li>Threat Intel</li><li>EDR</li><li>Phishing Training</li></ul>
           <a class="learn-more-link" href="services.html#cybersecurity">Learn More →</a>
         </article>
 
-        <article class="service-card reveal" style="animation-delay:.6s">
+        <article class="service-card reveal" style="animation-delay:.6s;">
           <img src="assets/icons/server.svg" alt="" width="60" height="60" loading="lazy" />
           <h4>Managed IT &amp; Helpdesk</h4>
-          <p>Proactive network management, patching, remote support, and on-site assistance.</p>
-          <ul>
-            <li>24/7 Helpdesk</li><li>Network Monitoring</li><li>Server &amp; Workstation Care</li><li>Lifecycle Mgmt</li>
-          </ul>
+          <p>Proactive network management, patching, and responsive support.</p>
+          <ul><li>24/7 Helpdesk</li><li>Network Monitoring</li><li>Server &amp; Workstation Care</li><li>Lifecycle Mgmt</li></ul>
           <a class="learn-more-link" href="services.html#managed-it">Learn More →</a>
         </article>
 
-        <article class="service-card reveal" style="animation-delay:.8s">
+        <article class="service-card reveal" style="animation-delay:.8s;">
           <img src="assets/icons/cloud-computing.svg" alt="" width="60" height="60" loading="lazy" />
           <h4>Cloud &amp; Infrastructure</h4>
-          <p>Secure Azure/AWS/hybrid deployments, zero-downtime migrations, and optimization.</p>
-          <ul>
-            <li>Cloud Architecture</li><li>VDI</li><li>Microsoft 365 &amp; Google Workspace</li><li>DR &amp; Planning</li>
-          </ul>
+          <p>Secure Azure/AWS/hybrid deployments and zero-downtime migrations.</p>
+          <ul><li>Cloud Architecture</li><li>VDI</li><li>M365/Workspace</li><li>DR &amp; Planning</li></ul>
           <a class="learn-more-link" href="services.html#cloud">Learn More →</a>
         </article>
 
-        <article class="service-card reveal" style="animation-delay:1s">
+        <article class="service-card reveal" style="animation-delay:1s;">
           <img src="assets/icons/checklist.svg" alt="" width="60" height="60" loading="lazy" />
           <h4>Compliance, Auditing &amp; Governance</h4>
-          <p>HIPAA, PCI DSS, SOC 2, and NIST readiness with gaps, policies, and continuous monitoring.</p>
-          <ul>
-            <li>HIPAA &amp; PCI Gap Analysis</li><li>Policy Development</li><li>Continuous Monitoring</li><li>Audit Remediation</li>
-          </ul>
+          <p>HIPAA, PCI DSS, SOC 2, and NIST readiness with gaps, policies, and monitoring.</p>
+          <ul><li>HIPAA/PCI Gaps</li><li>Policies</li><li>Continuous Monitoring</li><li>Audit Remediation</li></ul>
           <a class="learn-more-link" href="services.html#auditing">Learn More →</a>
         </article>
 
-        <article class="service-card reveal" style="animation-delay:1.2s">
+        <article class="service-card reveal" style="animation-delay:1.2s;">
           <img src="assets/icons/cloud-backup.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Backup, Recovery &amp; Business Continuity</h4>
-          <p>Automated backups, secure replication, and fast recovery to keep data available.</p>
-          <ul>
-            <li>Local &amp; Cloud Backups</li><li>DR Testing</li><li>RTO/RPO SLAs</li><li>High-Availability</li>
-          </ul>
+          <h4>Backup, Recovery &amp; Continuity</h4>
+          <p>Automated backups, secure replication, and fast recovery.</p>
+          <ul><li>Local &amp; Cloud</li><li>DR Testing</li><li>RTO/RPO SLAs</li><li>High Availability</li></ul>
           <a class="learn-more-link" href="services.html#backup">Learn More →</a>
         </article>
       </div>
     </section>
 
     <!-- HOW WE WORK -->
-    <section id="process" class="section-light">
+    <section id="process">
       <h2 class="section-header reveal">How We Work</h2>
-      <p class="intro-text reveal" style="animation-delay:.3s">
-        A consultative, transparent approach—so you know exactly what we’re doing, why, and when.
-      </p>
+      <p class="intro-text reveal" style="animation-delay:.3s">A consultative, transparent approach—know exactly what we’re doing, why, and when.</p>
+
       <div class="process-steps">
         <div class="process-step reveal" style="animation-delay:.4s">
           <div class="icon" aria-hidden="true">1</div>
-          <div>
-            <h4>Discovery &amp; Assessment</h4>
-            <p>We analyze your IT estate to uncover risks and inefficiencies.</p>
-          </div>
+          <div><h4>Discovery &amp; Assessment</h4><p>We analyze your IT estate to uncover risks and inefficiencies.</p></div>
         </div>
         <div class="process-step reveal" style="animation-delay:.6s">
           <div class="icon" aria-hidden="true">2</div>
-          <div>
-            <h4>Strategic Roadmap</h4>
-            <p>We prioritize hardening, patching, and architecture improvements.</p>
-          </div>
+          <div><h4>Strategic Roadmap</h4><p>We prioritize hardening, patching, and architecture improvements.</p></div>
         </div>
         <div class="process-step reveal" style="animation-delay:.8s">
           <div class="icon" aria-hidden="true">3</div>
-          <div>
-            <h4>Implementation &amp; Deployment</h4>
-            <p>Dedicated PM + team to execute with minimal disruption.</p>
-          </div>
+          <div><h4>Implementation &amp; Deployment</h4><p>Dedicated PM + team to execute with minimal disruption.</p></div>
         </div>
         <div class="process-step reveal" style="animation-delay:1s">
           <div class="icon" aria-hidden="true">4</div>
-          <div>
-            <h4>Managed Support &amp; Optimization</h4>
-            <p>24/7 SOC & helpdesk for everything from tickets to crisis response.</p>
-          </div>
+          <div><h4>Managed Support &amp; Optimization</h4><p>24/7 SOC & helpdesk—from tickets to crisis response.</p></div>
         </div>
       </div>
     </section>
 
     <!-- INDUSTRIES -->
-    <section id="industries" class="section-light">
+    <section id="industries">
       <h2 class="section-header reveal">Industries We Serve</h2>
       <p class="intro-text reveal" style="animation-delay:.3s">From healthcare to retail, we tailor solutions to your field.</p>
+
       <div class="industries-grid">
         <div class="industry-card reveal" style="animation-delay:.4s">
           <img src="assets/icons/healthcare.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Healthcare</h4>
-          <p>HIPAA-compliant support, EHR security, telehealth infrastructure.</p>
+          <h4>Healthcare</h4><p>HIPAA-compliant support, EHR security, telehealth infrastructure.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay:.6s">
           <img src="assets/icons/construction.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Construction &amp; Field Services</h4>
-          <p>MDM, secure file sync, remote collaboration.</p>
+          <h4>Construction &amp; Field Services</h4><p>MDM, secure file sync, remote collaboration.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay:.8s">
           <img src="assets/icons/legal.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Legal &amp; Accounting</h4>
-          <p>Encryption at rest, secure comms, regulatory support.</p>
+          <h4>Legal &amp; Accounting</h4><p>Encryption at rest, secure comms, regulatory support.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay:1s">
           <img src="assets/icons/real-estate.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Real Estate &amp; Property Mgmt</h4>
-          <p>Network isolation, remote office connectivity.</p>
+          <h4>Real Estate &amp; Property Mgmt</h4><p>Network isolation, remote office connectivity.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay:1.2s">
           <img src="assets/icons/retail.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Retail &amp; Local Shops</h4>
-          <p>POS hardening, PCI DSS gaps, secure guest Wi-Fi.</p>
+          <h4>Retail &amp; Local Shops</h4><p>POS hardening, PCI DSS gaps, secure guest Wi-Fi.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay:1.4s">
           <img src="assets/icons/nonprofit.svg" alt="" width="60" height="60" loading="lazy" />
-          <h4>Nonprofits &amp; SMBs</h4>
-          <p>Budget-friendly solutions, grant assistance, volunteer training.</p>
+          <h4>Nonprofits &amp; SMBs</h4><p>Budget-friendly solutions, grant assistance, volunteer training.</p>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section-light">
+    <section id="about">
       <h2 class="section-header reveal">About Zero Heat Solutions</h2>
       <p class="intro-text reveal" style="animation-delay:.3s">
-        We’re Phoenix-based engineers and SOC analysts focused on reliability, security, and people-first support.
+        Phoenix-based engineers and SOC analysts focused on reliability, security, and people-first support.
       </p>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section-light">
+    <section id="faq">
       <h2 class="section-header reveal">Frequently Asked Questions</h2>
 
       <div class="faq-item reveal" style="animation-delay:.3s">
@@ -308,7 +236,7 @@
           <h4>How quickly can I get support?</h4><span class="toggle-icon" aria-hidden="true">+</span>
         </button>
         <div class="faq-answer" hidden>
-          <p>We respond within 60 minutes during business hours (Mon–Fri, 8 AM–6 PM). Critical after-hours issues are escalated to our on-call engineer (24/7).</p>
+          <p>We respond within 60 minutes during business hours (Mon–Fri, 8 AM–6 PM). Critical after-hours issues escalate to our on-call engineer (24/7).</p>
         </div>
       </div>
 
@@ -332,16 +260,17 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section-light" aria-labelledby="contact-title">
+    <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-header reveal">Get a Quote</h2>
       <p class="intro-text reveal" style="animation-delay:.3s">Tell us about your environment—we’ll propose a plan within 1 business day.</p>
 
       <form action="https://formspree.io/f/xpwrwldy" method="POST" class="contact-form reveal" id="contact-form" novalidate style="animation-delay:.5s">
         <input type="hidden" name="form-name" value="contact" />
         <input type="hidden" name="_next" value="thank-you.html" />
+        <!-- honeypot -->
         <input type="text" name="_human" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true" />
 
-        <div class="form-grid">
+        <div class="contact-grid">
           <div>
             <label for="firstName">First Name *</label>
             <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
@@ -383,28 +312,23 @@
     </section>
   </main>
 
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
   <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="footer-sitemap">
       <div class="sitemap-column">
         <h4>Company</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="services.html">Services</a></li>
-        </ul>
+        <ul><li><a href="#about">About</a></li><li><a href="services.html">Services</a></li></ul>
       </div>
       <div class="sitemap-column">
         <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
+        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul>
       </div>
       <div class="sitemap-column">
         <h4>Contact</h4>
-        <ul>
-          <li><a href="#contact">Get a Quote</a></li>
-        </ul>
+        <ul><li><a href="#contact">Get a Quote</a></li></ul>
       </div>
     </div>
     <p>© <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
@@ -423,7 +347,7 @@
   }
   </script>
 
-  <!-- App JS (menu, reveal-on-scroll, small form validation) -->
+  <!-- App JS -->
   <script defer>
     // Mobile menu
     const burger = document.getElementById('hamburger');
@@ -436,7 +360,7 @@
       });
     }
 
-    // IntersectionObserver for .reveal
+    // Reveal on scroll
     const revealer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -447,7 +371,7 @@
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => revealer.observe(el));
 
-    // Lightweight form validation messaging
+    // Forms: simple messaging
     function wireForm(id, msgId) {
       const form = document.getElementById(id);
       const msg  = document.getElementById(msgId);
@@ -461,24 +385,27 @@
         }
       });
     }
-    wireForm('quote-form','form-msg');
     wireForm('contact-form','contact-msg');
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Back to Top
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) backToTopBtn.classList.add('show');
+      else backToTopBtn.classList.remove('show');
+    });
+    backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 
-  <!-- Minimal accessible helper for skip link (only class needed) -->
+  <!-- Skip link helper -->
   <style>
-    .visually-hidden-focusable:not(:focus):not(:active) {
-      position:absolute!important; width:1px!important; height:1px!important;
-      margin:-1px!important; overflow:hidden!important; clip:rect(0 0 0 0)!important;
-      border:0!important; padding:0!important;
+    .visually-hidden-focusable:not(:focus):not(:active){
+      position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;border:0!important;padding:0!important;
     }
   </style>
 
-  <noscript>
-    <style>.reveal{opacity:1;transform:none}</style>
-  </noscript>
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </body>
 </html>

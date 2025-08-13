@@ -1,282 +1,1311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Zero Heat Solutions | Enterprise IT & Cybersecurity in Phoenix</title>
-  <meta name="description" content="Enterprise-grade managed IT & cybersecurity for Phoenix-area businesses. Proactive SOC monitoring, helpdesk, cloud, backups, and compliance." />
-  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Enterprise-grade managed IT & cybersecurity for Phoenix-area small businesses. Proactive SOC monitoring, helpdesk, cloud, backups, and compliance.">
+  <meta name="keywords" content="Phoenix IT support, cybersecurity, managed IT, HIPAA, PCI, cloud security, network monitoring, small business IT">
+  <meta name="robots" content="index, follow">
 
   <!-- Canonical + Social -->
-  <link rel="canonical" href="https://www.zeroheatit.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Zero Heat Solutions — Enterprise IT & Cybersecurity" />
-  <meta property="og:description" content="Proactive IT management, 24/7 SOC, cloud, backups, and compliance for Phoenix businesses." />
-  <meta property="og:image" content="zhs-logo.jpg" />
-  <meta property="og:url" content="https://www.zeroheatit.com/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Zero Heat Solutions — IT & Cybersecurity" />
-  <meta name="twitter:description" content="Keep your business secure, fast, and compliant." />
-  <meta name="twitter:image" content="zhs-logo.jpg" />
+  <link rel="canonical" href="https://www.zeroheatit.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zero Heat Solutions - Enterprise IT & Cybersecurity">
+  <meta property="og:description" content="Proactive IT management, 24/7 SOC, cloud, backups, and compliance for Phoenix businesses.">
+  <meta property="og:image" content="zhs-logo.jpg">
+  <meta property="og:url" content="https://www.zeroheatit.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zero Heat Solutions - IT & Cybersecurity">
+  <meta name="twitter:description" content="Keep your business secure, fast, and compliant.">
+  <meta name="twitter:image" content="zhs-logo.jpg">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Prefetch internal pages -->
+  <link rel="prefetch" href="services.html" as="document">
+  <link rel="prefetch" href="privacy.html" as="document">
+  <link rel="prefetch" href="terms.html" as="document">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zero Heat Solutions",
+    "url": "https://www.zeroheatit.com/",
+    "logo": "https://www.zeroheatit.com/zhs-logo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+
+  <style>
+    /* CSS Reset & Base Styles */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-blue: #0066cc;
+      --primary-dark: #003d7a;
+      --secondary-orange: #ff6b35;
+      --accent-green: #28a745;
+      --neutral-900: #1a1a1a;
+      --neutral-800: #2d2d2d;
+      --neutral-700: #404040;
+      --neutral-500: #6b7280;
+      --neutral-400: #9ca3af;
+      --neutral-200: #e5e7eb;
+      --neutral-100: #f3f4f6;
+      --white: #ffffff;
+      --border-radius: 8px;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--neutral-800);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--neutral-200);
+      z-index: 1000;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--border-radius);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--neutral-700);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--neutral-700);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, var(--white), rgba(255, 255, 255, 0.8));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 500px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+
+    .cta-button.primary {
+      background: var(--secondary-orange);
+      color: var(--white);
+    }
+
+    .cta-button.primary:hover {
+      background: #ff5722;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-button.secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .cta-button.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+    }
+
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Section Styles */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--neutral-900);
+    }
+
+    .intro-text {
+      font-size: 1.125rem;
+      text-align: center;
+      color: var(--neutral-500);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--neutral-200);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--secondary-orange));
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(220deg);
+    }
+
+    .service-card h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--neutral-900);
+    }
+
+    .service-card p {
+      margin-bottom: 1rem;
+      color: var(--neutral-500);
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-card li {
+      padding: 0.25rem 0;
+      color: var(--neutral-600);
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .service-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+      font-weight: bold;
+    }
+
+    .learn-more-link {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+
+    .learn-more-link:hover {
+      color: var(--primary-dark);
+      gap: 0.75rem;
+    }
+
+    /* Process Steps */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--neutral-100);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .process-step:hover {
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .process-step .icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-blue);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .process-step h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--neutral-900);
+    }
+
+    .process-step p {
+      color: var(--neutral-500);
+    }
+
+    /* Industries Grid */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .industry-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--neutral-200);
+      transition: var(--transition);
+    }
+
+    .industry-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .industry-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(220deg);
+    }
+
+    .industry-card h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--neutral-900);
+    }
+
+    .industry-card p {
+      color: var(--neutral-500);
+    }
+
+    /* FAQ Styles */
+    .faq-item {
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      padding: 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--neutral-900);
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--neutral-100);
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      color: var(--primary-blue);
+      transition: var(--transition);
+    }
+
+    .faq-question[aria-expanded="true"] .toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      background: var(--neutral-100);
+      color: var(--neutral-600);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--neutral-200);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--neutral-700);
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 2px solid var(--neutral-200);
+      border-radius: var(--border-radius);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .contact-form button {
+      background: var(--primary-blue);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--neutral-900);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-sitemap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .sitemap-column h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .sitemap-column ul {
+      list-style: none;
+    }
+
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sitemap-column a {
+      color: var(--neutral-400);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .sitemap-column a:hover {
+      color: var(--white);
+    }
+
+    footer p {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--neutral-700);
+      color: var(--neutral-400);
+    }
+
+    /* Back to Top */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-blue);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 1000;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-90deg);
+    }
+
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #back-to-top:hover {
+      background: var(--primary-dark);
+      transform: rotate(-90deg) scale(1.1);
+    }
+
+    /* Animation Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--neutral-200);
+        list-style: none;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .mobile-menu li {
+        padding: 0.5rem 2rem;
+      }
+
+      .mobile-menu a {
+        color: var(--neutral-700);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .industries-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Accessibility */
+    .visually-hidden-focusable:not(:focus):not(:active) {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      :root {
+        --neutral-500: #404040;
+        --neutral-400: #666666;
+      }
+      
+      .service-card, .industry-card, .faq-item {
+        border-width: 2px;
+      }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .hero-logo img {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden-focusable">Skip to content</a>
 
-  <!-- NAV -->
-  <nav class="nav" aria-label="Primary">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Zero Heat Solutions home">
-        <img src="zhs-logo.jpg" width="42" height="42" alt="Zero Heat Solutions logo">
-        <span>Zero Heat</span>
+  <!-- Navigation -->
+  <nav aria-label="Primary">
+    <div class="logo">
+      <a href="index.html">
+        <img src="zhs-logo.jpg" alt="Zero Heat Solutions logo" width="50" height="50" decoding="async">
       </a>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" id="desktop-menu">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="#process">How We Work</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a class="btn small" href="#contact">Contact</a></li>
-      </ul>
     </div>
-
-    <ul class="mobile-menu" id="mobile-menu" role="menu">
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile">
       <li role="none"><a role="menuitem" href="services.html">Services</a></li>
       <li role="none"><a role="menuitem" href="#process">How We Work</a></li>
       <li role="none"><a role="menuitem" href="#industries">Industries</a></li>
-      <li role="none"><a role="menuitem" href="#about">About</a></li>
-      <li role="none"><a role="menuitem" class="btn small" href="#contact">Contact</a></li>
+      <li role="none"><a role="menuitem" href="#about">About Us</a></li>
+      <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- HERO (minimal, centered, no form) -->
-  <header class="hero">
-    <div class="container hero-inner">
-      <img class="hero-mark" src="zhs-logo.jpg" width="96" height="96" alt="" aria-hidden="true">
-      <h1>Enterprise-Grade IT &amp; Cybersecurity<br>Powered by Phoenix Expertise</h1>
-      <p class="lead">
-        Proactive threat detection, managed IT, cloud, backups and compliance—so you can focus on growth, not downtime.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn" href="services.html">Explore Services</a>
-        <a class="btn ghost" href="#contact">Get a Free Assessment</a>
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1 class="reveal">Enterprise-Grade IT & Cybersecurity<br>Powered by Phoenix Expertise</h1>
+        <p class="reveal" style="animation-delay: 0.3s">
+          Proactive threat detection, managed IT, cloud, backups, and compliance—so you can focus on growth, not downtime.
+        </p>
+        <div class="cta-buttons reveal" style="animation-delay: 0.6s">
+          <a href="services.html" class="cta-button primary">Explore Services</a>
+          <a href="#contact" class="cta-button secondary">Get Free Assessment</a>
+        </div>
+      </div>
+      <div class="hero-logo reveal" style="animation-delay: 0.9s">
+        <img src="zhs-logo.jpg" alt="Zero Heat Solutions shield and lock logo" width="300" height="300" decoding="async">
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="container">
-        <h2 class="section-title">Our Core Services</h2>
-        <p class="section-sub">End-to-end IT and cybersecurity—scalable, affordable, backed by 24/7 expert support.</p>
+    <!-- Services Section -->
+    <section id="services">
+      <h2 class="section-header reveal">Our Core Services</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        End-to-end IT and cybersecurity services—scalable, affordable, backed by 24/7 expert support.
+      </p>
 
-        <div class="cards">
-          <article class="card">
-            <h3>Cybersecurity &amp; Threat Hunting</h3>
-            <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
-            <ul class="bullets">
-              <li>24/7 SOC</li><li>Threat Intel</li><li>EDR</li><li>Phishing Training</li>
-            </ul>
-            <a class="link" href="services.html#cybersecurity">Learn more →</a>
-          </article>
+      <div class="services-grid">
+        <article class="service-card reveal" style="animation-delay: 0.4s">
+          <img src="assets/icons/shield.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Cybersecurity & Threat Hunting</h4>
+          <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
+          <ul>
+            <li>24/7 SOC</li>
+            <li>Threat Intel</li>
+            <li>EDR</li>
+            <li>Phishing Training</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#cybersecurity">Learn More →</a>
+        </article>
 
-          <article class="card">
-            <h3>Managed IT &amp; Helpdesk</h3>
-            <p>Proactive network management, patching, and responsive support.</p>
-            <ul class="bullets">
-              <li>24/7 Helpdesk</li><li>Network Monitoring</li><li>Server &amp; Workstation Care</li><li>Lifecycle Mgmt</li>
-            </ul>
-            <a class="link" href="services.html#managed-it">Learn more →</a>
-          </article>
+        <article class="service-card reveal" style="animation-delay: 0.6s">
+          <img src="assets/icons/server.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Managed IT & Helpdesk</h4>
+          <p>Proactive network management, patching, and responsive support.</p>
+          <ul>
+            <li>24/7 Helpdesk</li>
+            <li>Network Monitoring</li>
+            <li>Server & Workstation Care</li>
+            <li>Lifecycle Management</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#managed-it">Learn More →</a>
+        </article>
 
-          <article class="card">
-            <h3>Cloud &amp; Infrastructure</h3>
-            <p>Secure Azure/AWS/hybrid deployments and zero-downtime migrations.</p>
-            <ul class="bullets">
-              <li>Cloud Architecture</li><li>VDI</li><li>M365/Workspace</li><li>DR &amp; Planning</li>
-            </ul>
-            <a class="link" href="services.html#cloud">Learn more →</a>
-          </article>
+        <article class="service-card reveal" style="animation-delay: 0.8s">
+          <img src="assets/icons/cloud-computing.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Cloud & Infrastructure</h4>
+          <p>Secure Azure/AWS/hybrid deployments and zero-downtime migrations.</p>
+          <ul>
+            <li>Cloud Architecture</li>
+            <li>VDI</li>
+            <li>M365/Workspace</li>
+            <li>DR & Planning</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#cloud">Learn More →</a>
+        </article>
 
-          <article class="card">
-            <h3>Compliance &amp; Governance</h3>
-            <p>HIPAA, PCI DSS, SOC 2, and NIST—gaps, policies, and continuous monitoring.</p>
-            <ul class="bullets">
-              <li>HIPAA/PCI Gaps</li><li>Policies</li><li>Monitoring</li><li>Audit Remediation</li>
-            </ul>
-            <a class="link" href="services.html#auditing">Learn more →</a>
-          </article>
-        </div>
+        <article class="service-card reveal" style="animation-delay: 1s">
+          <img src="assets/icons/checklist.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Compliance, Auditing & Governance</h4>
+          <p>HIPAA, PCI DSS, SOC 2, and NIST readiness with gaps, policies, and monitoring.</p>
+          <ul>
+            <li>HIPAA/PCI Gaps</li>
+            <li>Policies</li>
+            <li>Continuous Monitoring</li>
+            <li>Audit Remediation</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#auditing">Learn More →</a>
+        </article>
+
+        <article class="service-card reveal" style="animation-delay: 1.2s">
+          <img src="assets/icons/cloud-backup.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Backup, Recovery & Continuity</h4>
+          <p>Automated backups, secure replication, and fast recovery.</p>
+          <ul>
+            <li>Local & Cloud</li>
+            <li>DR Testing</li>
+            <li>RTO/RPO SLAs</li>
+            <li>High Availability</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#backup">Learn More →</a>
+        </article>
       </div>
     </section>
 
-    <!-- HOW WE WORK -->
-    <section id="process" class="section alt">
-      <div class="container">
-        <h2 class="section-title">How We Work</h2>
-        <div class="steps">
-          <div class="step"><span>1</span><div><h3>Discovery &amp; Assessment</h3><p>We analyze your environment to uncover risks and inefficiencies.</p></div></div>
-          <div class="step"><span>2</span><div><h3>Strategic Roadmap</h3><p>We prioritize hardening, patching, and architecture improvements.</p></div></div>
-          <div class="step"><span>3</span><div><h3>Implementation</h3><p>Dedicated PM & team to execute with minimal disruption.</p></div></div>
-          <div class="step"><span>4</span><div><h3>Managed Support</h3><p>24/7 SOC & helpdesk—from tickets to crisis response.</p></div></div>
-        </div>
-      </div>
-    </section>
+    <!-- How We Work Section -->
+    <section id="process">
+      <h2 class="section-header reveal">How We Work</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        A consultative, transparent approach—know exactly what we're doing, why, and when.
+      </p>
 
-    <!-- INDUSTRIES -->
-    <section id="industries" class="section">
-      <div class="container">
-        <h2 class="section-title">Industries We Serve</h2>
-        <div class="chips">
-          <span class="chip">Healthcare</span>
-          <span class="chip">Construction & Field</span>
-          <span class="chip">Legal & Accounting</span>
-          <span class="chip">Real Estate</span>
-          <span class="chip">Retail</span>
-          <span class="chip">Nonprofits & SMBs</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section alt">
-      <div class="container narrow">
-        <h2 class="section-title">About Zero Heat Solutions</h2>
-        <p class="center">
-          We’re Phoenix-based engineers and SOC analysts focused on reliability, security, and people-first support.
-          Modern tooling, clear SLAs, and no-nonsense communication.
-        </p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section">
-      <div class="container narrow">
-        <h2 class="section-title">FAQ</h2>
-
-        <details class="faq"><summary>How quickly can I get support?</summary>
-          <p>We respond within 60 minutes during business hours (Mon–Fri, 8–6). Critical after-hours issues escalate to on-call (24/7).</p>
-        </details>
-
-        <details class="faq"><summary>Do you offer customizable service plans?</summary>
-          <p>Yes—tiers for Managed IT, Cybersecurity, Cloud, and Compliance. We tailor SLAs to your size, risk, and budget.</p>
-        </details>
-
-        <details class="faq"><summary>Can you help with HIPAA or PCI DSS?</summary>
-          <p>Absolutely. We perform gap assessments, write policies, implement controls, and prep you for audits.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- CONTACT (form lives here only) -->
-    <section id="contact" class="section alt">
-      <div class="container">
-        <h2 class="section-title">Get a Quote</h2>
-        <p class="section-sub center">Tell us about your environment—we’ll propose a plan within 1 business day.</p>
-
-        <form class="form" action="https://formspree.io/f/xpwrwldy" method="POST" id="contact-form" novalidate>
-          <input type="hidden" name="_next" value="thank-you.html">
-          <input type="text" name="_human" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-
-          <div class="grid">
-            <label>First Name*<input name="firstName" autocomplete="given-name" required></label>
-            <label>Last Name*<input name="lastName" autocomplete="family-name" required></label>
-            <label>Company*<input name="company" autocomplete="organization" required></label>
-            <label>Business Email*<input type="email" name="email" autocomplete="email" inputmode="email" required></label>
-            <label>Phone*<input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="^[0-9()\\-\\.\\s+]{7,}$" required></label>
-            <label>Interested In* 
-              <select name="interest" required>
-                <option value="" disabled selected>Select an option</option>
-                <option value="managedIT">Managed IT</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="cloud">Cloud Solutions</option>
-                <option value="compliance">Compliance & Auditing</option>
-              </select>
-            </label>
+      <div class="process-steps">
+        <div class="process-step reveal" style="animation-delay: 0.4s">
+          <div class="icon" aria-hidden="true">1</div>
+          <div>
+            <h4>Discovery & Assessment</h4>
+            <p>We analyze your IT estate to uncover risks and inefficiencies.</p>
           </div>
-
-          <label>Tell us a bit about your needs
-            <textarea name="message" rows="5" placeholder="Users/devices, compliance needs, recent issues…"></textarea>
-          </label>
-
-          <button class="btn" type="submit">Send Request</button>
-          <p id="contact-msg" class="form-msg" role="status" aria-live="polite"></p>
-        </form>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 0.6s">
+          <div class="icon" aria-hidden="true">2</div>
+          <div>
+            <h4>Strategic Roadmap</h4>
+            <p>We prioritize hardening, patching, and architecture improvements.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 0.8s">
+          <div class="icon" aria-hidden="true">3</div>
+          <div>
+            <div>
+            <h4>Implementation & Deployment</h4>
+            <p>Dedicated PM + team to execute with minimal disruption.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 1s">
+          <div class="icon" aria-hidden="true">4</div>
+          <div>
+            <h4>Managed Support & Optimization</h4>
+            <p>24/7 SOC & helpdesk—from tickets to crisis response.</p>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries">
+      <h2 class="section-header reveal">Industries We Serve</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        From healthcare to retail, we tailor solutions to your field.
+      </p>
+
+      <div class="industries-grid">
+        <div class="industry-card reveal" style="animation-delay: 0.4s">
+          <img src="assets/icons/healthcare.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Healthcare</h4>
+          <p>HIPAA-compliant support, EHR security, telehealth infrastructure.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 0.6s">
+          <img src="assets/icons/construction.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Construction & Field Services</h4>
+          <p>MDM, secure file sync, remote collaboration.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 0.8s">
+          <img src="assets/icons/legal.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Legal & Accounting</h4>
+          <p>Encryption at rest, secure comms, regulatory support.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1s">
+          <img src="assets/icons/real-estate.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Real Estate & Property Management</h4>
+          <p>Network isolation, remote office connectivity.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1.2s">
+          <img src="assets/icons/retail.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Retail & Local Shops</h4>
+          <p>POS hardening, PCI DSS gaps, secure guest Wi-Fi.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1.4s">
+          <img src="assets/icons/nonprofit.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Nonprofits & SMBs</h4>
+          <p>Budget-friendly solutions, grant assistance, volunteer training.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-header reveal">About Zero Heat Solutions</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        Phoenix-based engineers and SOC analysts focused on reliability, security, and people-first support.
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2 class="section-header reveal">Frequently Asked Questions</h2>
+
+      <div class="faq-item reveal" style="animation-delay: 0.3s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>How quickly can I get support?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We respond within 60 minutes during business hours (Mon–Fri, 8 AM–6 PM). Critical after-hours issues escalate to our on-call engineer (24/7).</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" style="animation-delay: 0.5s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Do you offer customizable service plans?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes—tiers for Managed IT, Cybersecurity, Cloud, and Compliance. We tailor SLAs to your size, risk, and budget.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" style="animation-delay: 0.7s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Can you help with HIPAA or PCI DSS?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Absolutely. We perform gap assessments, write policies, implement controls, and prep you for audits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-header reveal">Get a Quote</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        Tell us about your environment—we'll propose a plan within 1 business day.
+      </p>
+
+      <form action="https://formspree.io/f/xpwrwldy" method="POST" class="contact-form reveal" id="contact-form" novalidate style="animation-delay: 0.5s">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <!-- Honeypot -->
+        <input type="text" name="_human" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+        <div class="contact-grid">
+          <div>
+            <label for="firstName">First Name *</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name *</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+          </div>
+          <div>
+            <label for="company">Company *</label>
+            <input id="company" name="company" type="text" autocomplete="organization" required>
+          </div>
+          <div>
+            <label for="email">Business Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="^[0-9()\-\.\s+]{7,}$" required>
+          </div>
+          <div>
+            <label for="interest">Interested In *</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="managedIT">Managed IT</option>
+              <option value="cybersecurity">Cybersecurity</option>
+              <option value="cloud">Cloud Solutions</option>
+              <option value="compliance">Compliance & Auditing</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="message">Tell us a bit about your needs</label>
+        <textarea id="message" name="message" rows="5" placeholder="Number of users/devices, compliance needs, recent issues…"></textarea>
+
+        <button type="submit">Send Request</button>
+        <p id="contact-msg" role="status" aria-live="polite" class="intro-text" style="margin-top: 0.5rem"></p>
+      </form>
     </section>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="foot-col">
-        <strong>Zero Heat Solutions</strong>
-        <p>Phoenix, AZ • USA</p>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">→</button>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
       </div>
-      <ul class="foot-col">
-        <li><a href="#about">About</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
-      <ul class="foot-col">
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="terms.html">Terms</a></li>
-      </ul>
-      <div class="foot-col">
-        <a class="btn small" href="#contact">Get a Quote</a>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
       </div>
     </div>
-    <p class="copyright">© <span id="year"></span> Zero Heat Solutions</p>
+    <p>&copy; <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
   </footer>
 
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <!-- Structured Data for FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can I get support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We respond within 60 minutes during business hours. After-hours critical issues are escalated to on-call (24/7)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer customizable service plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tiers for Managed IT, Cybersecurity, Cloud, and Compliance with tailored SLAs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with HIPAA or PCI DSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We perform gap assessments, write policies, implement controls, and prepare you for audits."
+        }
+      }
+    ]
+  }
+  </script>
 
+  <!-- JavaScript -->
   <script>
-    // mobile menu
-    const burger = document.getElementById('hamburger');
-    const mobile = document.getElementById('mobile-menu');
-    if (burger && mobile) {
-      burger.addEventListener('click', () => {
-        const open = mobile.classList.toggle('open');
-        burger.classList.toggle('active');
-        burger.setAttribute('aria-expanded', String(open));
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
       });
     }
 
-    // form status
-    const form = document.getElementById('contact-form');
-    const msg  = document.getElementById('contact-msg');
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        if (!form.checkValidity()) {
-          e.preventDefault();
-          msg.textContent = 'Please complete the required fields.';
+    // Intersection Observer for reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // FAQ functionality
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const answer = button.nextElementSibling;
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-question').forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            otherButton.nextElementSibling.hidden = true;
+          }
+        });
+        
+        // Toggle current FAQ
+        button.setAttribute('aria-expanded', String(!isExpanded));
+        answer.hidden = !answer.hidden;
+      });
+    });
+
+    // Form handling
+    const contactForm = document.getElementById('contact-form');
+    const contactMsg = document.getElementById('contact-msg');
+    
+    if (contactForm && contactMsg) {
+      contactForm.addEventListener('submit', (event) => {
+        if (!contactForm.checkValidity()) {
+          event.preventDefault();
+          contactMsg.textContent = 'Please complete all required fields.';
+          contactMsg.style.color = '#dc2626';
         } else {
-          msg.textContent = 'Submitting…';
+          contactMsg.textContent = 'Submitting…';
+          contactMsg.style.color = '#059669';
         }
       });
     }
 
-    // year + back-to-top
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btt = document.getElementById('back-to-top');
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
     window.addEventListener('scroll', () => {
-      if (scrollY > innerHeight) btt.classList.add('show');
-      else btt.classList.remove('show');
+      if (window.scrollY > window.innerHeight) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
     });
-    btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
+    });
+
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
+
+  <!-- Fallback for no JavaScript -->
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      
+      .faq-answer {
+        display: block !important;
+      }
+      
+      .mobile-menu {
+        display: block;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+      
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-links {
+        display: flex;
+      }
+    </style>
+  </noscript>
 </body>
 </html>

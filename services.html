@@ -1,648 +1,1127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zero Heat Solutions | Our Services</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Basic SEO Tags -->
-  <meta
-    name="description"
-    content="Zero Heat Solutions — Detailed breakdown of our Managed IT & Cybersecurity services for Phoenix-area small businesses."
-  />
-  <meta
-    name="keywords"
-    content="Phoenix Managed IT, Phoenix Cybersecurity, HIPAA compliance, PCI compliance, small business IT solutions"
-  />
-  <meta name="robots" content="index, follow" />
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+  <title>Zero Heat Solutions | Professional IT & Cybersecurity Services</title>
+  <meta name="description" content="Comprehensive managed IT & cybersecurity services for Phoenix-area businesses. 24/7 SOC monitoring, compliance support, cloud solutions, and enterprise-grade security.">
+  <meta name="keywords" content="Phoenix IT support, managed cybersecurity, HIPAA compliance, PCI compliance, cloud security, SOC monitoring, business continuity">
+  <meta name="robots" content="index, follow">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Canonical + Social -->
+  <link rel="canonical" href="https://www.zeroheatit.com/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zero Heat Solutions - IT & Cybersecurity Services">
+  <meta property="og:description" content="Enterprise-grade IT and cybersecurity services designed for Phoenix small businesses. Proactive monitoring, compliance, and expert support.">
+  <meta property="og:image" content="zhs-logo.jpg">
+  <meta property="og:url" content="https://www.zeroheatit.com/services.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Prefetch -->
+  <link rel="prefetch" href="index.html" as="document">
 
   <style>
-    /* ──────────────────────────────────────────────────────────────────────────
-       CSS VARIABLES
-       ────────────────────────────────────────────────────────────────────────── */
-    :root {
-      --nav-bg: #0e1220;
-      --nav-hover: #00a8ff;
-      --accent-color: #1b263b;
-      --primary-color: #12213a;
-      --secondary-color: #007BFF;
-      --light-bg: #f4f8fc;
-      --text-light: #ffffff;
-      --text-dark: #333333;
-      --radius: 8px;
-      --transition: 0.3s ease;
-      --letter-spacing: 1px;
-      --nav-height: 60px;
-      --offset: 80px;
-      --section-padding: 3rem;
-      --card-hover-shadow: rgba(0, 0, 0, 0.15);
-      --tech-blue: #0a84ff;
-      --tech-neon: #00d8ff;
-    }
-
-    /* ──────────────────────────────────────────────────────────────────────────
-       GLOBAL RESET & BASE STYLES
-       ────────────────────────────────────────────────────────────────────────── */
-    * {
+    /* CSS Reset & Base Styles */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background-color: #ffffff;
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-    ul,
-    ol {
-      margin-left: 1.25rem;
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-      color: var(--accent-color);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    p {
-      margin-bottom: 1.5rem;
-      color: var(--text-dark);
-    }
-    button {
-      cursor: pointer;
-      transition: background-color var(--transition);
-      font-family: 'Open Sans', sans-serif;
+
+    :root {
+      --primary-blue: #0066cc;
+      --primary-dark: #003d7a;
+      --secondary-orange: #ff6b35;
+      --accent-green: #28a745;
+      --neutral-900: #1a1a1a;
+      --neutral-800: #2d2d2d;
+      --neutral-700: #404040;
+      --neutral-500: #6b7280;
+      --neutral-400: #9ca3af;
+      --neutral-200: #e5e7eb;
+      --neutral-100: #f3f4f6;
+      --white: #ffffff;
+      --border-radius: 8px;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--secondary-orange) 0%, #ff5722 100%);
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       NAVIGATION (DESKTOP & MOBILE)
-       ────────────────────────────────────────────────────────────────────────── */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: var(--neutral-800);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* Navigation - Matching index.html */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      background-color: var(--nav-bg);
-      height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1.5rem;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-    nav .logo img {
-      height: 50px;
-      width: auto;
-    }
-    nav .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    nav .nav-links li {
-      list-style: none;
-    }
-    nav .nav-links li a {
-      color: var(--text-light);
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: var(--letter-spacing);
-      position: relative;
-      padding: 0.5rem 0;
-    }
-    nav .nav-links li a::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
       left: 0;
-      width: 0%;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--neutral-200);
+      z-index: 1000;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .logo img {
+      width: auto;
+      height: 50px;
+      max-width: 120px;
+      border-radius: var(--border-radius);
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--neutral-700);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-blue);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
       height: 2px;
-      background-color: var(--tech-neon);
-      transition: width var(--transition);
+      background: var(--primary-blue);
+      transition: var(--transition);
     }
-    nav .nav-links li a:hover::after {
+
+    .nav-links a:hover::after {
       width: 100%;
-    }
-    nav .nav-links li a:hover {
-      color: var(--tech-neon);
     }
 
     .hamburger {
       display: none;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
+      background: none;
+      border: none;
       cursor: pointer;
+      gap: 4px;
     }
+
     .hamburger span {
-      display: block;
-      width: 100%;
+      width: 25px;
       height: 3px;
-      margin-bottom: 5px;
-      background-color: var(--text-light);
+      background: var(--neutral-700);
       border-radius: 2px;
-      transition: all var(--transition);
-    }
-    .hamburger span:last-child {
-      margin-bottom: 0;
+      transition: var(--transition);
     }
 
     .mobile-menu {
+      display: none;
+    }
+
+    /* Hero Section - Enhanced */
+    .services-hero {
+      min-height: 70vh;
+      background: var(--gradient-primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 70px;
+    }
+
+    .services-hero::before {
+      content: '';
       position: absolute;
-      top: var(--nav-height);
+      top: 0;
       left: 0;
       right: 0;
-      background-color: var(--nav-bg);
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      z-index: 999;
-    }
-    .mobile-menu.open {
-      display: flex;
-    }
-    .mobile-menu li {
-      list-style: none;
-      margin: 0.75rem 0;
-    }
-    .mobile-menu li a {
-      color: var(--text-light);
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: var(--letter-spacing);
-      transition: color var(--transition);
-    }
-    .mobile-menu li a:hover {
-      color: var(--tech-neon);
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
     }
 
-    @media screen and (max-width: 768px) {
-      nav .nav-links {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
+    .services-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom right, transparent 49%, var(--white) 50%);
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       HERO / BANNER FOR SERVICES PAGE
-       ────────────────────────────────────────────────────────────────────────── */
-    .services-hero {
-      position: relative;
-      background:
-        linear-gradient(rgba(18, 33, 58, 0.7), rgba(18, 33, 58, 0.7)),
-        url('assets/phoenix-skyline.jpg') center/cover no-repeat;
-      color: var(--text-light);
-      padding: 6rem 1rem;
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
       text-align: center;
-    }
-    .services-hero h1 {
-      font-size: 2.75rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-    .services-hero p {
-      font-size: 1.125rem;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-      color: #e0e0e0;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       MAIN CONTENT & SECTIONS (with SCROLL OFFSETS)
-       ────────────────────────────────────────────────────────────────────────── */
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, var(--white), rgba(255, 255, 255, 0.9));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary-orange);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    /* Main Content */
     main {
       max-width: 1200px;
-      margin: auto;
-      padding: 0 1rem;
-    }
-    section {
-      padding: var(--section-padding) 0;
-    }
-    section[id] {
-      scroll-margin-top: var(--offset);
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-    /* ──────────────────────────────────────────────────────────────────────────
-       DETAILED SERVICES GRID
-       ────────────────────────────────────────────────────────────────────────── */
+    /* Section Styles */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--neutral-900);
+      position: relative;
+    }
+
+    .section-header::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-accent);
+      border-radius: 2px;
+    }
+
+    .intro-text {
+      font-size: 1.125rem;
+      text-align: center;
+      color: var(--neutral-500);
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Enhanced Services Grid */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
     }
+
     .service-card {
-      background-color: var(--light-bg);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: var(--radius);
-      box-shadow: 0 4px 10px var(--card-hover-shadow);
+      background: var(--white);
+      border-radius: 16px;
       padding: 2.5rem;
-      text-align: left;
-      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--neutral-200);
       position: relative;
       overflow: hidden;
     }
+
     .service-card::before {
-      content: "";
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-accent);
+    }
+
+    .service-card::after {
+      content: '';
       position: absolute;
       top: -50%;
       right: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at center, var(--tech-neon) 0%, transparent 70%);
+      background: radial-gradient(circle at center, var(--primary-blue) 0%, transparent 70%);
       opacity: 0;
       transition: opacity var(--transition);
+      pointer-events: none;
     }
-    .service-card:hover::before {
-      opacity: 0.15;
-    }
-    .service-card img {
-      height: 50px;
-      margin-bottom: 1rem;
-    }
-    .service-card h4 {
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      color: var(--primary-color);
-    }
-    .service-card p {
-      font-size: 1rem;
-      color: #444444;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .service-card ul {
-      list-style-type: disc;
-      margin: 0.5rem 0 0 1.25rem;
-      text-align: left;
-    }
-    .service-card li {
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+
     .service-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-xl);
     }
 
-    /* ACCENT BARS IN SECTION HEADERS */
-    .section-header {
-      display: inline-block;
-      position: relative;
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .section-header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background-color: var(--tech-blue);
+    .service-card:hover::after {
+      opacity: 0.03;
     }
 
-    /* FOOTER + SITEMAP */
-    footer {
-      background-color: var(--accent-color);
-      color: var(--text-light);
-      padding: 2rem 1rem;
-    }
-    .footer-sitemap {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+    .service-icon {
+      width: 64px;
+      height: 64px;
       margin-bottom: 1.5rem;
-    }
-    .sitemap-column {
-      min-width: 150px;
-    }
-    .sitemap-column h4 {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: var(--text-light);
-    }
-    .sitemap-column ul {
-      list-style: none;
-      padding: 0;
-    }
-    .sitemap-column li {
-      margin-bottom: 0.5rem;
-    }
-    .sitemap-column a {
-      color: var(--text-light);
-      font-size: 0.95rem;
-    }
-    .sitemap-column a:hover {
-      text-decoration: underline;
-    }
-    footer p {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    /* BACK TO TOP BUTTON */
-    #back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: var(--secondary-color);
-      color: var(--text-light);
-      border: none;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      font-size: 1.5rem;
+      padding: 12px;
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .service-icon img {
+      width: 40px;
+      height: 40px;
+      filter: brightness(0) invert(1);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--neutral-900);
+    }
+
+    .service-card p {
+      margin-bottom: 1.5rem;
+      color: var(--neutral-600);
+      line-height: 1.6;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .service-features li {
+      padding: 0.5rem 0;
+      color: var(--neutral-600);
+      position: relative;
+      padding-left: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      color: var(--accent-green);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .service-features li strong {
+      color: var(--neutral-800);
+      font-weight: 600;
+    }
+
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-blue);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      padding: 0.75rem 1.5rem;
+      background: var(--neutral-100);
+      border-radius: var(--border-radius);
+      margin-top: auto;
+    }
+
+    .service-cta:hover {
+      background: var(--primary-blue);
+      color: var(--white);
+      transform: translateX(4px);
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+      background: var(--neutral-100);
+      margin: 5rem -2rem 0;
+      padding: 5rem 2rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 1rem;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--neutral-900);
+    }
+
+    .benefit-item p {
+      color: var(--neutral-600);
+      line-height: 1.5;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient-primary);
+      color: var(--white);
+      text-align: center;
+      margin: 5rem -2rem 0;
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(255, 107, 53, 0.2) 0%, transparent 50%);
+    }
+
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .cta-section p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--secondary-orange);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .cta-button:hover {
+      background: #ff5722;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--neutral-900);
+      color: var(--white);
+      padding: 3rem 2rem 2rem;
+    }
+
+    .footer-sitemap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .sitemap-column h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .sitemap-column ul {
+      list-style: none;
+    }
+
+    .sitemap-column li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sitemap-column a {
+      color: var(--neutral-400);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .sitemap-column a:hover {
+      color: var(--white);
+    }
+
+    footer p {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--neutral-700);
+      color: var(--neutral-400);
+    }
+
+    /* Back to Top */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--primary-blue);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
       cursor: pointer;
-      z-index: 1000;
       opacity: 0;
       visibility: hidden;
-      transition: opacity var(--transition), visibility var(--transition);
+      transition: var(--transition);
+      z-index: 1000;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-90deg);
     }
+
     #back-to-top.show {
       opacity: 1;
       visibility: visible;
     }
+
+    #back-to-top:hover {
+      background: var(--primary-dark);
+      transform: rotate(-90deg) scale(1.1);
+    }
+
+    /* Animation Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .mobile-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-bottom: 1px solid var(--neutral-200);
+        list-style: none;
+        padding: 1rem 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .mobile-menu li {
+        padding: 0.5rem 2rem;
+      }
+
+      .mobile-menu a {
+        color: var(--neutral-700);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-choose-us,
+      .cta-section {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .section-header {
+        font-size: 2rem;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Accessibility */
+    .visually-hidden-focusable:not(:focus):not(:active) {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      :root {
+        --neutral-500: #404040;
+        --neutral-400: #666666;
+      }
+      
+      .service-card, .benefit-item {
+        border-width: 2px;
+      }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       NAVIGATION (Desktop + Mobile)
-       ────────────────────────────────────────────────────────────────────────── -->
-  <nav>
+  <!-- Skip Link -->
+  <a href="#main" class="visually-hidden-focusable">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav aria-label="Primary">
     <div class="logo">
-      <a href="index.html"><img src="zhs-logo.jpg" alt="Zero Heat Solutions Logo" /></a>
+      <a href="index.html">
+        <img src="zhs-logo.jpg" alt="Zero Heat Solutions logo" width="120" height="50" decoding="async">
+      </a>
     </div>
     <ul class="nav-links">
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html" aria-current="page">Services</a></li>
       <li><a href="index.html#process">How We Work</a></li>
       <li><a href="index.html#industries">Industries</a></li>
       <li><a href="index.html#about">About Us</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#contact">Get a Quote</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="mobile-menu" id="mobile-menu">
-      <li><a href="services.html">Services</a></li>
-      <li><a href="index.html#process">How We Work</a></li>
-      <li><a href="index.html#industries">Industries</a></li>
-      <li><a href="index.html#about">About Us</a></li>
-      <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#contact">Get a Quote</a></li>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile">
+      <li role="none"><a role="menuitem" href="services.html">Services</a></li>
+      <li role="none"><a role="menuitem" href="index.html#process">How We Work</a></li>
+      <li role="none"><a role="menuitem" href="index.html#industries">Industries</a></li>
+      <li role="none"><a role="menuitem" href="index.html#about">About Us</a></li>
+      <li role="none"><a role="menuitem" href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       HERO / BANNER FOR SERVICES PAGE
-       ────────────────────────────────────────────────────────────────────────── -->
-  <header class="services-hero">
-    <h1>Empowering Your Digital Frontier</h1>
-    <p>
-      Dive into our comprehensive portfolio of Managed IT & Cybersecurity solutions—designed to safeguard and scale Phoenix-area small businesses.  
-      Click any service below to learn how we can protect your critical data and optimize your infrastructure.
-    </p>
+  <!-- Hero Section -->
+  <header class="services-hero" role="banner">
+    <div class="hero-content">
+      <h1 class="reveal">Comprehensive IT & Cybersecurity Solutions</h1>
+      <p class="reveal" style="animation-delay: 0.3s">
+        Enterprise-grade services tailored for Phoenix small businesses. From 24/7 monitoring to compliance support, we've got your technology covered.
+      </p>
+      
+      <div class="hero-stats reveal" style="animation-delay: 0.6s">
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <div class="stat-label">SOC Monitoring</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">99.9%</span>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">&lt;60min</span>
+          <div class="stat-label">Response Time</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <div class="stat-label">Compliance Ready</div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       DETAILED SERVICES GRID
-       ────────────────────────────────────────────────────────────────────────── -->
-  <main>
+  <main id="main">
+    <!-- Services Section -->
     <section id="services">
-      <h2 class="section-header">Our Services</h2>
+      <h2 class="section-header reveal">Our Services</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        Comprehensive technology solutions designed to protect, optimize, and scale your business operations.
+      </p>
+
       <div class="services-grid">
-        <!-- 1. Comprehensive Cybersecurity -->
-        <div class="service-card">
-          <img src="assets/icons/shield.svg" alt="Cybersecurity Icon" />
-          <h4>Comprehensive Cybersecurity</h4>
-          <p>
-            Fortify your digital perimeter with a multi-layered approach:
-          </p>
-          <ul>
+        <!-- Cybersecurity -->
+        <article class="service-card reveal" style="animation-delay: 0.4s">
+          <div class="service-icon">
+            <img src="assets/icons/shield.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Comprehensive Cybersecurity</h3>
+          <p>Multi-layered security approach with 24/7 SOC monitoring, threat hunting, and incident response to protect your digital assets.</p>
+          
+          <ul class="service-features">
             <li>
-              <strong>Risk Assessments & Gap Analysis</strong><br />
-              • In-depth infrastructure audit to uncover vulnerabilities<br />
-              • Detailed remediation roadmap aligned with business priorities
+              <strong>24/7 Security Operations Center (SOC)</strong><br>
+              Continuous monitoring with real-time threat detection and response
             </li>
             <li>
-              <strong>Cloud Security & Compliance Audits</strong><br />
-              • AWS/Azure security posture assessments<br />
-              • HIPAA & PCI compliance reviews for cloud workloads
+              <strong>Advanced Threat Hunting</strong><br>
+              Proactive identification of sophisticated threats and anomalies
             </li>
             <li>
-              <strong>Security Awareness Training & Phishing Simulations</strong><br />
-              • Interactive staff training modules<br />
-              • Realistic phishing campaigns with analytics and reporting
+              <strong>Endpoint Detection & Response (EDR)</strong><br>
+              Real-time endpoint protection with behavioral analysis
             </li>
             <li>
-              <strong>HIPAA, PCI & SMB Compliance Support</strong><br />
-              • Policy creation (Data Handling, Incident Response, etc.)<br />
-              • Continuous compliance monitoring and audit preparation
+              <strong>Security Awareness Training</strong><br>
+              Interactive staff training with simulated phishing campaigns
+            </li>
+            <li>
+              <strong>Risk Assessments & Penetration Testing</strong><br>
+              Comprehensive vulnerability assessments and remediation planning
             </li>
           </ul>
-        </div>
+          
+          <a href="index.html#contact" class="service-cta">Get Security Assessment →</a>
+        </article>
 
-        <!-- 2. Managed IT Support -->
-        <div class="service-card">
-          <img src="assets/icons/server.svg" alt="Managed IT Icon" />
-          <h4>Managed IT Support</h4>
-          <p>
-            Keep your operations seamless with our 24/7 Managed IT solution:
-          </p>
-          <ul>
+        <!-- Managed IT -->
+        <article class="service-card reveal" style="animation-delay: 0.6s">
+          <div class="service-icon">
+            <img src="assets/icons/server.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Managed IT Support</h3>
+          <p>Proactive IT management with 24/7 helpdesk support, ensuring your systems run smoothly and efficiently.</p>
+          
+          <ul class="service-features">
             <li>
-              <strong>24/7 Remote Help Desk & IT Support</strong><br />
-              • Rapid ticket resolution (most issues solved < 1 hour)<br />
-              • Windows, macOS, and Linux expert assistance
+              <strong>24/7 Help Desk & Remote Support</strong><br>
+              Expert assistance with &lt;60 minute response time guarantee
             </li>
             <li>
-              <strong>Workstation, Device & Patch Management</strong><br />
-              • Automated patch deployments for OS & third-party software<br />
-              • Endpoint inventory tracking and lifecycle management
+              <strong>Proactive Network Monitoring</strong><br>
+              Real-time monitoring with automated alerting and issue resolution
             </li>
             <li>
-              <strong>Network Monitoring & VPN/Firewall Maintenance</strong><br />
-              • Proactive SNMP/NetFlow monitoring with real-time alerts<br />
-              • Managed firewall rule reviews and secure VPN configuration
+              <strong>Server & Workstation Management</strong><br>
+              Complete lifecycle management including updates and maintenance
             </li>
             <li>
-              <strong>Backup & Continuity Services</strong><br />
-              • On-premises and cloud backup orchestration<br />
-              • Comprehensive disaster recovery planning with RTO/RPO alignment
+              <strong>Patch Management</strong><br>
+              Automated security updates for OS and third-party applications
             </li>
             <li>
-              <strong>Office 365 & Google Workspace Support</strong><br />
-              • Tenant configuration, security hardening, and license management<br />
-              • Migration assistance and ongoing administration
+              <strong>Asset & License Management</strong><br>
+              Complete inventory tracking with compliance reporting
             </li>
           </ul>
-        </div>
+          
+          <a href="index.html#contact" class="service-cta">Start Free Trial →</a>
+        </article>
 
-        <!-- 3. Compliance & Auditing -->
-        <div class="service-card">
-          <img src="assets/icons/checklist.svg" alt="Compliance Icon" />
-          <h4>Compliance & Auditing</h4>
-          <p>
-            Navigate regulatory landscapes with confidence:
-          </p>
-          <ul>
+        <!-- Cloud & Infrastructure -->
+        <article class="service-card reveal" style="animation-delay: 0.8s">
+          <div class="service-icon">
+            <img src="assets/icons/cloud-computing.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Cloud & Infrastructure</h3>
+          <p>Modern cloud solutions and infrastructure optimization for scalability, performance, and cost-efficiency.</p>
+          
+          <ul class="service-features">
             <li>
-              <strong>HIPAA/PCI Gap Analysis</strong><br />
-              • Control mapping against HIPAA & PCI DSS frameworks<br />
-              • Gap reports with prioritized remediation steps
+              <strong>Cloud Migration & Architecture</strong><br>
+              Secure AWS/Azure migrations with zero-downtime strategies
             </li>
             <li>
-              <strong>Policy & Procedure Development</strong><br />
-              • Craft Acceptable Use, Incident Response, and Data Protection policies<br />
-              • Employee confidentiality agreements and security protocols
+              <strong>Virtual Desktop Infrastructure (VDI)</strong><br>
+              Secure remote access solutions for distributed teams
             </li>
             <li>
-              <strong>Continuous Compliance Monitoring</strong><br />
-              • Quarterly vulnerability scans and remediation support<br />
-              • Vendor risk assessments and BAA management
+              <strong>Microsoft 365 & Google Workspace</strong><br>
+              Complete setup, security configuration, and ongoing management
             </li>
             <li>
-              <strong>Audit Remediation Planning</strong><br />
-              • Roadmap to close compliance gaps<br />
-              • Coordination with external auditors, ensuring smooth audits
+              <strong>Hybrid Cloud Integration</strong><br>
+              Seamless on-premises and cloud environment integration
+            </li>
+            <li>
+              <strong>Infrastructure as Code (IaC)</strong><br>
+              Automated deployment and scaling with DevOps best practices
             </li>
           </ul>
-        </div>
+          
+          <a href="index.html#contact" class="service-cta">Plan Your Migration →</a>
+        </article>
 
-        <!-- 4. Backup & Continuity -->
-        <div class="service-card">
-          <img src="assets/icons/cloud-backup.svg" alt="Backup Icon" />
-          <h4>Backup & Continuity</h4>
-          <p>
-            Guarantee business resilience through proactive data protection:
-          </p>
-          <ul>
+        <!-- Compliance & Auditing -->
+        <article class="service-card reveal" style="animation-delay: 1s">
+          <div class="service-icon">
+            <img src="assets/icons/checklist.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Compliance & Auditing</h3>
+          <p>Navigate regulatory requirements with confidence through comprehensive compliance programs and audit preparation.</p>
+          
+          <ul class="service-features">
             <li>
-              <strong>Automated On-Premises & Cloud Backups</strong><br />
-              • Local snapshots plus cloud replication (AWS, Azure, GCP)<br />
-              • File-level and image-level backup strategies
+              <strong>HIPAA/PCI DSS Gap Assessments</strong><br>
+              Detailed compliance gap analysis with prioritized remediation plans
             </li>
             <li>
-              <strong>Disaster Recovery Planning</strong><br />
-              • RTO/RPO assessment and documentation<br />
-              • Failover site testing and runbook creation
+              <strong>Policy & Procedure Development</strong><br>
+              Custom security policies, procedures, and employee training materials
             </li>
             <li>
-              <strong>24/7 Monitoring & Alerting</strong><br />
-              • Backup job health checks with automated notifications<br />
-              • Offsite backup integrity audits and audits
+              <strong>Continuous Compliance Monitoring</strong><br>
+              Automated compliance checks with regular reporting and alerts
             </li>
             <li>
-              <strong>Business Continuity Strategy</strong><br />
-              • Redundant infrastructure recommendations<br />
-              • High-availability clustering and load balancing
+              <strong>Audit Preparation & Support</strong><br>
+              Complete audit readiness including documentation and evidence collection
+            </li>
+            <li>
+              <strong>Risk Management Framework</strong><br>
+              NIST-based risk assessment and management programs
             </li>
           </ul>
-        </div>
+          
+          <a href="index.html#contact" class="service-cta">Get Compliance Review →</a>
+        </article>
 
-        <!-- 5. Cloud & Infrastructure -->
-        <div class="service-card">
-          <img src="assets/icons/cloud-computing.svg" alt="Cloud Icon" />
-          <h4>Cloud & Infrastructure</h4>
-          <p>
-            Modernize your environment for scale, performance, and security:
-          </p>
-          <ul>
+        <!-- Backup & Recovery -->
+        <article class="service-card reveal" style="animation-delay: 1.2s">
+          <div class="service-icon">
+            <img src="assets/icons/cloud-backup.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Backup & Business Continuity</h3>
+          <p>Comprehensive data protection and business continuity solutions to ensure your operations never stop.</p>
+          
+          <ul class="service-features">
             <li>
-              <strong>Office 365 & Google Workspace Administration</strong><br />
-              • Tenant setup, security policies, and MFA enforcement<br />
-              • License management and cost optimization
+              <strong>Automated Cloud & Local Backups</strong><br>
+              Multi-tier backup strategy with local and cloud replication
             </li>
             <li>
-              <strong>AWS & Azure Optimization</strong><br />
-              • Cost analysis and resource rightsizing<br />
-              • IAM reviews, secure role-based access, and policy enforcement
+              <strong>Disaster Recovery Planning</strong><br>
+              Custom DR plans with defined RTO/RPO objectives and testing
             </li>
             <li>
-              <strong>Secure Cloud Migrations</strong><br />
-              • Lift-and-shift or cloud-native rearchitecting<br />
-              • Zero-trust network segmentation and VPC/VNet design
+              <strong>Business Continuity Assessment</strong><br>
+              Comprehensive BIA and continuity strategy development
             </li>
             <li>
-              <strong>Virtual Desktop Infrastructure (VDI)</strong><br />
-              • Azure Virtual Desktop or AWS WorkSpaces deployments<br />
-              • Secure remote access for distributed teams
+              <strong>High Availability Solutions</strong><br>
+              Redundant systems and failover configurations for critical services
             </li>
             <li>
-              <strong>Hybrid-Cloud & On-Prem Integration</strong><br />
-              • Site-to-site VPN, ExpressRoute/Direct Connect<br />
-              • AD/Azure AD sync, SSO configuration, and hybrid identity
+              <strong>Recovery Testing & Validation</strong><br>
+              Regular DR drills and backup integrity verification
             </li>
           </ul>
+          
+          <a href="index.html#contact" class="service-cta">Test Your Recovery →</a>
+        </article>
+
+        <!-- Strategic IT Consulting -->
+        <article class="service-card reveal" style="animation-delay: 1.4s">
+          <div class="service-icon">
+            <img src="assets/icons/strategy.svg" alt="" width="40" height="40" loading="lazy">
+          </div>
+          <h3>Strategic IT Consulting</h3>
+          <p>Expert guidance to align your technology investments with business objectives and drive digital transformation.</p>
+          
+          <ul class="service-features">
+            <li>
+              <strong>IT Strategy & Roadmapping</strong><br>
+              Long-term technology planning aligned with business goals
+            </li>
+            <li>
+              <strong>Digital Transformation</strong><br>
+              Modernization strategies for legacy systems and processes
+            </li>
+            <li>
+              <strong>Technology Procurement</strong><br>
+              Vendor evaluation, contract negotiation, and implementation oversight
+            </li>
+            <li>
+              <strong>Cost Optimization</strong><br>
+              IT spend analysis with recommendations for efficiency improvements
+            </li>
+            <li>
+              <strong>Executive Technology Advisory</strong><br>
+              C-level consultation on technology investments and risk management
+            </li>
+          </ul>
+          
+          <a href="index.html#contact" class="service-cta">Schedule Consultation →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+      <div class="hero-content">
+        <h2 class="section-header reveal">Why Phoenix Businesses Choose Zero Heat Solutions</h2>
+        <p class="intro-text reveal" style="animation-delay: 0.3s">
+          Local expertise meets enterprise-grade solutions. We understand the unique challenges facing Phoenix-area businesses.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit-item reveal" style="animation-delay: 0.4s">
+            <div class="benefit-icon">
+              🏆
+            </div>
+            <h4>Proven Expertise</h4>
+            <p>Certified professionals with decades of combined experience in enterprise IT and cybersecurity.</p>
+          </div>
+
+          <div class="benefit-item reveal" style="animation-delay: 0.6s">
+            <div class="benefit-icon">
+              🚀
+            </div>
+            <h4>Rapid Response</h4>
+            <p>Local team with guaranteed response times and 24/7 emergency support when you need it most.</p>
+          </div>
+
+          <div class="benefit-item reveal" style="animation-delay: 0.8s">
+            <div class="benefit-icon">
+              💡
+            </div>
+            <h4>Proactive Approach</h4>
+            <p>We prevent problems before they happen with continuous monitoring and predictive analytics.</p>
+          </div>
+
+          <div class="benefit-item reveal" style="animation-delay: 1s">
+            <div class="benefit-icon">
+              📊
+            </div>
+            <h4>Transparent Reporting</h4>
+            <p>Detailed monthly reports and real-time dashboards so you always know what we're doing.</p>
+          </div>
+
+          <div class="benefit-item reveal" style="animation-delay: 1.2s">
+            <div class="benefit-icon">
+              🔒
+            </div>
+            <h4>Security First</h4>
+            <p>Every solution is designed with security as the foundation, not an afterthought.</p>
+          </div>
+
+          <div class="benefit-item reveal" style="animation-delay: 1.4s">
+            <div class="benefit-icon">
+              💰
+            </div>
+            <h4>Cost Effective</h4>
+            <p>Enterprise-level services at SMB prices with flexible pricing models that scale with you.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       BACK TO TOP BUTTON
-       ────────────────────────────────────────────────────────────────────────── -->
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="reveal">Ready to Secure Your Business?</h2>
+      <p class="reveal" style="animation-delay: 0.3s">
+        Get a free security assessment and discover how Zero Heat Solutions can protect and optimize your IT infrastructure.
+      </p>
+      <a href="index.html#contact" class="cta-button reveal" style="animation-delay: 0.6s">
+        Get Free Assessment →
+      </a>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top">↑</button>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       FOOTER + SITEMAP
-       ────────────────────────────────────────────────────────────────────────── -->
-  <footer>
+  <!-- Footer -->
+  <footer role="contentinfo">
     <div class="footer-sitemap">
       <div class="sitemap-column">
-        <h4>Quick Links</h4>
+        <h4>Company</h4>
         <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="index.html#process">How We Work</a></li>
-          <li><a href="index.html#industries">Industries</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="sitemap-column">
-        <h4>Support</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="index.html#contact">Get a Quote</a></li>
-          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+          <li><a href="#services">Cybersecurity</a></li>
+          <li><a href="#services">Managed IT</a></li>
+          <li><a href="#services">Cloud Solutions</a></li>
+          <li><a href="#services">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="index.html#industries">Healthcare</a></li>
+          <li><a href="index.html#industries">Legal</a></li>
+          <li><a href="index.html#industries">Retail</a></li>
+          <li><a href="index.html#industries">Construction</a></li>
         </ul>
       </div>
       <div class="sitemap-column">
@@ -652,41 +1131,173 @@
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
       </div>
+      <div class="sitemap-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="index.html#contact">Get a Quote</a></li>
+          <li><a href="mailto:info@zeroheatsolutions.com">Email Us</a></li>
+        </ul>
+      </div>
     </div>
-    <p>&copy; 2025 Zero Heat Solutions. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
   </footer>
 
-  <!-- ──────────────────────────────────────────────────────────────────────────
-       JAVASCRIPT: MOBILE MENU & BACK TO TOP
-       ────────────────────────────────────────────────────────────────────────── -->
+  <!-- Structured Data for Services -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Zero Heat Solutions",
+    "url": "https://www.zeroheatit.com/services.html",
+    "logo": "https://www.zeroheatit.com/zhs-logo.jpg",
+    "description": "Comprehensive IT and cybersecurity services for Phoenix-area businesses including managed IT, 24/7 SOC monitoring, compliance support, and cloud solutions.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Phoenix",
+      "@type": "PostalAddress",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "addressCountry": "US"
+    },
+    "serviceType": [
+      "Managed IT Services",
+      "Cybersecurity Services", 
+      "Cloud Solutions",
+      "Compliance & Auditing",
+      "Backup & Recovery",
+      "IT Consulting"
+    ],
+    "areaServed": "Phoenix, Arizona"
+  }
+  </script>
+
+  <!-- JavaScript -->
   <script>
-    // Toggle the mobile menu open/close
+    // Mobile menu functionality
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
 
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('active');
+    // Intersection Observer for reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
     });
-    document.querySelectorAll('.mobile-menu a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight * 0.5) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
       });
     });
 
-    // “Back to Top” button logic
-    const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > window.innerHeight) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Service card hover effects
+    document.querySelectorAll('.service-card').forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.setProperty('--hover-scale', '1');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.setProperty('--hover-scale', '0');
+      });
     });
+
+    // Performance optimization - Lazy load images
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+
+      document.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+        imageObserver.observe(img);
+      });
+    }
   </script>
+
+  <!-- Fallback for no JavaScript -->
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      
+      .mobile-menu {
+        display: block;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+      
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-links {
+        display: flex;
+      }
+    </style>
+  </noscript>
 </body>
 </html>

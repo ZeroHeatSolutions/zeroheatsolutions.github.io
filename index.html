@@ -307,29 +307,6 @@
       margin-right: auto;
     }
 
-    /* Icon Styles */
-    .icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 1rem;
-    }
-
-    .icon svg {
-      width: 100%;
-      height: 100%;
-      stroke: var(--primary-blue);
-      fill: none;
-      stroke-width: 1.5;
-    }
-
-    .service-card .icon svg {
-      stroke: var(--primary-blue);
-    }
-
-    .industry-card .icon svg {
-      stroke: var(--primary-blue);
-    }
-
     /* Services Grid */
     .services-grid {
       display: grid;
@@ -364,8 +341,11 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .service-card:hover .icon svg {
-      stroke: var(--secondary-orange);
+    .service-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(220deg);
     }
 
     .service-card h4 {
@@ -438,24 +418,17 @@
       box-shadow: var(--shadow-md);
     }
 
-    .process-step .step-icon {
-      width: 50px;
-      height: 50px;
+    .process-step .icon {
+      width: 40px;
+      height: 40px;
       background: var(--primary-blue);
       color: var(--white);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: 700;
       flex-shrink: 0;
-    }
-
-    .process-step .step-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--white);
-      fill: none;
-      stroke-width: 2;
     }
 
     .process-step h4 {
@@ -492,8 +465,11 @@
       transform: translateY(-2px);
     }
 
-    .industry-card:hover .icon svg {
-      stroke: var(--secondary-orange);
+    .industry-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(220deg);
     }
 
     .industry-card h4 {
@@ -678,17 +654,11 @@
       visibility: hidden;
       transition: var(--transition);
       z-index: 1000;
+      font-size: 1.2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    #back-to-top svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--white);
-      fill: none;
-      stroke-width: 2;
+      transform: rotate(-90deg);
     }
 
     #back-to-top.show {
@@ -698,7 +668,7 @@
 
     #back-to-top:hover {
       background: var(--primary-dark);
-      transform: scale(1.1);
+      transform: rotate(-90deg) scale(1.1);
     }
 
     /* Animation Classes */
@@ -892,12 +862,7 @@
 
       <div class="services-grid">
         <article class="service-card reveal" style="animation-delay: 0.4s">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-          </div>
+          <img src="assets/icons/shield.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Cybersecurity & Threat Hunting</h4>
           <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
           <ul>
@@ -910,14 +875,7 @@
         </article>
 
         <article class="service-card reveal" style="animation-delay: 0.6s">
-          <div class="icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
-              <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
-              <line x1="6" x2="6.01" y1="6" y2="6"/>
-              <line x1="6" x2="6.01" y1="18" y2="18"/>
-            </svg>
-          </div>
+          <img src="assets/icons/server.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Managed IT & Helpdesk</h4>
           <p>Proactive network management, patching, and responsive support.</p>
           <ul>
@@ -926,3 +884,432 @@
             <li>Server & Workstation Care</li>
             <li>Lifecycle Management</li>
           </ul>
+          <a class="learn-more-link" href="services.html#managed-it">Learn More →</a>
+        </article>
+
+        <article class="service-card reveal" style="animation-delay: 0.8s">
+          <img src="assets/icons/cloud-computing.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Cloud & Infrastructure</h4>
+          <p>Secure Azure/AWS/hybrid deployments and zero-downtime migrations.</p>
+          <ul>
+            <li>Cloud Architecture</li>
+            <li>VDI</li>
+            <li>M365/Workspace</li>
+            <li>DR & Planning</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#cloud">Learn More →</a>
+        </article>
+
+        <article class="service-card reveal" style="animation-delay: 1s">
+          <img src="assets/icons/checklist.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Compliance, Auditing & Governance</h4>
+          <p>HIPAA, PCI DSS, SOC 2, and NIST readiness with gaps, policies, and monitoring.</p>
+          <ul>
+            <li>HIPAA/PCI Gaps</li>
+            <li>Policies</li>
+            <li>Continuous Monitoring</li>
+            <li>Audit Remediation</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#auditing">Learn More →</a>
+        </article>
+
+        <article class="service-card reveal" style="animation-delay: 1.2s">
+          <img src="assets/icons/cloud-backup.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Backup, Recovery & Continuity</h4>
+          <p>Automated backups, secure replication, and fast recovery.</p>
+          <ul>
+            <li>Local & Cloud</li>
+            <li>DR Testing</li>
+            <li>RTO/RPO SLAs</li>
+            <li>High Availability</li>
+          </ul>
+          <a class="learn-more-link" href="services.html#backup">Learn More →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="process">
+      <h2 class="section-header reveal">How We Work</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        A consultative, transparent approach—know exactly what we're doing, why, and when.
+      </p>
+
+      <div class="process-steps">
+        <div class="process-step reveal" style="animation-delay: 0.4s">
+          <div class="icon" aria-hidden="true">1</div>
+          <div>
+            <h4>Discovery & Assessment</h4>
+            <p>We analyze your IT estate to uncover risks and inefficiencies.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 0.6s">
+          <div class="icon" aria-hidden="true">2</div>
+          <div>
+            <h4>Strategic Roadmap</h4>
+            <p>We prioritize hardening, patching, and architecture improvements.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 0.8s">
+          <div class="icon" aria-hidden="true">3</div>
+          <div>
+            <div>
+            <h4>Implementation & Deployment</h4>
+            <p>Dedicated PM + team to execute with minimal disruption.</p>
+          </div>
+        </div>
+        <div class="process-step reveal" style="animation-delay: 1s">
+          <div class="icon" aria-hidden="true">4</div>
+          <div>
+            <h4>Managed Support & Optimization</h4>
+            <p>24/7 SOC & helpdesk—from tickets to crisis response.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries">
+      <h2 class="section-header reveal">Industries We Serve</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        From healthcare to retail, we tailor solutions to your field.
+      </p>
+
+      <div class="industries-grid">
+        <div class="industry-card reveal" style="animation-delay: 0.4s">
+          <img src="assets/icons/healthcare.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Healthcare</h4>
+          <p>HIPAA-compliant support, EHR security, telehealth infrastructure.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 0.6s">
+          <img src="assets/icons/construction.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Construction & Field Services</h4>
+          <p>MDM, secure file sync, remote collaboration.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 0.8s">
+          <img src="assets/icons/legal.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Legal & Accounting</h4>
+          <p>Encryption at rest, secure comms, regulatory support.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1s">
+          <img src="assets/icons/real-estate.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Real Estate & Property Management</h4>
+          <p>Network isolation, remote office connectivity.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1.2s">
+          <img src="assets/icons/retail.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Retail & Local Shops</h4>
+          <p>POS hardening, PCI DSS gaps, secure guest Wi-Fi.</p>
+        </div>
+        <div class="industry-card reveal" style="animation-delay: 1.4s">
+          <img src="assets/icons/nonprofit.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Nonprofits & SMBs</h4>
+          <p>Budget-friendly solutions, grant assistance, volunteer training.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-header reveal">About Zero Heat Solutions</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        Phoenix-based engineers and SOC analysts focused on reliability, security, and people-first support.
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2 class="section-header reveal">Frequently Asked Questions</h2>
+
+      <div class="faq-item reveal" style="animation-delay: 0.3s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>How quickly can I get support?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>We respond within 60 minutes during business hours (Mon–Fri, 8 AM–6 PM). Critical after-hours issues escalate to our on-call engineer (24/7).</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" style="animation-delay: 0.5s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Do you offer customizable service plans?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Yes—tiers for Managed IT, Cybersecurity, Cloud, and Compliance. We tailor SLAs to your size, risk, and budget.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal" style="animation-delay: 0.7s">
+        <button class="faq-question" aria-expanded="false">
+          <h4>Can you help with HIPAA or PCI DSS?</h4>
+          <span class="toggle-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" hidden>
+          <p>Absolutely. We perform gap assessments, write policies, implement controls, and prep you for audits.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-header reveal">Get a Quote</h2>
+      <p class="intro-text reveal" style="animation-delay: 0.3s">
+        Tell us about your environment—we'll propose a plan within 1 business day.
+      </p>
+
+      <form action="https://formspree.io/f/xpwrwldy" method="POST" class="contact-form reveal" id="contact-form" novalidate style="animation-delay: 0.5s">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <!-- Honeypot -->
+        <input type="text" name="_human" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+        <div class="contact-grid">
+          <div>
+            <label for="firstName">First Name *</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name *</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+          </div>
+          <div>
+            <label for="company">Company *</label>
+            <input id="company" name="company" type="text" autocomplete="organization" required>
+          </div>
+          <div>
+            <label for="email">Business Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+          </div>
+          <div>
+            <label for="phone">Phone *</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="^[0-9()\-\.\s+]{7,}$" required>
+          </div>
+          <div>
+            <label for="interest">Interested In *</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="managedIT">Managed IT</option>
+              <option value="cybersecurity">Cybersecurity</option>
+              <option value="cloud">Cloud Solutions</option>
+              <option value="compliance">Compliance & Auditing</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="message">Tell us a bit about your needs</label>
+        <textarea id="message" name="message" rows="5" placeholder="Number of users/devices, compliance needs, recent issues…"></textarea>
+
+        <button type="submit">Send Request</button>
+        <p id="contact-msg" role="status" aria-live="polite" class="intro-text" style="margin-top: 0.5rem"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">→</button>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="footer-sitemap">
+      <div class="sitemap-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="sitemap-column">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
+  </footer>
+
+  <!-- Structured Data for FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly can I get support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We respond within 60 minutes during business hours. After-hours critical issues are escalated to on-call (24/7)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer customizable service plans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Tiers for Managed IT, Cybersecurity, Cloud, and Compliance with tailored SLAs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with HIPAA or PCI DSS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We perform gap assessments, write policies, implement controls, and prepare you for audits."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+
+    // Intersection Observer for reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { 
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // FAQ functionality
+    document.querySelectorAll('.faq-question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const answer = button.nextElementSibling;
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-question').forEach((otherButton) => {
+          if (otherButton !== button) {
+            otherButton.setAttribute('aria-expanded', 'false');
+            otherButton.nextElementSibling.hidden = true;
+          }
+        });
+        
+        // Toggle current FAQ
+        button.setAttribute('aria-expanded', String(!isExpanded));
+        answer.hidden = !answer.hidden;
+      });
+    });
+
+    // Form handling
+    const contactForm = document.getElementById('contact-form');
+    const contactMsg = document.getElementById('contact-msg');
+    
+    if (contactForm && contactMsg) {
+      contactForm.addEventListener('submit', (event) => {
+        if (!contactForm.checkValidity()) {
+          event.preventDefault();
+          contactMsg.textContent = 'Please complete all required fields.';
+          contactMsg.style.color = '#dc2626';
+        } else {
+          contactMsg.textContent = 'Submitting…';
+          contactMsg.style.color = '#059669';
+        }
+      });
+    }
+
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+      });
+    });
+
+    // Update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Fallback for no JavaScript -->
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      
+      .faq-answer {
+        display: block !important;
+      }
+      
+      .mobile-menu {
+        display: block;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+      
+      .hamburger {
+        display: none;
+      }
+      
+      .nav-links {
+        display: flex;
+      }
+    </style>
+  </noscript>
+</body>
+</html>

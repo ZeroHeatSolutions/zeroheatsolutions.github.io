@@ -98,9 +98,6 @@
       border-bottom: 1px solid var(--neutral-200);
       z-index: 1000;
       padding: 1rem 0;
-    }
-
-    .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -344,17 +341,11 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .service-card .service-icon {
+    .service-card img {
       width: 60px;
       height: 60px;
       margin-bottom: 1rem;
-      background: var(--primary-blue);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
+      filter: hue-rotate(220deg);
     }
 
     .service-card h4 {
@@ -474,17 +465,11 @@
       transform: translateY(-2px);
     }
 
-    .industry-card .industry-icon {
+    .industry-card img {
       width: 60px;
       height: 60px;
-      margin: 0 auto 1rem;
-      background: var(--accent-green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
+      margin-bottom: 1rem;
+      filter: hue-rotate(220deg);
     }
 
     .industry-card h4 {
@@ -646,7 +631,7 @@
       color: var(--white);
     }
 
-    .footer-bottom {
+    footer p {
       text-align: center;
       padding-top: 2rem;
       border-top: 1px solid var(--neutral-700);
@@ -673,6 +658,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      transform: rotate(-90deg);
     }
 
     #back-to-top.show {
@@ -682,7 +668,7 @@
 
     #back-to-top:hover {
       background: var(--primary-dark);
-      transform: scale(1.1);
+      transform: rotate(-90deg) scale(1.1);
     }
 
     /* Animation Classes */
@@ -778,6 +764,18 @@
       }
     }
 
+    /* Accessibility */
+    .visually-hidden-focusable:not(:focus):not(:active) {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      border: 0 !important;
+      padding: 0 !important;
+    }
+
     /* High contrast mode support */
     @media (prefers-contrast: high) {
       :root {
@@ -811,30 +809,28 @@
 
   <!-- Navigation -->
   <nav aria-label="Primary">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html">
-          <img src="zhs-logo.jpg" alt="Zero Heat Solutions logo" width="120" height="50" decoding="async">
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="services.html">Services</a></li>
-        <li><a href="#process">How We Work</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile">
-        <li role="none"><a role="menuitem" href="services.html">Services</a></li>
-        <li role="none"><a role="menuitem" href="#process">How We Work</a></li>
-        <li role="none"><a role="menuitem" href="#industries">Industries</a></li>
-        <li role="none"><a role="menuitem" href="#about">About Us</a></li>
-        <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo">
+      <a href="index.html">
+        <img src="zhs-logo.jpg" alt="Zero Heat Solutions logo" width="120" height="50" decoding="async">
+      </a>
     </div>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#industries">Industries</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="mobile-menu" id="mobile-menu" role="menu" aria-label="Mobile">
+      <li role="none"><a role="menuitem" href="services.html">Services</a></li>
+      <li role="none"><a role="menuitem" href="#process">How We Work</a></li>
+      <li role="none"><a role="menuitem" href="#industries">Industries</a></li>
+      <li role="none"><a role="menuitem" href="#about">About Us</a></li>
+      <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- Hero Section -->
@@ -866,9 +862,9 @@
 
       <div class="services-grid">
         <article class="service-card reveal" style="animation-delay: 0.4s">
-          <div class="service-icon">🛡️</div>
-          <h4>Cybersecurity & Threat Hunting</h4>
-          <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
+          <img src="assets/icons/shield.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>Backup, Recovery & Continuity</h4>
+          <p>Automated backups, secure replication, and fast recovery.</p>
           <ul>
             <li>Local & Cloud</li>
             <li>DR Testing</li>
@@ -928,32 +924,32 @@
 
       <div class="industries-grid">
         <div class="industry-card reveal" style="animation-delay: 0.4s">
-          <div class="industry-icon">🏥</div>
+          <img src="assets/icons/healthcare.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Healthcare</h4>
           <p>HIPAA-compliant support, EHR security, telehealth infrastructure.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay: 0.6s">
-          <div class="industry-icon">🏗️</div>
+          <img src="assets/icons/construction.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Construction & Field Services</h4>
           <p>MDM, secure file sync, remote collaboration.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay: 0.8s">
-          <div class="industry-icon">⚖️</div>
+          <img src="assets/icons/legal.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Legal & Accounting</h4>
           <p>Encryption at rest, secure comms, regulatory support.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay: 1s">
-          <div class="industry-icon">🏠</div>
+          <img src="assets/icons/real-estate.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Real Estate & Property Management</h4>
           <p>Network isolation, remote office connectivity.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay: 1.2s">
-          <div class="industry-icon">🛍️</div>
+          <img src="assets/icons/retail.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Retail & Local Shops</h4>
           <p>POS hardening, PCI DSS gaps, secure guest Wi-Fi.</p>
         </div>
         <div class="industry-card reveal" style="animation-delay: 1.4s">
-          <div class="industry-icon">🤝</div>
+          <img src="assets/icons/nonprofit.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Nonprofits & SMBs</h4>
           <p>Budget-friendly solutions, grant assistance, volunteer training.</p>
         </div>
@@ -1059,7 +1055,7 @@
   </main>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" aria-label="Back to top">↑</button>
+  <button id="back-to-top" aria-label="Back to top">→</button>
 
   <!-- Footer -->
   <footer role="contentinfo">
@@ -1085,9 +1081,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
-    </div>
+    <p>&copy; <span id="year"></span> Zero Heat Solutions. All rights reserved.</p>
   </footer>
 
   <!-- Structured Data for FAQ -->
@@ -1265,7 +1259,9 @@
     </style>
   </noscript>
 </body>
-</html>
+</html>Cybersecurity & Threat Hunting</h4>
+          <p>Continuous monitoring, real-time detection, and incident response from our SOC.</p>
+          <ul>
             <li>24/7 SOC</li>
             <li>Threat Intel</li>
             <li>EDR</li>
@@ -1275,7 +1271,7 @@
         </article>
 
         <article class="service-card reveal" style="animation-delay: 0.6s">
-          <div class="service-icon">⚙️</div>
+          <img src="assets/icons/server.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Managed IT & Helpdesk</h4>
           <p>Proactive network management, patching, and responsive support.</p>
           <ul>
@@ -1288,7 +1284,7 @@
         </article>
 
         <article class="service-card reveal" style="animation-delay: 0.8s">
-          <div class="service-icon">☁️</div>
+          <img src="assets/icons/cloud-computing.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Cloud & Infrastructure</h4>
           <p>Secure Azure/AWS/hybrid deployments and zero-downtime migrations.</p>
           <ul>
@@ -1301,7 +1297,7 @@
         </article>
 
         <article class="service-card reveal" style="animation-delay: 1s">
-          <div class="service-icon">✅</div>
+          <img src="assets/icons/checklist.svg" alt="" width="60" height="60" loading="lazy">
           <h4>Compliance, Auditing & Governance</h4>
           <p>HIPAA, PCI DSS, SOC 2, and NIST readiness with gaps, policies, and monitoring.</p>
           <ul>
@@ -1314,7 +1310,5 @@
         </article>
 
         <article class="service-card reveal" style="animation-delay: 1.2s">
-          <div class="service-icon">💾</div>
-          <h4>Backup, Recovery & Continuity</h4>
-          <p>Automated backups, secure replication, and fast recovery.</p>
-          <ul>
+          <img src="assets/icons/cloud-backup.svg" alt="" width="60" height="60" loading="lazy">
+          <h4>
